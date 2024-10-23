@@ -28,10 +28,11 @@ namespace CapaDatos
 
         // Este es un metodo que se puede replicar para practicamente todas las entidades
         // Solo necesita devolver el tipo de dato coincidente junto a sus atributos especificos
+
         private List<Empleado> ToList(String peziduri)
         {
             List<Empleado> empleados = new List<Empleado>();
-            DataTable data = Conexion.PeziDuri(peziduri);
+            DataTable data = Conexion.Instancia.PeziDuri(peziduri);
 
             if (data.Rows.Count > 0)
             {
@@ -62,6 +63,44 @@ namespace CapaDatos
         {      
             return ToList("sp_ListarEmpleados");
         }
+
+        public bool BuscarEmpleadoId(int id_empleado)
+        {
+            SqlCommand comando = null;
+            Boolean existe = false;
+            try
+            {
+                SqlConnection conexion = Conexion.Instancia.Conectar();
+                comando = new SqlCommand("sp_BuscarEmpleadoId", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Id_Empleado", id_empleado);
+
+                conexion.Open();
+                SqlDataReader data = comando.ExecuteReader();
+
+                DataTable dataTable = new DataTable();
+                dataTable.Load(data);
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    existe = true;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            finally 
+            {
+                if (comando != null)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            return existe;
+        }
+
 
 
     }

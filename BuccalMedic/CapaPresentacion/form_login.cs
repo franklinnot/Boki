@@ -28,6 +28,19 @@ namespace CapaPresentacion
             {
                 Debug.WriteLine(empleado.Nombre);
             }
+
+            if (LogEmpleado.Instancia.BuscarEmpleadoId(45)) 
+            {
+                Debug.WriteLine("El id 45 si existe ,waos");
+            }
+            else
+            {
+                Debug.WriteLine("El id 45 no tiene ningun empleado asociado, pipip");
+            }
+
         }
+
+
+
     }
 }

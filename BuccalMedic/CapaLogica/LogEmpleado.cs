@@ -16,10 +16,16 @@ namespace CapaLogica
         public static LogEmpleado Instancia { get { return LogEmpleado._instancia; } }
         #endregion
 
-
         public List<Empleado> ListarEmpleados()
         {
             return DatEmpleado.Instancia.ListarEmpleados();
         }
+
+        public bool BuscarEmpleadoId(int id)
+        {
+            return DatEmpleado.Instancia.BuscarEmpleadoId(id);
+        }
+
+
     }
 }

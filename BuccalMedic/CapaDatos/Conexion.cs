@@ -35,13 +35,16 @@ namespace CapaDatos
             return connection;
         }
 
+        // SOLO APLICABLE PARA PEZIDURIS SIN PARAMETROS, caso contrario debe realizarse desde
+        // la propia clase Dat, por ejemplo DatEmpleado
+
         // No necesitan cambiar este metodo
         // Para que se guien como usarlo, revisen la clase DatEmpleado (capaDatos) y revisen el metodo ToList
         // Lo pueden usar para cualquier clase, tan solo haciendo que devuelva otro tipo de dato y
         // sus columnas coincidan
 
         // Todos los store procedures estaran y deben estar en el archivo README.md del repositorio
-        public static DataTable PeziDuri(string peziduri)
+        public DataTable PeziDuri(string peziduri)
         {
             SqlCommand comando = null;
             DataTable dataTable = new DataTable();
@@ -70,8 +73,6 @@ namespace CapaDatos
 
             return dataTable;
         }
-
-
 
 
 
