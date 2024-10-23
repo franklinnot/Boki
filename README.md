@@ -11,11 +11,11 @@ BEGIN
 END
 
 -- Buscar un empleado por id
-CREATE OR ALTER PROCEDURE sp_BuscarClientePorId
-    @Id_cliente INT
+CREATE OR ALTER PROCEDURE sp_BuscarEmpleadoId
+    @Id_Empleado INT
 AS
 BEGIN
-    SELECT * FROM Cliente WHERE Id_cliente = @Id_cliente
+    SELECT * FROM Empleado WHERE Id_Empleado = @Id_Empleado
 END
 
 
