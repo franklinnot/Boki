@@ -26,7 +26,7 @@ namespace CapaPresentacion
 
             foreach (Empleado empleado in empleados) 
             {
-                Debug.Write(empleado.Nombre);
+                Debug.WriteLine(empleado.Nombre);
             }
         }
     }

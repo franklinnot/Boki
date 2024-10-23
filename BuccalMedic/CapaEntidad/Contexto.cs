@@ -8,7 +8,7 @@ namespace CapaEntidad
     public partial class Contexto : DbContext
     {
         public Contexto()
-            : base("Data Source=localhost;Initial Catalog=Bucal;Integrated Security=True;TrustServerCertificate=True")
+            : base("name=Settings")
         {
         }
 

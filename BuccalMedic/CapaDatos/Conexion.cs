@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
@@ -18,7 +20,7 @@ namespace CapaDatos
             Debug.WriteLine("Se creo una instancia de Conexion");
         }
 
-        public static Conexion Query { get { return Conexion._instancia; } }
+        public static Conexion Instancia { get { return Conexion._instancia; } }
 
         public SqlConnection Conectar()
         {
@@ -32,6 +34,46 @@ namespace CapaDatos
 
             return connection;
         }
-    }
 
+        // No necesitan cambiar este metodo
+        // Para que se guien como usarlo, revisen la clase DatEmpleado (capaDatos) y revisen el metodo ToList
+        // Lo pueden usar para cualquier clase, tan solo haciendo que devuelva otro tipo de dato y
+        // sus columnas coincidan
+
+        // Todos los store procedures estaran y deben estar en el archivo readme del repositorio
+        public static DataTable PeziDuri(string peziduri)
+        {
+            SqlCommand comando = null;
+            DataTable dataTable = new DataTable();
+            try
+            {
+                SqlConnection connection = Conexion.Instancia.Conectar();
+                comando = new SqlCommand(peziduri, connection);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                connection.Open();
+                SqlDataReader data = comando.ExecuteReader();
+
+                dataTable.Load(data); 
+            }
+            catch (Exception e)
+            {
+                Debug.Write($"Me dio amsieda: {e.Message}");
+            }
+            finally
+            {
+                if (comando != null)
+                {
+                    comando.Connection.Close();
+                }
+            }
+
+            return dataTable;
+        }
+
+
+
+
+
+    }
 }
