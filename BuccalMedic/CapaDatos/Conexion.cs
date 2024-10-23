@@ -40,7 +40,7 @@ namespace CapaDatos
         // Lo pueden usar para cualquier clase, tan solo haciendo que devuelva otro tipo de dato y
         // sus columnas coincidan
 
-        // Todos los store procedures estaran y deben estar en el archivo readme del repositorio
+        // Todos los store procedures estaran y deben estar en el archivo README.md del repositorio
         public static DataTable PeziDuri(string peziduri)
         {
             SqlCommand comando = null;
