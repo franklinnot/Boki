@@ -24,23 +24,33 @@ namespace CapaPresentacion
         {
             List<Empleado> empleados = LogEmpleado.Instancia.ListarEmpleados();
 
-            foreach (Empleado empleado in empleados) 
+        }
+
+        private void btn_iniciar_sesion_Click(object sender, EventArgs e)
+        {
+            string usuario = txt_usuario.Text.Trim();
+            string password = txt_password.Text.Trim();
+
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(password))
             {
-                Debug.WriteLine(empleado.Nombre);
+                MessageBox.Show("Debe ingresar usuario y contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            if (LogEmpleado.Instancia.BuscarEmpleadoId(45)) 
+            Empleado empleado = new Empleado();
+            empleado = LogEmpleado.Instancia.BuscarEmpleadoLogin(usuario, password);
+
+            if (empleado != null) 
             {
-                Debug.WriteLine("El id 45 si existe ,waos");
+                //form_principal formPrincipal = new form_principal(empleado);
+                //formPrincipal.Show();
+                this.Hide();
             }
             else
             {
-                Debug.WriteLine("El id 45 no tiene ningun empleado asociado, pipip");
+                MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
-
-
-
     }
 }

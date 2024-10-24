@@ -21,9 +21,14 @@ namespace CapaLogica
             return DatEmpleado.Instancia.ListarEmpleados();
         }
 
-        public bool BuscarEmpleadoId(int id)
+        public Empleado BuscarEmpleadoId(int id)
         {
             return DatEmpleado.Instancia.BuscarEmpleadoId(id);
+        }
+
+        public Empleado BuscarEmpleadoLogin(string usuario, string password)
+        {
+            return DatEmpleado.Instancia.BuscarEmpleadoLogin(usuario: usuario, password: password);
         }
 
 
