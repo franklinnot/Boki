@@ -41,7 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogCita.cs" />
+    <Compile Include="LogCitaConsulta.cs" />
+    <Compile Include="LogCitaTratamiento.cs" />
+    <Compile Include="LogCliente.cs" />
+    <Compile Include="LogDiagnostico.cs" />
     <Compile Include="LogEmpleado.cs" />
+    <Compile Include="LogTratamiento.cs" />
+    <Compile Include="LogTratamientoDiagnostico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
