@@ -15,9 +15,12 @@ namespace CapaPresentacion
 {
     public partial class form_login : Form
     {
+        public static Empleado empleado;
+
         public form_login()
         {
             InitializeComponent();
+            empleado = new Empleado();
         }
 
         private void form_login_Load(object sender, EventArgs e)
@@ -36,14 +39,26 @@ namespace CapaPresentacion
                 return;
             }
 
-            Empleado empleado = LogEmpleado.Instancia.BuscarEmpleadoLogin(usuario, password);
+            Empleado emp = LogEmpleado.Instancia.BuscarEmpleadoLogin(usuario, password);
 
-            if (empleado != null) 
+            if (emp != null)
             {
                 // Hace falta implementar el formulario para el odontologo
-                form_recepcion form_Recepcion = new form_recepcion(empleado);
-                form_Recepcion.ShowDialog();
-                this.Hide();
+                if (emp.Cargo.ToLower() == "recepcionista")
+                {
+                    form_recepcion form_Recepcion = new form_recepcion();
+                    form_Recepcion.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Esta sección aun se encuentra en desarrollo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                empleado = emp;
+
+                // conforme se vaya desarrollando, se ira implementando el codigo para
+                // ocultar y volver a mostrar
+                // this.Hide();
             }
             else
             {

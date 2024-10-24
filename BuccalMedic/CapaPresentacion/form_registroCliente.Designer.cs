@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtp_fecha_nacimiento = new System.Windows.Forms.DateTimePicker();
+            this.txt_Direccion = new System.Windows.Forms.TextBox();
+            this.txt_Telefono = new System.Windows.Forms.TextBox();
+            this.cmb_genero = new System.Windows.Forms.ComboBox();
+            this.txt_NombreCliente = new System.Windows.Forms.TextBox();
+            this.txt_DNI = new System.Windows.Forms.TextBox();
             this.btn_atras = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,12 +43,6 @@
             this.tel_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genero_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.est_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_DNI = new System.Windows.Forms.TextBox();
-            this.txt_NombreCliente = new System.Windows.Forms.TextBox();
-            this.cmb_genero = new System.Windows.Forms.ComboBox();
-            this.txt_Telefono = new System.Windows.Forms.TextBox();
-            this.txt_Direccion = new System.Windows.Forms.TextBox();
-            this.dtp_registroCliente = new System.Windows.Forms.DateTimePicker();
             this.btn_inhabilitar_cliente = new System.Windows.Forms.Button();
             this.btn_modificar_Cliente = new System.Windows.Forms.Button();
             this.btn_registrar_Cliente = new System.Windows.Forms.Button();
@@ -52,24 +52,79 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtp_registroCliente);
+            this.groupBox1.Controls.Add(this.dtp_fecha_nacimiento);
             this.groupBox1.Controls.Add(this.txt_Direccion);
             this.groupBox1.Controls.Add(this.txt_Telefono);
             this.groupBox1.Controls.Add(this.cmb_genero);
             this.groupBox1.Controls.Add(this.txt_NombreCliente);
             this.groupBox1.Controls.Add(this.txt_DNI);
-            this.groupBox1.Location = new System.Drawing.Point(59, 46);
+            this.groupBox1.Location = new System.Drawing.Point(44, 37);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(493, 185);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(370, 150);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Paciente:";
             // 
+            // dtp_fecha_nacimiento
+            // 
+            this.dtp_fecha_nacimiento.Location = new System.Drawing.Point(17, 121);
+            this.dtp_fecha_nacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtp_fecha_nacimiento.Name = "dtp_fecha_nacimiento";
+            this.dtp_fecha_nacimiento.Size = new System.Drawing.Size(198, 20);
+            this.dtp_fecha_nacimiento.TabIndex = 25;
+            // 
+            // txt_Direccion
+            // 
+            this.txt_Direccion.Location = new System.Drawing.Point(244, 118);
+            this.txt_Direccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Direccion.Name = "txt_Direccion";
+            this.txt_Direccion.Size = new System.Drawing.Size(92, 20);
+            this.txt_Direccion.TabIndex = 24;
+            // 
+            // txt_Telefono
+            // 
+            this.txt_Telefono.Location = new System.Drawing.Point(244, 82);
+            this.txt_Telefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Telefono.Name = "txt_Telefono";
+            this.txt_Telefono.Size = new System.Drawing.Size(92, 20);
+            this.txt_Telefono.TabIndex = 22;
+            // 
+            // cmb_genero
+            // 
+            this.cmb_genero.FormattingEnabled = true;
+            this.cmb_genero.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
+            this.cmb_genero.Location = new System.Drawing.Point(17, 79);
+            this.cmb_genero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_genero.Name = "cmb_genero";
+            this.cmb_genero.Size = new System.Drawing.Size(118, 21);
+            this.cmb_genero.TabIndex = 21;
+            // 
+            // txt_NombreCliente
+            // 
+            this.txt_NombreCliente.Location = new System.Drawing.Point(244, 41);
+            this.txt_NombreCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_NombreCliente.Name = "txt_NombreCliente";
+            this.txt_NombreCliente.Size = new System.Drawing.Size(92, 20);
+            this.txt_NombreCliente.TabIndex = 20;
+            // 
+            // txt_DNI
+            // 
+            this.txt_DNI.Location = new System.Drawing.Point(17, 41);
+            this.txt_DNI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_DNI.Name = "txt_DNI";
+            this.txt_DNI.Size = new System.Drawing.Size(118, 20);
+            this.txt_DNI.TabIndex = 19;
+            // 
             // btn_atras
             // 
-            this.btn_atras.Location = new System.Drawing.Point(36, 473);
+            this.btn_atras.Location = new System.Drawing.Point(27, 384);
+            this.btn_atras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_atras.Name = "btn_atras";
-            this.btn_atras.Size = new System.Drawing.Size(75, 23);
+            this.btn_atras.Size = new System.Drawing.Size(56, 19);
             this.btn_atras.TabIndex = 4;
             this.btn_atras.Text = "<--";
             this.btn_atras.UseVisualStyleBackColor = true;
@@ -86,12 +141,13 @@
             this.tel_Cliente,
             this.genero_Cliente,
             this.est_Cliente});
-            this.dataGridView1.Location = new System.Drawing.Point(135, 277);
+            this.dataGridView1.Location = new System.Drawing.Point(101, 225);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(603, 219);
+            this.dataGridView1.Size = new System.Drawing.Size(452, 178);
             this.dataGridView1.TabIndex = 5;
             // 
             // id_Cliente
@@ -130,87 +186,49 @@
             this.est_Cliente.Name = "est_Cliente";
             this.est_Cliente.ReadOnly = true;
             // 
-            // txt_DNI
-            // 
-            this.txt_DNI.Location = new System.Drawing.Point(23, 51);
-            this.txt_DNI.Name = "txt_DNI";
-            this.txt_DNI.Size = new System.Drawing.Size(156, 22);
-            this.txt_DNI.TabIndex = 19;
-            // 
-            // txt_NombreCliente
-            // 
-            this.txt_NombreCliente.Location = new System.Drawing.Point(325, 51);
-            this.txt_NombreCliente.Name = "txt_NombreCliente";
-            this.txt_NombreCliente.Size = new System.Drawing.Size(121, 22);
-            this.txt_NombreCliente.TabIndex = 20;
-            // 
-            // cmb_genero
-            // 
-            this.cmb_genero.FormattingEnabled = true;
-            this.cmb_genero.Location = new System.Drawing.Point(23, 97);
-            this.cmb_genero.Name = "cmb_genero";
-            this.cmb_genero.Size = new System.Drawing.Size(156, 24);
-            this.cmb_genero.TabIndex = 21;
-            // 
-            // txt_Telefono
-            // 
-            this.txt_Telefono.Location = new System.Drawing.Point(325, 101);
-            this.txt_Telefono.Name = "txt_Telefono";
-            this.txt_Telefono.Size = new System.Drawing.Size(121, 22);
-            this.txt_Telefono.TabIndex = 22;
-            // 
-            // txt_Direccion
-            // 
-            this.txt_Direccion.Location = new System.Drawing.Point(325, 145);
-            this.txt_Direccion.Name = "txt_Direccion";
-            this.txt_Direccion.Size = new System.Drawing.Size(121, 22);
-            this.txt_Direccion.TabIndex = 24;
-            // 
-            // dtp_registroCliente
-            // 
-            this.dtp_registroCliente.Location = new System.Drawing.Point(23, 149);
-            this.dtp_registroCliente.Name = "dtp_registroCliente";
-            this.dtp_registroCliente.Size = new System.Drawing.Size(262, 22);
-            this.dtp_registroCliente.TabIndex = 25;
-            // 
             // btn_inhabilitar_cliente
             // 
-            this.btn_inhabilitar_cliente.Location = new System.Drawing.Point(588, 188);
+            this.btn_inhabilitar_cliente.Location = new System.Drawing.Point(441, 153);
+            this.btn_inhabilitar_cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_inhabilitar_cliente.Name = "btn_inhabilitar_cliente";
-            this.btn_inhabilitar_cliente.Size = new System.Drawing.Size(124, 29);
+            this.btn_inhabilitar_cliente.Size = new System.Drawing.Size(93, 24);
             this.btn_inhabilitar_cliente.TabIndex = 17;
             this.btn_inhabilitar_cliente.Text = "Inhabilitar";
             this.btn_inhabilitar_cliente.UseVisualStyleBackColor = true;
             // 
             // btn_modificar_Cliente
             // 
-            this.btn_modificar_Cliente.Location = new System.Drawing.Point(588, 140);
+            this.btn_modificar_Cliente.Location = new System.Drawing.Point(441, 114);
+            this.btn_modificar_Cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_modificar_Cliente.Name = "btn_modificar_Cliente";
-            this.btn_modificar_Cliente.Size = new System.Drawing.Size(124, 29);
+            this.btn_modificar_Cliente.Size = new System.Drawing.Size(93, 24);
             this.btn_modificar_Cliente.TabIndex = 16;
             this.btn_modificar_Cliente.Text = "Modificar";
             this.btn_modificar_Cliente.UseVisualStyleBackColor = true;
             // 
             // btn_registrar_Cliente
             // 
-            this.btn_registrar_Cliente.Location = new System.Drawing.Point(588, 90);
+            this.btn_registrar_Cliente.Location = new System.Drawing.Point(441, 73);
+            this.btn_registrar_Cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_registrar_Cliente.Name = "btn_registrar_Cliente";
-            this.btn_registrar_Cliente.Size = new System.Drawing.Size(124, 29);
+            this.btn_registrar_Cliente.Size = new System.Drawing.Size(93, 24);
             this.btn_registrar_Cliente.TabIndex = 15;
             this.btn_registrar_Cliente.Text = "Registrar";
             this.btn_registrar_Cliente.UseVisualStyleBackColor = true;
+            this.btn_registrar_Cliente.Click += new System.EventHandler(this.btn_registrar_Cliente_Click);
             // 
             // form_registroCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 541);
+            this.ClientSize = new System.Drawing.Size(603, 440);
             this.Controls.Add(this.btn_inhabilitar_cliente);
             this.Controls.Add(this.btn_modificar_Cliente);
             this.Controls.Add(this.btn_registrar_Cliente);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_atras);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "form_registroCliente";
             this.Text = "form_registroCliente";
             this.groupBox1.ResumeLayout(false);
@@ -236,7 +254,7 @@
         private System.Windows.Forms.TextBox txt_Direccion;
         private System.Windows.Forms.TextBox txt_Telefono;
         private System.Windows.Forms.ComboBox cmb_genero;
-        private System.Windows.Forms.DateTimePicker dtp_registroCliente;
+        private System.Windows.Forms.DateTimePicker dtp_fecha_nacimiento;
         private System.Windows.Forms.Button btn_inhabilitar_cliente;
         private System.Windows.Forms.Button btn_modificar_Cliente;
         private System.Windows.Forms.Button btn_registrar_Cliente;

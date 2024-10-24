@@ -45,7 +45,7 @@
             // 
             this.cmb_tratamiento.FormattingEnabled = true;
             this.cmb_tratamiento.Location = new System.Drawing.Point(152, 260);
-            this.cmb_tratamiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_tratamiento.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_tratamiento.Name = "cmb_tratamiento";
             this.cmb_tratamiento.Size = new System.Drawing.Size(92, 21);
             this.cmb_tratamiento.TabIndex = 23;
@@ -54,7 +54,7 @@
             // 
             this.cbx_tratamiento.AutoSize = true;
             this.cbx_tratamiento.Location = new System.Drawing.Point(152, 239);
-            this.cbx_tratamiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbx_tratamiento.Margin = new System.Windows.Forms.Padding(2);
             this.cbx_tratamiento.Name = "cbx_tratamiento";
             this.cbx_tratamiento.Size = new System.Drawing.Size(82, 17);
             this.cbx_tratamiento.TabIndex = 22;
@@ -65,7 +65,7 @@
             // 
             this.cmb_horario.FormattingEnabled = true;
             this.cmb_horario.Location = new System.Drawing.Point(152, 201);
-            this.cmb_horario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_horario.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_horario.Name = "cmb_horario";
             this.cmb_horario.Size = new System.Drawing.Size(92, 21);
             this.cmb_horario.TabIndex = 21;
@@ -74,7 +74,7 @@
             // 
             this.cmb_fecha.FormattingEnabled = true;
             this.cmb_fecha.Location = new System.Drawing.Point(152, 154);
-            this.cmb_fecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_fecha.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_fecha.Name = "cmb_fecha";
             this.cmb_fecha.Size = new System.Drawing.Size(92, 21);
             this.cmb_fecha.TabIndex = 20;
@@ -83,23 +83,15 @@
             // 
             this.cmb_odontologo.FormattingEnabled = true;
             this.cmb_odontologo.Location = new System.Drawing.Point(152, 112);
-            this.cmb_odontologo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_odontologo.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_odontologo.Name = "cmb_odontologo";
             this.cmb_odontologo.Size = new System.Drawing.Size(92, 21);
             this.cmb_odontologo.TabIndex = 19;
             // 
-            // txt_DNI
-            // 
-            this.txt_DNI.Location = new System.Drawing.Point(152, 62);
-            this.txt_DNI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_DNI.Name = "txt_DNI";
-            this.txt_DNI.Size = new System.Drawing.Size(92, 20);
-            this.txt_DNI.TabIndex = 18;
-            // 
             // lbl_nombreR
             // 
             this.lbl_nombreR.AutoSize = true;
-            this.lbl_nombreR.Location = new System.Drawing.Point(247, 64);
+            this.lbl_nombreR.Location = new System.Drawing.Point(149, 51);
             this.lbl_nombreR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_nombreR.Name = "lbl_nombreR";
             this.lbl_nombreR.Size = new System.Drawing.Size(35, 13);
@@ -109,7 +101,7 @@
             // btn_mostrar_citas
             // 
             this.btn_mostrar_citas.Location = new System.Drawing.Point(334, 225);
-            this.btn_mostrar_citas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_mostrar_citas.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mostrar_citas.Name = "btn_mostrar_citas";
             this.btn_mostrar_citas.Size = new System.Drawing.Size(93, 24);
             this.btn_mostrar_citas.TabIndex = 15;
@@ -119,17 +111,18 @@
             // btn_nuevo_cliente
             // 
             this.btn_nuevo_cliente.Location = new System.Drawing.Point(334, 178);
-            this.btn_nuevo_cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_nuevo_cliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_nuevo_cliente.Name = "btn_nuevo_cliente";
             this.btn_nuevo_cliente.Size = new System.Drawing.Size(93, 24);
             this.btn_nuevo_cliente.TabIndex = 14;
             this.btn_nuevo_cliente.Text = "Nuevo Cliente";
             this.btn_nuevo_cliente.UseVisualStyleBackColor = true;
+            this.btn_nuevo_cliente.Click += new System.EventHandler(this.btn_nuevo_cliente_Click);
             // 
             // btn_cancelar
             // 
             this.btn_cancelar.Location = new System.Drawing.Point(334, 139);
-            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(93, 24);
             this.btn_cancelar.TabIndex = 13;
@@ -139,7 +132,7 @@
             // btn_registrarCita
             // 
             this.btn_registrarCita.Location = new System.Drawing.Point(334, 98);
-            this.btn_registrarCita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_registrarCita.Margin = new System.Windows.Forms.Padding(2);
             this.btn_registrarCita.Name = "btn_registrarCita";
             this.btn_registrarCita.Size = new System.Drawing.Size(93, 24);
             this.btn_registrarCita.TabIndex = 12;
@@ -148,9 +141,10 @@
             // 
             // txt_DNI
             // 
-            this.txt_DNI.Location = new System.Drawing.Point(202, 76);
+            this.txt_DNI.Location = new System.Drawing.Point(152, 76);
+            this.txt_DNI.Margin = new System.Windows.Forms.Padding(2);
             this.txt_DNI.Name = "txt_DNI";
-            this.txt_DNI.Size = new System.Drawing.Size(121, 22);
+            this.txt_DNI.Size = new System.Drawing.Size(121, 20);
             this.txt_DNI.TabIndex = 18;
             // 
             // form_recepcion
@@ -170,7 +164,7 @@
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_registrarCita);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "form_recepcion";
             this.Text = "Recepcion";
             this.Load += new System.EventHandler(this.form_recepcion_Load);

@@ -27,6 +27,8 @@ BEGIN
     SELECT * FROM Cliente
 END
 
+
+
 -- buscar un empleado por usuario y contraseña
 CREATE OR ALTER PROCEDURE sp_BuscarEmpleadoLogin
     @Usuario VARCHAR(50),
@@ -34,4 +36,19 @@ CREATE OR ALTER PROCEDURE sp_BuscarEmpleadoLogin
 AS
 BEGIN
     SELECT * FROM Empleado WHERE Usuario = @Usuario AND [Password] = @Password
+END;
+
+
+
+-- insertar un cliente
+CREATE OR ALTER PROCEDURE sp_InsertarCliente
+    @DNI VARCHAR(50),
+    @Nombre VARCHAR(50),
+    @Genero VARCHAR(50),
+    @Estado VARCHAR(100),
+    @Fecha_nacimiento DATETIME
+AS
+BEGIN
+    INSERT INTO Cliente (DNI, Nombre, Genero, Estado, Fecha_nacimiento)
+    VALUES (@DNI, @Nombre, @Genero, @Estado, @Fecha_nacimiento)
 END;
