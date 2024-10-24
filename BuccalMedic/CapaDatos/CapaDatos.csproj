@@ -52,7 +52,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="DatCita.cs" />
+    <Compile Include="DatCitaConsulta.cs" />
+    <Compile Include="DatCitaTratamiento.cs" />
+    <Compile Include="DatCliente.cs" />
+    <Compile Include="DatDiagnostico.cs" />
     <Compile Include="DatEmpleado.cs" />
+    <Compile Include="DatTratamiento.cs" />
+    <Compile Include="DatTratamientoDiagnostico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
