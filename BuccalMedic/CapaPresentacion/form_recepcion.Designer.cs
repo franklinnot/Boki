@@ -33,12 +33,12 @@
             this.cmb_horario = new System.Windows.Forms.ComboBox();
             this.cmb_fecha = new System.Windows.Forms.ComboBox();
             this.cmb_odontologo = new System.Windows.Forms.ComboBox();
-            this.txt_DNI = new System.Windows.Forms.TextBox();
             this.lbl_nombreR = new System.Windows.Forms.Label();
             this.btn_mostrar_citas = new System.Windows.Forms.Button();
             this.btn_nuevo_cliente = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_registrarCita = new System.Windows.Forms.Button();
+            this.txt_DNI = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cmb_tratamiento
@@ -82,13 +82,6 @@
             this.cmb_odontologo.Name = "cmb_odontologo";
             this.cmb_odontologo.Size = new System.Drawing.Size(121, 24);
             this.cmb_odontologo.TabIndex = 19;
-            // 
-            // txt_DNI
-            // 
-            this.txt_DNI.Location = new System.Drawing.Point(202, 76);
-            this.txt_DNI.Name = "txt_DNI";
-            this.txt_DNI.Size = new System.Drawing.Size(121, 22);
-            this.txt_DNI.TabIndex = 18;
             // 
             // lbl_nombreR
             // 
@@ -135,11 +128,18 @@
             this.btn_registrarCita.Text = "Registrar";
             this.btn_registrarCita.UseVisualStyleBackColor = true;
             // 
+            // txt_DNI
+            // 
+            this.txt_DNI.Location = new System.Drawing.Point(202, 76);
+            this.txt_DNI.Name = "txt_DNI";
+            this.txt_DNI.Size = new System.Drawing.Size(121, 22);
+            this.txt_DNI.TabIndex = 18;
+            // 
             // form_recepcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 541);
             this.Controls.Add(this.cmb_tratamiento);
             this.Controls.Add(this.cbx_tratamiento);
             this.Controls.Add(this.cmb_horario);
@@ -151,6 +151,7 @@
             this.Controls.Add(this.btn_nuevo_cliente);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_registrarCita);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "form_recepcion";
             this.Text = "Recepcion";
             this.ResumeLayout(false);
@@ -165,11 +166,11 @@
         private System.Windows.Forms.ComboBox cmb_horario;
         private System.Windows.Forms.ComboBox cmb_fecha;
         private System.Windows.Forms.ComboBox cmb_odontologo;
-        private System.Windows.Forms.TextBox txt_DNI;
         private System.Windows.Forms.Label lbl_nombreR;
         private System.Windows.Forms.Button btn_mostrar_citas;
         private System.Windows.Forms.Button btn_nuevo_cliente;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_registrarCita;
+        private System.Windows.Forms.TextBox txt_DNI;
     }
 }

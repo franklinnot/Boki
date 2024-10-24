@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace CapaPresentacion
 {
@@ -12,54 +14,63 @@ namespace CapaPresentacion
     {
         public  static void SetPlaceholder(Control control, string placeholder)
         {
-            // Verificamos si el control es un TextBox
-            if (control is TextBox textBox)
+            
+            if(control is DateTimePicker dateTimePicker)
             {
-                textBox.ForeColor = Color.Gray;
-                textBox.Text = placeholder;
+                dateTimePicker.Format = DateTimePickerFormat.Custom;
+                dateTimePicker.CustomFormat = $"'{placeholder}'";
+                dateTimePicker.ForeColor = Color.Gray;
 
-                textBox.Enter += (sender, e) =>
+                dateTimePicker.Enter += (sender, e) =>
                 {
-                    if (textBox.Text == placeholder)
+                    if (dateTimePicker.CustomFormat == $"'{placeholder}'")
                     {
-                        textBox.Text = "";
-                        textBox.ForeColor = Color.Black; // Cambiar a color normal cuando el usuario escriba
+                        // Restablecer al formato estándar cuando el usuario hace clic
+                        dateTimePicker.Format = DateTimePickerFormat.Short;
+                        dateTimePicker.ForeColor = Color.Black;
                     }
                 };
 
-                textBox.Leave += (sender, e) =>
+                dateTimePicker.Leave += (sender, e) =>
                 {
-                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    // Si no se ha seleccionado una fecha, restablecer el placeholder
+                    if (dateTimePicker.Value == dateTimePicker.MinDate)
                     {
-                        textBox.Text = placeholder;
-                        textBox.ForeColor = Color.Gray; // Placeholder color
+                        dateTimePicker.Format = DateTimePickerFormat.Custom;
+                        dateTimePicker.CustomFormat = $"'{placeholder}'";
+                        dateTimePicker.ForeColor = Color.Gray;
+                    }
+                };
+
+                // Inicializar el valor del DateTimePicker para que coincida con el estado "vacío"
+                dateTimePicker.Value = dateTimePicker.MinDate;
+            }
+            else
+            {
+                control.ForeColor = Color.Gray;
+                control.Text = placeholder;
+
+                control.Enter += (sender, e) =>
+                {
+                    if (control.Text == placeholder)
+                    {
+                        control.Text = "";
+                        control.ForeColor = Color.Black; // Cambiar a color normal cuando el usuario escriba
+                    }
+                };
+
+                control.Leave += (sender, e) =>
+                {
+                    if (string.IsNullOrWhiteSpace(control.Text))
+                    {
+                        control.Text = placeholder;
+                        control.ForeColor = Color.Gray; // Placeholder color
                     }
                 };
             }
-            // Verificamos si el control es un ComboBox
-            else if (control is ComboBox comboBox)
-            {
-                comboBox.ForeColor = Color.Gray;
-                comboBox.Text = placeholder;
 
-                comboBox.Enter += (sender, e) =>
-                {
-                    if (comboBox.Text == placeholder)
-                    {
-                        comboBox.Text = "";
-                        comboBox.ForeColor = Color.Black; // Cambiar a color normal cuando el usuario escriba
-                    }
-                };
-
-                comboBox.Leave += (sender, e) =>
-                {
-                    if (string.IsNullOrWhiteSpace(comboBox.Text))
-                    {
-                        comboBox.Text = placeholder;
-                        comboBox.ForeColor = Color.Gray; // Placeholder color
-                    }
-                };
-            }
+            
+            
         }
     }
 }

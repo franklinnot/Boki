@@ -58,6 +58,12 @@
     <Compile Include="form_recepcion.Designer.cs">
       <DependentUpon>form_recepcion.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_registroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_registroCliente.Designer.cs">
+      <DependentUpon>form_registroCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="MetodosUI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +72,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_recepcion.resx">
       <DependentUpon>form_recepcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_registroCliente.resx">
+      <DependentUpon>form_registroCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
