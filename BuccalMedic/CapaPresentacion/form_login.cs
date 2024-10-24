@@ -22,7 +22,6 @@ namespace CapaPresentacion
 
         private void form_login_Load(object sender, EventArgs e)
         {
-            List<Empleado> empleados = LogEmpleado.Instancia.ListarEmpleados();
 
         }
 
@@ -37,13 +36,12 @@ namespace CapaPresentacion
                 return;
             }
 
-            Empleado empleado = new Empleado();
-            empleado = LogEmpleado.Instancia.BuscarEmpleadoLogin(usuario, password);
+            Empleado empleado = LogEmpleado.Instancia.BuscarEmpleadoLogin(usuario, password);
 
             if (empleado != null) 
             {
-                //form_principal formPrincipal = new form_principal(empleado);
-                //formPrincipal.Show();
+                form_recepcion form_Recepcion = new form_recepcion(empleado);
+                form_Recepcion.ShowDialog();
                 this.Hide();
             }
             else
