@@ -40,6 +40,7 @@ namespace CapaPresentacion
 
             if (empleado != null) 
             {
+                // Hace falta implementar el formulario para el odontologo
                 form_recepcion form_Recepcion = new form_recepcion(empleado);
                 form_Recepcion.ShowDialog();
                 this.Hide();
