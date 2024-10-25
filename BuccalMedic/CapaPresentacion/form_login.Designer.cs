@@ -43,9 +43,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.loguito;
-            this.pictureBox1.Location = new System.Drawing.Point(154, 53);
+            this.pictureBox1.Location = new System.Drawing.Point(230, 86);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(262, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(307, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -58,10 +58,10 @@
             this.panel_login.Controls.Add(this.label1);
             this.panel_login.Controls.Add(this.label3);
             this.panel_login.Controls.Add(this.label2);
-            this.panel_login.Location = new System.Drawing.Point(180, 157);
+            this.panel_login.Location = new System.Drawing.Point(268, 223);
             this.panel_login.Margin = new System.Windows.Forms.Padding(2);
             this.panel_login.Name = "panel_login";
-            this.panel_login.Size = new System.Drawing.Size(210, 170);
+            this.panel_login.Size = new System.Drawing.Size(221, 167);
             this.panel_login.TabIndex = 5;
             // 
             // label2
@@ -130,7 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(603, 440);
+            this.ClientSize = new System.Drawing.Size(804, 541);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel_login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

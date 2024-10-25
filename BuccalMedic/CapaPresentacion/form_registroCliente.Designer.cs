@@ -46,6 +46,7 @@
             this.btn_inhabilitar_cliente = new System.Windows.Forms.Button();
             this.btn_modificar_Cliente = new System.Windows.Forms.Button();
             this.btn_registrar_Cliente = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -58,11 +59,11 @@
             this.groupBox1.Controls.Add(this.cmb_genero);
             this.groupBox1.Controls.Add(this.txt_NombreCliente);
             this.groupBox1.Controls.Add(this.txt_DNI);
-            this.groupBox1.Location = new System.Drawing.Point(44, 37);
+            this.groupBox1.Location = new System.Drawing.Point(110, 70);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(370, 150);
+            this.groupBox1.Size = new System.Drawing.Size(454, 150);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Paciente:";
@@ -77,18 +78,18 @@
             // 
             // txt_Direccion
             // 
-            this.txt_Direccion.Location = new System.Drawing.Point(244, 118);
+            this.txt_Direccion.Location = new System.Drawing.Point(261, 118);
             this.txt_Direccion.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Direccion.Name = "txt_Direccion";
-            this.txt_Direccion.Size = new System.Drawing.Size(92, 20);
+            this.txt_Direccion.Size = new System.Drawing.Size(154, 20);
             this.txt_Direccion.TabIndex = 24;
             // 
             // txt_Telefono
             // 
-            this.txt_Telefono.Location = new System.Drawing.Point(244, 82);
+            this.txt_Telefono.Location = new System.Drawing.Point(261, 82);
             this.txt_Telefono.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Telefono.Name = "txt_Telefono";
-            this.txt_Telefono.Size = new System.Drawing.Size(92, 20);
+            this.txt_Telefono.Size = new System.Drawing.Size(154, 20);
             this.txt_Telefono.TabIndex = 22;
             // 
             // cmb_genero
@@ -100,15 +101,15 @@
             this.cmb_genero.Location = new System.Drawing.Point(17, 79);
             this.cmb_genero.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_genero.Name = "cmb_genero";
-            this.cmb_genero.Size = new System.Drawing.Size(118, 21);
+            this.cmb_genero.Size = new System.Drawing.Size(198, 21);
             this.cmb_genero.TabIndex = 21;
             // 
             // txt_NombreCliente
             // 
-            this.txt_NombreCliente.Location = new System.Drawing.Point(244, 41);
+            this.txt_NombreCliente.Location = new System.Drawing.Point(261, 41);
             this.txt_NombreCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txt_NombreCliente.Name = "txt_NombreCliente";
-            this.txt_NombreCliente.Size = new System.Drawing.Size(92, 20);
+            this.txt_NombreCliente.Size = new System.Drawing.Size(154, 20);
             this.txt_NombreCliente.TabIndex = 20;
             // 
             // txt_DNI
@@ -116,15 +117,15 @@
             this.txt_DNI.Location = new System.Drawing.Point(17, 41);
             this.txt_DNI.Margin = new System.Windows.Forms.Padding(2);
             this.txt_DNI.Name = "txt_DNI";
-            this.txt_DNI.Size = new System.Drawing.Size(118, 20);
+            this.txt_DNI.Size = new System.Drawing.Size(198, 20);
             this.txt_DNI.TabIndex = 19;
             // 
             // btn_atras
             // 
-            this.btn_atras.Location = new System.Drawing.Point(27, 384);
+            this.btn_atras.Location = new System.Drawing.Point(110, 491);
             this.btn_atras.Margin = new System.Windows.Forms.Padding(2);
             this.btn_atras.Name = "btn_atras";
-            this.btn_atras.Size = new System.Drawing.Size(56, 19);
+            this.btn_atras.Size = new System.Drawing.Size(57, 19);
             this.btn_atras.TabIndex = 4;
             this.btn_atras.Text = "<--";
             this.btn_atras.UseVisualStyleBackColor = true;
@@ -141,13 +142,13 @@
             this.tel_Cliente,
             this.genero_Cliente,
             this.est_Cliente});
-            this.dataGridView1.Location = new System.Drawing.Point(101, 225);
+            this.dataGridView1.Location = new System.Drawing.Point(110, 242);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(452, 178);
+            this.dataGridView1.Size = new System.Drawing.Size(565, 235);
             this.dataGridView1.TabIndex = 5;
             // 
             // id_Cliente
@@ -188,40 +189,55 @@
             // 
             // btn_inhabilitar_cliente
             // 
-            this.btn_inhabilitar_cliente.Location = new System.Drawing.Point(441, 153);
+            this.btn_inhabilitar_cliente.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_inhabilitar_cliente.Location = new System.Drawing.Point(582, 188);
             this.btn_inhabilitar_cliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_inhabilitar_cliente.Name = "btn_inhabilitar_cliente";
-            this.btn_inhabilitar_cliente.Size = new System.Drawing.Size(93, 24);
+            this.btn_inhabilitar_cliente.Size = new System.Drawing.Size(93, 28);
             this.btn_inhabilitar_cliente.TabIndex = 17;
             this.btn_inhabilitar_cliente.Text = "Inhabilitar";
-            this.btn_inhabilitar_cliente.UseVisualStyleBackColor = true;
+            this.btn_inhabilitar_cliente.UseVisualStyleBackColor = false;
             // 
             // btn_modificar_Cliente
             // 
-            this.btn_modificar_Cliente.Location = new System.Drawing.Point(441, 114);
+            this.btn_modificar_Cliente.BackColor = System.Drawing.Color.Orange;
+            this.btn_modificar_Cliente.Location = new System.Drawing.Point(582, 149);
             this.btn_modificar_Cliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_modificar_Cliente.Name = "btn_modificar_Cliente";
-            this.btn_modificar_Cliente.Size = new System.Drawing.Size(93, 24);
+            this.btn_modificar_Cliente.Size = new System.Drawing.Size(93, 28);
             this.btn_modificar_Cliente.TabIndex = 16;
             this.btn_modificar_Cliente.Text = "Modificar";
-            this.btn_modificar_Cliente.UseVisualStyleBackColor = true;
+            this.btn_modificar_Cliente.UseVisualStyleBackColor = false;
             // 
             // btn_registrar_Cliente
             // 
-            this.btn_registrar_Cliente.Location = new System.Drawing.Point(441, 73);
+            this.btn_registrar_Cliente.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btn_registrar_Cliente.Location = new System.Drawing.Point(582, 108);
             this.btn_registrar_Cliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_registrar_Cliente.Name = "btn_registrar_Cliente";
-            this.btn_registrar_Cliente.Size = new System.Drawing.Size(93, 24);
+            this.btn_registrar_Cliente.Size = new System.Drawing.Size(93, 28);
             this.btn_registrar_Cliente.TabIndex = 15;
             this.btn_registrar_Cliente.Text = "Registrar";
-            this.btn_registrar_Cliente.UseVisualStyleBackColor = true;
+            this.btn_registrar_Cliente.UseVisualStyleBackColor = false;
             this.btn_registrar_Cliente.Click += new System.EventHandler(this.btn_registrar_Cliente_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(106, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 20);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Pacientes";
             // 
             // form_registroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 440);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(804, 541);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_inhabilitar_cliente);
             this.Controls.Add(this.btn_modificar_Cliente);
             this.Controls.Add(this.btn_registrar_Cliente);
@@ -235,6 +251,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -258,5 +275,6 @@
         private System.Windows.Forms.Button btn_inhabilitar_cliente;
         private System.Windows.Forms.Button btn_modificar_Cliente;
         private System.Windows.Forms.Button btn_registrar_Cliente;
+        private System.Windows.Forms.Label label1;
     }
 }
