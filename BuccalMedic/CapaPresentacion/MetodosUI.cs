@@ -52,19 +52,30 @@ namespace CapaPresentacion
 
                 control.Enter += (sender, e) =>
                 {
+                    if (control is System.Windows.Forms.ComboBox comboBox)
+                    {
+                        comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                        
+                    }
+
                     if (control.Text == placeholder)
                     {
                         control.Text = "";
-                        control.ForeColor = Color.Black; // Cambiar a color normal cuando el usuario escriba
+                        control.ForeColor = Color.Black; 
                     }
                 };
 
                 control.Leave += (sender, e) =>
                 {
+                    if (control is System.Windows.Forms.ComboBox comboBox)
+                    {
+                        comboBox.DropDownStyle = ComboBoxStyle.DropDown;
+                    }
+
                     if (string.IsNullOrWhiteSpace(control.Text))
                     {
                         control.Text = placeholder;
-                        control.ForeColor = Color.Gray; // Placeholder color
+                        control.ForeColor = Color.Gray; 
                     }
                 };
             }
