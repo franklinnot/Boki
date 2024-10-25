@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
@@ -12,10 +13,10 @@ namespace CapaPresentacion
 {
     public class MetodosUI
     {
-        public  static void SetPlaceholder(Control control, string placeholder)
+        public static void SetPlaceholder(Control control, string placeholder)
         {
-            
-            if(control is DateTimePicker dateTimePicker)
+
+            if (control is DateTimePicker dateTimePicker)
             {
                 dateTimePicker.Format = DateTimePickerFormat.Custom;
                 dateTimePicker.CustomFormat = $"'{placeholder}'";
@@ -55,13 +56,13 @@ namespace CapaPresentacion
                     if (control is System.Windows.Forms.ComboBox comboBox)
                     {
                         comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-                        
+
                     }
 
                     if (control.Text == placeholder)
                     {
                         control.Text = "";
-                        control.ForeColor = Color.Black; 
+                        control.ForeColor = Color.Black;
                     }
                 };
 
@@ -75,13 +76,21 @@ namespace CapaPresentacion
                     if (string.IsNullOrWhiteSpace(control.Text))
                     {
                         control.Text = placeholder;
-                        control.ForeColor = Color.Gray; 
+                        control.ForeColor = Color.Gray;
+                    }
+                    else
+                    {
+                        control.ForeColor = Color.Black;
                     }
                 };
             }
 
-            
-            
+
+
         }
+
+
     }
+    
 }
+

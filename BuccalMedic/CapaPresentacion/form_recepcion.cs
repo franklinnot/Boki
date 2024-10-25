@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace CapaPresentacion
         public form_recepcion()
         {
             InitializeComponent();
-
+            
             #region placeholders de txt y comboboxs
             MetodosUI.SetPlaceholder(txt_DNI, "DNI");
             MetodosUI.SetPlaceholder(cmb_odontologo,"Odontólogo");
@@ -46,6 +47,42 @@ namespace CapaPresentacion
             form_RegistroCliente.ShowDialog();
 
         }
+
+        public void getTratamientos(ComboBox comboBox)
+        {
+           
+            comboBox.Items.Clear();
+
+           
+            List<Tratamiento> listaTratamientos = LogTratamiento.Instancia.ListarTratamientos();
+
+            
+            foreach (var tratamiento in listaTratamientos)
+            {
+                comboBox.Items.Add(tratamiento.Nombre);
+            }
+
+           
+        }
+
+        public void getOdontologos(ComboBox comboBox)
+        {
+
+            comboBox.Items.Clear();
+
+
+            List<Empleado> empleado = LogEmpleado.Instancia.ListarOdontologos();
+
+
+            foreach (var emp in empleado)
+            {
+                comboBox.Items.Add(emp.Nombre);
+            }
+
+
+        }
+
+
 
         private void txt_DNI_TextChanged(object sender, EventArgs e)
         {
@@ -89,6 +126,26 @@ namespace CapaPresentacion
                 }
 
             }
+        }
+
+
+
+        private void cmb_tratamiento_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            getTratamientos(cmb_tratamiento);
+        }
+
+        private void btn_registrarCita_Click(object sender, EventArgs e)
+        {
+            //Debug.Write(cmb_tratamiento.Text.ToString());
+            MetodosUI.SetPlaceholder(cmb_tratamiento, "Tratamiento");
+            MetodosUI.SetPlaceholder(cmb_odontologo, "Odontólogo");
+
+        }
+
+        private void cmb_odontologo_MouseClick(object sender, MouseEventArgs e)
+        {
+            getOdontologos(cmb_odontologo);
         }
     }
 }

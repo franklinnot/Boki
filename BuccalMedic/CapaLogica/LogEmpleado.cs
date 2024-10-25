@@ -21,6 +21,11 @@ namespace CapaLogica
             return DatEmpleado.Instancia.ListarEmpleados();
         }
 
+        public List<Empleado> ListarOdontologos()
+        {
+            return DatEmpleado.Instancia.ListarOdontologo();
+        }
+
         public Empleado BuscarEmpleadoId(int id)
         {
             return DatEmpleado.Instancia.BuscarEmpleadoId(id);

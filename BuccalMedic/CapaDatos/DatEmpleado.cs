@@ -61,8 +61,12 @@ namespace CapaDatos
 
 
         public List<Empleado> ListarEmpleados()
-        {      
+        {
             return ToList("sp_ListarEmpleados");
+        }
+        public List<Empleado> ListarOdontologo()
+        {
+            return ToList("sp_ListarOdontologos");
         }
 
         public Empleado BuscarEmpleadoId(int id_empleado)
