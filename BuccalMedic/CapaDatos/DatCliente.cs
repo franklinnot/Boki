@@ -129,7 +129,6 @@ namespace CapaDatos
 
                         if (data.HasRows)
                         {
-                            Debug.WriteLine("No tiene ningun registro");
                             return true;
                         }
                     }
