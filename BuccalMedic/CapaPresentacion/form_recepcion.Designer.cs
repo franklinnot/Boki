@@ -188,7 +188,7 @@
             this.ClientSize = new System.Drawing.Size(804, 541);
             this.Controls.Add(this.panel_Recepcion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "form_recepcion";
             this.Text = "Recepcion";
             this.Load += new System.EventHandler(this.form_recepcion_Load);
