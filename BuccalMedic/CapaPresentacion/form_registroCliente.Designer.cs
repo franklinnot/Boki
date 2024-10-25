@@ -59,9 +59,9 @@
             this.groupBox1.Controls.Add(this.txt_NombreCliente);
             this.groupBox1.Controls.Add(this.txt_DNI);
             this.groupBox1.Location = new System.Drawing.Point(44, 37);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(370, 150);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -70,7 +70,7 @@
             // dtp_fecha_nacimiento
             // 
             this.dtp_fecha_nacimiento.Location = new System.Drawing.Point(17, 121);
-            this.dtp_fecha_nacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtp_fecha_nacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_fecha_nacimiento.Name = "dtp_fecha_nacimiento";
             this.dtp_fecha_nacimiento.Size = new System.Drawing.Size(198, 20);
             this.dtp_fecha_nacimiento.TabIndex = 25;
@@ -78,7 +78,7 @@
             // txt_Direccion
             // 
             this.txt_Direccion.Location = new System.Drawing.Point(244, 118);
-            this.txt_Direccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Direccion.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Direccion.Name = "txt_Direccion";
             this.txt_Direccion.Size = new System.Drawing.Size(92, 20);
             this.txt_Direccion.TabIndex = 24;
@@ -86,7 +86,7 @@
             // txt_Telefono
             // 
             this.txt_Telefono.Location = new System.Drawing.Point(244, 82);
-            this.txt_Telefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Telefono.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Telefono.Name = "txt_Telefono";
             this.txt_Telefono.Size = new System.Drawing.Size(92, 20);
             this.txt_Telefono.TabIndex = 22;
@@ -98,7 +98,7 @@
             "Masculino",
             "Femenino"});
             this.cmb_genero.Location = new System.Drawing.Point(17, 79);
-            this.cmb_genero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_genero.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_genero.Name = "cmb_genero";
             this.cmb_genero.Size = new System.Drawing.Size(118, 21);
             this.cmb_genero.TabIndex = 21;
@@ -106,7 +106,7 @@
             // txt_NombreCliente
             // 
             this.txt_NombreCliente.Location = new System.Drawing.Point(244, 41);
-            this.txt_NombreCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_NombreCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txt_NombreCliente.Name = "txt_NombreCliente";
             this.txt_NombreCliente.Size = new System.Drawing.Size(92, 20);
             this.txt_NombreCliente.TabIndex = 20;
@@ -114,7 +114,7 @@
             // txt_DNI
             // 
             this.txt_DNI.Location = new System.Drawing.Point(17, 41);
-            this.txt_DNI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_DNI.Margin = new System.Windows.Forms.Padding(2);
             this.txt_DNI.Name = "txt_DNI";
             this.txt_DNI.Size = new System.Drawing.Size(118, 20);
             this.txt_DNI.TabIndex = 19;
@@ -122,7 +122,7 @@
             // btn_atras
             // 
             this.btn_atras.Location = new System.Drawing.Point(27, 384);
-            this.btn_atras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_atras.Margin = new System.Windows.Forms.Padding(2);
             this.btn_atras.Name = "btn_atras";
             this.btn_atras.Size = new System.Drawing.Size(56, 19);
             this.btn_atras.TabIndex = 4;
@@ -142,7 +142,7 @@
             this.genero_Cliente,
             this.est_Cliente});
             this.dataGridView1.Location = new System.Drawing.Point(101, 225);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -189,7 +189,7 @@
             // btn_inhabilitar_cliente
             // 
             this.btn_inhabilitar_cliente.Location = new System.Drawing.Point(441, 153);
-            this.btn_inhabilitar_cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_inhabilitar_cliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_inhabilitar_cliente.Name = "btn_inhabilitar_cliente";
             this.btn_inhabilitar_cliente.Size = new System.Drawing.Size(93, 24);
             this.btn_inhabilitar_cliente.TabIndex = 17;
@@ -199,7 +199,7 @@
             // btn_modificar_Cliente
             // 
             this.btn_modificar_Cliente.Location = new System.Drawing.Point(441, 114);
-            this.btn_modificar_Cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_modificar_Cliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_modificar_Cliente.Name = "btn_modificar_Cliente";
             this.btn_modificar_Cliente.Size = new System.Drawing.Size(93, 24);
             this.btn_modificar_Cliente.TabIndex = 16;
@@ -209,7 +209,7 @@
             // btn_registrar_Cliente
             // 
             this.btn_registrar_Cliente.Location = new System.Drawing.Point(441, 73);
-            this.btn_registrar_Cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_registrar_Cliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_registrar_Cliente.Name = "btn_registrar_Cliente";
             this.btn_registrar_Cliente.Size = new System.Drawing.Size(93, 24);
             this.btn_registrar_Cliente.TabIndex = 15;
@@ -228,7 +228,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_atras);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "form_registroCliente";
             this.Text = "form_registroCliente";
             this.groupBox1.ResumeLayout(false);
