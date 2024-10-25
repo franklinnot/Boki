@@ -41,7 +41,7 @@ namespace CapaPresentacion
 
             Empleado emp = LogEmpleado.Instancia.BuscarEmpleadoLogin(usuario, password);
 
-            if (emp != null)
+            if (!string.IsNullOrEmpty(emp.Nombre))
             {
                 // Hace falta implementar el formulario para el odontologo
                 if (emp.Cargo.ToLower() == "recepcionista")
