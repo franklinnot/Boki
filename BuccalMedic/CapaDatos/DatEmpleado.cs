@@ -65,6 +65,7 @@ namespace CapaDatos
             return ToList("sp_ListarEmpleados");
         }
 
+
         public Empleado BuscarEmpleadoId(int id_empleado)
         {
             SqlCommand comando = null;

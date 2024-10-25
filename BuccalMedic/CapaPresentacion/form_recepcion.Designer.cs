@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel_Recepcion = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmb_tratamiento = new System.Windows.Forms.ComboBox();
             this.cbx_tratamiento = new System.Windows.Forms.CheckBox();
             this.cmb_horario = new System.Windows.Forms.ComboBox();
@@ -40,8 +42,6 @@
             this.btn_nuevo_cliente = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_registrarCita = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel_Recepcion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,27 @@
             this.panel_Recepcion.Name = "panel_Recepcion";
             this.panel_Recepcion.Size = new System.Drawing.Size(546, 456);
             this.panel_Recepcion.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.loguito;
+            this.pictureBox1.Location = new System.Drawing.Point(185, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(182, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 132);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 24);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Registro de citas";
             // 
             // cmb_tratamiento
             // 
@@ -172,6 +193,7 @@
             this.btn_nuevo_cliente.TabIndex = 26;
             this.btn_nuevo_cliente.Text = "Nuevo \r\nCliente";
             this.btn_nuevo_cliente.UseVisualStyleBackColor = false;
+            this.btn_nuevo_cliente.Click += new System.EventHandler(this.btn_nuevo_cliente_Click);
             // 
             // btn_cancelar
             // 
@@ -197,27 +219,6 @@
             this.btn_registrarCita.TabIndex = 24;
             this.btn_registrarCita.Text = "Registrar";
             this.btn_registrarCita.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.loguito;
-            this.pictureBox1.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 68);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 132);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 24);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Registro de citas";
             // 
             // form_recepcion
             // 
