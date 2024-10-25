@@ -157,10 +157,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(198, 27);
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(232, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(399, 54);
+            this.label1.Size = new System.Drawing.Size(353, 59);
             this.label1.TabIndex = 0;
             this.label1.Text = "EVALUACIONES";
             // 
