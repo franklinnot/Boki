@@ -54,11 +54,13 @@ BEGIN
 END;
 
 --buscar cliente por DNI
-CREATE OR ALTER  PROCEDURE sp_BuscarClienteDNI      
+CREATE   PROCEDURE sp_BuscarClienteDNI      
     @dni_Cliente varchar(50)  
 AS  BEGIN      
     SELECT * FROM Cliente WHERE DNI = @dni_Cliente  
 END
+
+
 --listar tratamientos
 CREATE OR ALTER  PROCEDURE sp_ListarTratamiento
 AS

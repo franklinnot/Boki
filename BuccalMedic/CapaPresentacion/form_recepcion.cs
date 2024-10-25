@@ -31,7 +31,7 @@ namespace CapaPresentacion
             #endregion
             
             btn_registrarCita.Enabled = false;
-            btn_nuevo_cliente.Enabled = false;
+            btn_nuevo_cliente.Enabled = true;
             
             empleado = form_login.empleado;
         }

@@ -69,6 +69,7 @@ namespace CapaDatos
             return ToList("sp_ListarOdontologos");
         }
 
+
         public Empleado BuscarEmpleadoId(int id_empleado)
         {
             SqlCommand comando = null;

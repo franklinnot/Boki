@@ -109,6 +109,7 @@ namespace CapaDatos
 
             return cliente;
         }
+
         public bool BuscarClienteDNI_bool(string dni)
         {
 
@@ -124,9 +125,11 @@ namespace CapaDatos
                     conexion.Open();
                     using (SqlDataReader data = comando.ExecuteReader())
                     {
+                        Debug.WriteLine("Store procedure: sp_BuscarClienteDNI ejecutado");
 
                         if (data.HasRows)
                         {
+                            Debug.WriteLine("No tiene ningun registro");
                             return true;
                         }
                     }
@@ -135,7 +138,7 @@ namespace CapaDatos
             catch (Exception e)
             {
                 Debug.WriteLine(e.Message);
-
+                Debug.WriteLine("Store procedure: sp_BuscarClienteDNI no se ejecuto correctamente");
             }
             finally
             {
@@ -148,7 +151,43 @@ namespace CapaDatos
             return false;
         }
 
+        private List<Cliente> ToList(String peziduri)
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            DataTable data = Conexion.Instancia.PeziDuri(peziduri);
+
+            if (data.Rows.Count > 0)
+            {
+                foreach (DataRow fila in data.Rows)
+                {
+                    Cliente empleado = new Cliente
+                    {
+                        Id_cliente = Convert.ToInt32(fila["Id_cliente"]),
+                        Nombre = fila["Nombre"].ToString(),
+                        Genero = fila["Genero"].ToString(),
+                        Fecha_nacimiento = DateTime.Parse(fila["Fecha_nacimiento"].ToString()),
+                        DNI = fila["DNI"].ToString(),
+                        Estado = fila["Estado"].ToString()
+                    };
+
+                    clientes.Add(empleado);
+                }
+            }
+            else
+            {
+                Debug.WriteLine("El DataTable está vacío.");
+            }
+
+            return clientes;
+        }
+
+
+
+        public List<Cliente> ListarClientes()
+        {
+            return ToList("sp_ListarClientes");
+        }
+
+
     }
-
-
 }
