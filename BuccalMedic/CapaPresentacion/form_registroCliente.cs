@@ -23,6 +23,9 @@ namespace CapaPresentacion
             MetodosUI.SetPlaceholder(dtp_registroCliente,"Fecha de Nacimiento");
         }
 
-        
+        private void btn_registrar_Cliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

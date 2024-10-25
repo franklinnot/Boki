@@ -52,6 +52,12 @@
     <Compile Include="form_cita.Designer.cs">
       <DependentUpon>form_cita.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_citas_odontologo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_citas_odontologo.Designer.cs">
+      <DependentUpon>form_citas_odontologo.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     <Compile Include="MetodosUI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form_cita.resx">
+      <DependentUpon>form_cita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_citas_odontologo.resx">
+      <DependentUpon>form_citas_odontologo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_login.resx">
       <DependentUpon>form_login.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +102,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -113,6 +126,9 @@
       <Project>{3de9054e-c77e-4c1b-bc7b-6c35c31664ec}</Project>
       <Name>CapaLogica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoBucalMedic.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

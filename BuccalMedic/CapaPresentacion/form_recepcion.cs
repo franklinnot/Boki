@@ -32,5 +32,15 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btn_registrarCita_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_nuevo_cliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
