@@ -18,6 +18,8 @@ namespace CapaPresentacion
         public form_login()
         {
             InitializeComponent();
+            form_cirugias cirugias = new form_cirugias();
+            cirugias.ShowDialog();
         }
 
         private void form_login_Load(object sender, EventArgs e)
