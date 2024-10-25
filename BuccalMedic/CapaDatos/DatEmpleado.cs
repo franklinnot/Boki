@@ -23,7 +23,13 @@ namespace CapaDatos
             Debug.WriteLine("Se creo una instancia de DatEmpleado");
         }
 
-        public static DatEmpleado Instancia { get { return DatEmpleado._instancia; } }
+        public static DatEmpleado Instancia 
+        { 
+            get 
+            { 
+                return DatEmpleado._instancia; 
+            } 
+        }
         #endregion
 
         // Este es un metodo que se puede replicar para practicamente todas las entidades

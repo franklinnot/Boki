@@ -18,6 +18,8 @@ namespace CapaPresentacion
         public form_login()
         {
             InitializeComponent();
+            form_cita formCitas = new form_cita();
+            formCitas.Show();
         }
 
         private void form_login_Load(object sender, EventArgs e)

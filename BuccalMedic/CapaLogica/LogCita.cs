@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaDatos;
+using CapaEntidad;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,23 @@ using System.Threading.Tasks;
 
 namespace CapaLogica
 {
-    internal class LogCita
+    public class LogCita
     {
+        #region Constructor y patron singleton
+        private static readonly LogCita _instancia = new LogCita();
+
+        public static LogCita Instancia { get { return LogCita._instancia; } }
+        #endregion
+
+        public List<Dictionary<string, string>> ListarCitas()
+        {
+            return DatCita.Instancia.ListarCita();
+        }
+
+        public void Anular(string idCita)
+        {
+            int id = int.Parse(idCita);
+            DatCita.Instancia.AnularCita(id);
+        }
     }
 }

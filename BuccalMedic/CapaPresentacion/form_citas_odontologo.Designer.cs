@@ -30,6 +30,7 @@
         {
             this.panel_cita = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,7 +39,11 @@
             this.cmb_pacienteRC = new System.Windows.Forms.ComboBox();
             this.dtp_fechaRC = new System.Windows.Forms.DateTimePicker();
             this.dgv_cita = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
+            this.idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_cita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cita)).BeginInit();
@@ -46,6 +51,7 @@
             // 
             // panel_cita
             // 
+            this.panel_cita.Controls.Add(this.dgv_cita);
             this.panel_cita.Controls.Add(this.pictureBox1);
             this.panel_cita.Controls.Add(this.label5);
             this.panel_cita.Controls.Add(this.label4);
@@ -55,7 +61,6 @@
             this.panel_cita.Controls.Add(this.cmb_codRC);
             this.panel_cita.Controls.Add(this.cmb_pacienteRC);
             this.panel_cita.Controls.Add(this.dtp_fechaRC);
-            this.panel_cita.Controls.Add(this.dgv_cita);
             this.panel_cita.Location = new System.Drawing.Point(26, 13);
             this.panel_cita.Margin = new System.Windows.Forms.Padding(4);
             this.panel_cita.Name = "panel_cita";
@@ -71,6 +76,17 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
+            this.label5.Location = new System.Drawing.Point(294, 85);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Seleccionar fecha:";
             // 
             // label4
             // 
@@ -147,22 +163,45 @@
             this.dgv_cita.BackgroundColor = System.Drawing.Color.White;
             this.dgv_cita.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_cita.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cita.Location = new System.Drawing.Point(50, 160);
+            this.dgv_cita.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCita,
+            this.Fecha,
+            this.paciente,
+            this.tratamiento,
+            this.estado});
+            this.dgv_cita.Location = new System.Drawing.Point(104, 164);
             this.dgv_cita.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_cita.Name = "dgv_cita";
-            this.dgv_cita.Size = new System.Drawing.Size(648, 222);
-            this.dgv_cita.TabIndex = 1;
+            this.dgv_cita.Size = new System.Drawing.Size(543, 222);
+            this.dgv_cita.TabIndex = 15;
             // 
-            // label5
+            // idCita
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
-            this.label5.Location = new System.Drawing.Point(294, 85);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Seleccionar fecha:";
+            this.idCita.HeaderText = "idCita";
+            this.idCita.Name = "idCita";
+            this.idCita.Width = 60;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha de cita";
+            this.Fecha.Name = "Fecha";
+            // 
+            // paciente
+            // 
+            this.paciente.HeaderText = "Paciente";
+            this.paciente.Name = "paciente";
+            this.paciente.Width = 150;
+            // 
+            // tratamiento
+            // 
+            this.tratamiento.HeaderText = "Tratamiento";
+            this.tratamiento.Name = "tratamiento";
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.Width = 80;
             // 
             // form_citas_odontologo
             // 
@@ -192,7 +231,12 @@
         private System.Windows.Forms.ComboBox cmb_codRC;
         private System.Windows.Forms.ComboBox cmb_pacienteRC;
         private System.Windows.Forms.DateTimePicker dtp_fechaRC;
-        private System.Windows.Forms.DataGridView dgv_cita;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgv_cita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tratamiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }
