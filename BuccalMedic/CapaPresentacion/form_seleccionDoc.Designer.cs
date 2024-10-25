@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_seleccionDoc));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_citasd = new System.Windows.Forms.Button();
-            this.btn_evaluacionesd = new System.Windows.Forms.Button();
-            this.btn_intervencionesd = new System.Windows.Forms.Button();
-            this.btn_tratamientod = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_tratamientod = new System.Windows.Forms.Button();
+            this.btn_intervencionesd = new System.Windows.Forms.Button();
+            this.btn_evaluacionesd = new System.Windows.Forms.Button();
+            this.btn_citasd = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,37 +57,27 @@
             this.panel1.Size = new System.Drawing.Size(776, 426);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // pictureBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Britannic Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(324, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "¿A donde quieres ir?";
+            this.pictureBox2.BackgroundImage = global::CapaPresentacion.Properties.Resources.OIP;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(290, 94);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(392, 284);
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
             // 
-            // btn_citasd
+            // btn_tratamientod
             // 
-            this.btn_citasd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
-            this.btn_citasd.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_citasd.Location = new System.Drawing.Point(53, 94);
-            this.btn_citasd.Name = "btn_citasd";
-            this.btn_citasd.Size = new System.Drawing.Size(156, 71);
-            this.btn_citasd.TabIndex = 2;
-            this.btn_citasd.Text = "Citas";
-            this.btn_citasd.UseVisualStyleBackColor = false;
-            // 
-            // btn_evaluacionesd
-            // 
-            this.btn_evaluacionesd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
-            this.btn_evaluacionesd.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_evaluacionesd.Location = new System.Drawing.Point(53, 171);
-            this.btn_evaluacionesd.Name = "btn_evaluacionesd";
-            this.btn_evaluacionesd.Size = new System.Drawing.Size(156, 71);
-            this.btn_evaluacionesd.TabIndex = 3;
-            this.btn_evaluacionesd.Text = "Evaluaciones";
-            this.btn_evaluacionesd.UseVisualStyleBackColor = false;
+            this.btn_tratamientod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
+            this.btn_tratamientod.Font = new System.Drawing.Font("Britannic Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tratamientod.Location = new System.Drawing.Point(53, 248);
+            this.btn_tratamientod.Name = "btn_tratamientod";
+            this.btn_tratamientod.Size = new System.Drawing.Size(156, 71);
+            this.btn_tratamientod.TabIndex = 5;
+            this.btn_tratamientod.Text = "Tratamiento";
+            this.btn_tratamientod.UseVisualStyleBackColor = false;
+            this.btn_tratamientod.Click += new System.EventHandler(this.btn_tratamientod_Click);
             // 
             // btn_intervencionesd
             // 
@@ -100,26 +90,27 @@
             this.btn_intervencionesd.Text = "Cirugias/intervenciones";
             this.btn_intervencionesd.UseVisualStyleBackColor = false;
             // 
-            // btn_tratamientod
+            // btn_evaluacionesd
             // 
-            this.btn_tratamientod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
-            this.btn_tratamientod.Font = new System.Drawing.Font("Britannic Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tratamientod.Location = new System.Drawing.Point(53, 248);
-            this.btn_tratamientod.Name = "btn_tratamientod";
-            this.btn_tratamientod.Size = new System.Drawing.Size(156, 71);
-            this.btn_tratamientod.TabIndex = 5;
-            this.btn_tratamientod.Text = "Tratamiento";
-            this.btn_tratamientod.UseVisualStyleBackColor = false;
+            this.btn_evaluacionesd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
+            this.btn_evaluacionesd.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_evaluacionesd.Location = new System.Drawing.Point(53, 171);
+            this.btn_evaluacionesd.Name = "btn_evaluacionesd";
+            this.btn_evaluacionesd.Size = new System.Drawing.Size(156, 71);
+            this.btn_evaluacionesd.TabIndex = 3;
+            this.btn_evaluacionesd.Text = "Evaluaciones";
+            this.btn_evaluacionesd.UseVisualStyleBackColor = false;
             // 
-            // pictureBox2
+            // btn_citasd
             // 
-            this.pictureBox2.BackgroundImage = global::CapaPresentacion.Properties.Resources.OIP;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(290, 94);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(392, 284);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.btn_citasd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
+            this.btn_citasd.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_citasd.Location = new System.Drawing.Point(53, 94);
+            this.btn_citasd.Name = "btn_citasd";
+            this.btn_citasd.Size = new System.Drawing.Size(156, 71);
+            this.btn_citasd.TabIndex = 2;
+            this.btn_citasd.Text = "Citas";
+            this.btn_citasd.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -132,6 +123,16 @@
             this.pictureBox1.Size = new System.Drawing.Size(222, 70);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(46, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(317, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "¿A donde quieres ir?";
             // 
             // form_seleccionDoc
             // 

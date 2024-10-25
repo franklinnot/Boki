@@ -16,5 +16,10 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void btn_tratamientod_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

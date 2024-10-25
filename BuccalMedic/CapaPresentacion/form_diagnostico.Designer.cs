@@ -34,7 +34,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.chlbtratamientos = new System.Windows.Forms.CheckedListBox();
             this.btn_citasd = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.checkedListBox1);
+            this.panel1.Controls.Add(this.chlbtratamientos);
             this.panel1.Controls.Add(this.btn_citasd);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -109,14 +109,14 @@
             this.textBox1.Size = new System.Drawing.Size(127, 22);
             this.textBox1.TabIndex = 11;
             // 
-            // checkedListBox1
+            // chlbtratamientos
             // 
-            this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(43, 268);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(229, 123);
-            this.checkedListBox1.TabIndex = 10;
+            this.chlbtratamientos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
+            this.chlbtratamientos.FormattingEnabled = true;
+            this.chlbtratamientos.Location = new System.Drawing.Point(43, 268);
+            this.chlbtratamientos.Name = "chlbtratamientos";
+            this.chlbtratamientos.Size = new System.Drawing.Size(229, 123);
+            this.chlbtratamientos.TabIndex = 10;
             // 
             // btn_citasd
             // 
@@ -128,6 +128,7 @@
             this.btn_citasd.TabIndex = 9;
             this.btn_citasd.Text = "Registrar";
             this.btn_citasd.UseVisualStyleBackColor = false;
+            this.btn_citasd.Click += new System.EventHandler(this.btn_citasd_Click);
             // 
             // label5
             // 
@@ -214,11 +215,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_citasd;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.CheckedListBox chlbtratamientos;
     }
 }
