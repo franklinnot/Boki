@@ -38,7 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_detalle_cita = new System.Windows.Forms.Button();
             this.btn_anular = new System.Windows.Forms.Button();
-            this.cmb_codC = new System.Windows.Forms.ComboBox();
+            this.cmb_dni = new System.Windows.Forms.ComboBox();
             this.cmb_pacienteC = new System.Windows.Forms.ComboBox();
             this.cmb_odontologoC = new System.Windows.Forms.ComboBox();
             this.dtp_fechaC = new System.Windows.Forms.DateTimePicker();
@@ -46,6 +46,7 @@
             this.colum_idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_odontologo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colum_dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +66,7 @@
             this.panel_cita.Controls.Add(this.label1);
             this.panel_cita.Controls.Add(this.btn_detalle_cita);
             this.panel_cita.Controls.Add(this.btn_anular);
-            this.panel_cita.Controls.Add(this.cmb_codC);
+            this.panel_cita.Controls.Add(this.cmb_dni);
             this.panel_cita.Controls.Add(this.cmb_pacienteC);
             this.panel_cita.Controls.Add(this.cmb_odontologoC);
             this.panel_cita.Controls.Add(this.dtp_fechaC);
@@ -115,9 +116,9 @@
             this.label4.Location = new System.Drawing.Point(47, 85);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 17);
+            this.label4.Size = new System.Drawing.Size(34, 17);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Codigo de cita:";
+            this.label4.Text = "DNI:";
             // 
             // label3
             // 
@@ -164,6 +165,7 @@
             this.btn_detalle_cita.TabIndex = 7;
             this.btn_detalle_cita.Text = "Detalle de la cita";
             this.btn_detalle_cita.UseVisualStyleBackColor = false;
+            this.btn_detalle_cita.Click += new System.EventHandler(this.btn_detalle_cita_Click);
             // 
             // btn_anular
             // 
@@ -177,14 +179,15 @@
             this.btn_anular.UseVisualStyleBackColor = false;
             this.btn_anular.Click += new System.EventHandler(this.btn_anular_Click);
             // 
-            // cmb_codC
+            // cmb_dni
             // 
-            this.cmb_codC.FormattingEnabled = true;
-            this.cmb_codC.Location = new System.Drawing.Point(152, 82);
-            this.cmb_codC.Margin = new System.Windows.Forms.Padding(4);
-            this.cmb_codC.Name = "cmb_codC";
-            this.cmb_codC.Size = new System.Drawing.Size(107, 25);
-            this.cmb_codC.TabIndex = 5;
+            this.cmb_dni.FormattingEnabled = true;
+            this.cmb_dni.Location = new System.Drawing.Point(89, 82);
+            this.cmb_dni.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_dni.Name = "cmb_dni";
+            this.cmb_dni.Size = new System.Drawing.Size(170, 25);
+            this.cmb_dni.TabIndex = 5;
+            this.cmb_dni.SelectedIndexChanged += new System.EventHandler(this.cmb_dni_SelectedIndexChanged);
             // 
             // cmb_pacienteC
             // 
@@ -194,6 +197,7 @@
             this.cmb_pacienteC.Name = "cmb_pacienteC";
             this.cmb_pacienteC.Size = new System.Drawing.Size(209, 25);
             this.cmb_pacienteC.TabIndex = 4;
+            this.cmb_pacienteC.SelectedIndexChanged += new System.EventHandler(this.cmb_pacienteC_SelectedIndexChanged);
             // 
             // cmb_odontologoC
             // 
@@ -203,6 +207,7 @@
             this.cmb_odontologoC.Name = "cmb_odontologoC";
             this.cmb_odontologoC.Size = new System.Drawing.Size(209, 25);
             this.cmb_odontologoC.TabIndex = 3;
+            this.cmb_odontologoC.SelectedIndexChanged += new System.EventHandler(this.cmb_odontologoC_SelectedIndexChanged);
             // 
             // dtp_fechaC
             // 
@@ -211,6 +216,7 @@
             this.dtp_fechaC.Name = "dtp_fechaC";
             this.dtp_fechaC.Size = new System.Drawing.Size(250, 23);
             this.dtp_fechaC.TabIndex = 2;
+            this.dtp_fechaC.ValueChanged += new System.EventHandler(this.dtp_fechaC_ValueChanged);
             // 
             // dgv_cita
             // 
@@ -223,6 +229,7 @@
             this.colum_idCita,
             this.colum_fecha,
             this.colum_odontologo,
+            this.colum_dni,
             this.colum_paciente,
             this.colum_tratamiento,
             this.colum_estado});
@@ -252,14 +259,21 @@
             this.colum_odontologo.HeaderText = "Odontologo";
             this.colum_odontologo.Name = "colum_odontologo";
             this.colum_odontologo.ReadOnly = true;
-            this.colum_odontologo.Width = 150;
+            this.colum_odontologo.Width = 120;
+            // 
+            // colum_dni
+            // 
+            this.colum_dni.HeaderText = "DNI";
+            this.colum_dni.Name = "colum_dni";
+            this.colum_dni.ReadOnly = true;
+            this.colum_dni.Width = 80;
             // 
             // colum_paciente
             // 
             this.colum_paciente.HeaderText = "Paciente";
             this.colum_paciente.Name = "colum_paciente";
             this.colum_paciente.ReadOnly = true;
-            this.colum_paciente.Width = 150;
+            this.colum_paciente.Width = 120;
             // 
             // colum_tratamiento
             // 
@@ -299,7 +313,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_detalle_cita;
         private System.Windows.Forms.Button btn_anular;
-        private System.Windows.Forms.ComboBox cmb_codC;
+        private System.Windows.Forms.ComboBox cmb_dni;
         private System.Windows.Forms.ComboBox cmb_pacienteC;
         private System.Windows.Forms.ComboBox cmb_odontologoC;
         private System.Windows.Forms.DateTimePicker dtp_fechaC;
@@ -313,6 +327,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_idCita;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_odontologo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colum_dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_paciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_tratamiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_estado;

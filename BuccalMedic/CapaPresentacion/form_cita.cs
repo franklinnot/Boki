@@ -7,6 +7,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,22 +20,78 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             CargarCitas();
+            CargarCombobox();
+
+            foreach (Dictionary<string, string> item in LogCita.Instancia.ListarCitas("23456789"))
+            {
+                foreach (var element in item)
+                {
+                    Debug.WriteLine(element.Key, element.Value);
+
+                }
+            }
+
         }
 
-        private void CargarCitas()
+        private void CargarCitas(string dni = null, string odontologo = null, string paciente = null, DateTime? fecha = null)
         {
-            foreach(Dictionary<string, string> item in LogCita.Instancia.ListarCitas())
-            {    
+            dgv_cita.Rows.Clear();
+            foreach (Dictionary<string, string> item in LogCita.Instancia.ListarCitas(dni, odontologo, paciente, fecha))
+            {
                 string id = item["Id_Cita"].ToString();
-                string fecha = DateTime.Parse(item["Fecha_Registro"].ToString()).ToShortDateString();
-                string odontologo = item["NombreOdontologo"].ToString();
-                string paciente = item["NombreCliente"].ToString();
+                string fechaC = DateTime.Parse(item["Fecha_Registro"].ToString()).ToShortDateString();
+                string odontologoC = item["NombreOdontologo"].ToString();
+                string dniC = item["DNI"].ToString();
+                string pacienteC = item["NombreCliente"].ToString();
                 string tratamiento = item["Tratamiento"].ToString();
                 string estado = item["Estado"].ToString();
 
-                dgv_cita.Rows.Add(id,fecha,odontologo,paciente,tratamiento,estado);
-                
+                dgv_cita.Rows.Add(id, fechaC, odontologoC, dniC, pacienteC, tratamiento, estado);
+
             }
+        }
+
+        private void CargarCombobox()
+        {
+            var citas = LogCita.Instancia.ListarCitas();
+
+            cmb_dni.Items.Clear();
+            foreach (var item in citas)
+            {
+                cmb_dni.Items.Add(item["DNI"]);
+            }
+
+            cmb_odontologoC.Items.Clear();
+            foreach (var item in citas)
+            {
+                if (!cmb_odontologoC.Items.Contains(item["NombreOdontologo"]))
+                {
+                    cmb_odontologoC.Items.Add(item["NombreOdontologo"]);
+                }
+            }
+
+            cmb_pacienteC.Items.Clear();
+            foreach (var item in citas)
+            {
+                if (!cmb_pacienteC.Items.Contains(item["NombreCliente"]))
+                {
+                    cmb_pacienteC.Items.Add(item["NombreCliente"]);
+                }
+            }
+
+        }
+        private void FiltrarCitas()
+        {
+            string dni = cmb_dni.SelectedItem?.ToString();
+            dni = string.IsNullOrEmpty(dni)? null:dni;
+            string odontologo = cmb_odontologoC.SelectedItem?.ToString();
+            odontologo = string.IsNullOrEmpty(odontologo) ? null : odontologo;
+            string paciente = cmb_pacienteC.SelectedItem?.ToString();
+            paciente = string.IsNullOrEmpty(paciente) ? null : paciente;
+
+            DateTime? fecha = dtp_fechaC.Checked ? dtp_fechaC.Value : (DateTime?)null;
+
+            CargarCitas(dni, odontologo, paciente, fecha);
         }
 
         private string selectedCitaId; 
@@ -53,8 +110,16 @@ namespace CapaPresentacion
         {
             if (!string.IsNullOrEmpty(selectedCitaId))
             {
+                string estadoCita = dgv_cita.Rows[dgv_cita.CurrentRow.Index].Cells["colum_estado"].Value.ToString();
+
+                if (estadoCita == "Anulado")
+                {
+                    MessageBox.Show("La cita ya ha sido anulada.");
+                    return; 
+                }
+
                 LogCita.Instancia.Anular(selectedCitaId);
-                dgv_cita.Rows.Clear();
+                dgv_cita.Rows.Clear(); 
 
                 CargarCitas();
                 MessageBox.Show("Cita anulada exitosamente.");
@@ -63,6 +128,39 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Por favor, selecciona una cita para anular.");
             }
+        }
+
+        private void btn_detalle_cita_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(selectedCitaId))
+            {
+                form_detalleCita detalleCitaForm = new form_detalleCita();
+                detalleCitaForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una cita para ver el detalle.");
+            }
+        }
+
+        private void cmb_dni_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarCitas();
+        }
+
+        private void cmb_odontologoC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarCitas();
+        }
+
+        private void cmb_pacienteC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarCitas();
+        }
+
+        private void dtp_fechaC_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarCitas();
         }
     }
 }

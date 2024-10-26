@@ -74,7 +74,5 @@ namespace CapaDatos
             return dataTable;
         }
 
-
-
     }
 }

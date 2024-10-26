@@ -16,10 +16,14 @@ namespace CapaLogica
         public static LogCita Instancia { get { return LogCita._instancia; } }
         #endregion
 
-        public List<Dictionary<string, string>> ListarCitas()
+
+
+        public List<Dictionary<string, string>> ListarCitas(string dni = null, string odontologo = null, string paciente = null, DateTime? fecha = null)
         {
-            return DatCita.Instancia.ListarCita();
+            return DatCita.Instancia.ListarCita(dni, odontologo, paciente, fecha);
         }
+
+
 
         public void Anular(string idCita)
         {
