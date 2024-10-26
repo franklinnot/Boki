@@ -41,6 +41,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_limpiar = new System.Windows.Forms.Button();
+            this.IdCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_cirugias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cirugias_dgv)).BeginInit();
@@ -51,6 +55,7 @@
             // 
             this.panel_cirugias.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_cirugias.BackColor = System.Drawing.Color.White;
+            this.panel_cirugias.Controls.Add(this.btn_limpiar);
             this.panel_cirugias.Controls.Add(this.cirugia_btn_Consultar);
             this.panel_cirugias.Controls.Add(this.pictureBox1);
             this.panel_cirugias.Controls.Add(this.cirugias_dgv);
@@ -77,6 +82,7 @@
             this.cirugia_btn_Consultar.TabIndex = 11;
             this.cirugia_btn_Consultar.Text = "Consultar";
             this.cirugia_btn_Consultar.UseVisualStyleBackColor = false;
+            this.cirugia_btn_Consultar.Click += new System.EventHandler(this.cirugia_btn_Consultar_Click);
             // 
             // pictureBox1
             // 
@@ -93,6 +99,10 @@
             // cirugias_dgv
             // 
             this.cirugias_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cirugias_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdCita,
+            this.Nombre,
+            this.Fecha});
             this.cirugias_dgv.Location = new System.Drawing.Point(294, 151);
             this.cirugias_dgv.Name = "cirugias_dgv";
             this.cirugias_dgv.RowHeadersWidth = 51;
@@ -176,6 +186,37 @@
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
+            // btn_limpiar
+            // 
+            this.btn_limpiar.Location = new System.Drawing.Point(676, 446);
+            this.btn_limpiar.Name = "btn_limpiar";
+            this.btn_limpiar.Size = new System.Drawing.Size(118, 42);
+            this.btn_limpiar.TabIndex = 14;
+            this.btn_limpiar.Text = "Limpiar";
+            this.btn_limpiar.UseVisualStyleBackColor = true;
+            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
+            // 
+            // IdCita
+            // 
+            this.IdCita.HeaderText = "IdCita";
+            this.IdCita.MinimumWidth = 6;
+            this.IdCita.Name = "IdCita";
+            this.IdCita.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.MinimumWidth = 6;
+            this.Fecha.Name = "Fecha";
+            this.Fecha.Width = 125;
+            // 
             // form_cirugias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -208,5 +249,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btn_limpiar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
     }
 }
