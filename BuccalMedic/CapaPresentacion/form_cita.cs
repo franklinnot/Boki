@@ -22,15 +22,6 @@ namespace CapaPresentacion
             CargarCitas();
             CargarCombobox();
 
-            foreach (Dictionary<string, string> item in LogCita.Instancia.ListarCitas("23456789"))
-            {
-                foreach (var element in item)
-                {
-                    Debug.WriteLine(element.Key, element.Value);
-
-                }
-            }
-
         }
 
         private void CargarCitas(string dni = null, string odontologo = null, string paciente = null, DateTime? fecha = null)
@@ -80,6 +71,7 @@ namespace CapaPresentacion
             }
 
         }
+        
         private void FiltrarCitas()
         {
             string dni = cmb_dni.SelectedItem?.ToString();
@@ -91,8 +83,9 @@ namespace CapaPresentacion
 
             DateTime? fecha = dtp_fechaC.Checked ? dtp_fechaC.Value : (DateTime?)null;
 
-            CargarCitas(dni, odontologo, paciente, fecha);
+            CargarCitas(dni,odontologo,paciente,fecha);
         }
+
 
         private string selectedCitaId; 
         private void dgv_cita_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -161,6 +154,15 @@ namespace CapaPresentacion
         private void dtp_fechaC_ValueChanged(object sender, EventArgs e)
         {
             FiltrarCitas();
+        }
+
+        private void btn_refrescar_Click(object sender, EventArgs e)
+        {
+            cmb_dni.SelectedIndex = -1;
+            cmb_odontologoC.SelectedIndex = -1;
+            cmb_pacienteC.SelectedIndex = -1;
+            
+            CargarCombobox();
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_cita = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_regresar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@
             this.colum_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_refrescar = new System.Windows.Forms.Button();
             this.panel_cita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cita)).BeginInit();
@@ -57,7 +58,8 @@
             // 
             // panel_cita
             // 
-            this.panel_cita.Controls.Add(this.button1);
+            this.panel_cita.Controls.Add(this.btn_refrescar);
+            this.panel_cita.Controls.Add(this.btn_regresar);
             this.panel_cita.Controls.Add(this.pictureBox1);
             this.panel_cita.Controls.Add(this.label5);
             this.panel_cita.Controls.Add(this.label4);
@@ -77,16 +79,16 @@
             this.panel_cita.Size = new System.Drawing.Size(739, 480);
             this.panel_cita.TabIndex = 0;
             // 
-            // button1
+            // btn_regresar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
-            this.button1.Location = new System.Drawing.Point(4, 7);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 30);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "<--";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_regresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
+            this.btn_regresar.Location = new System.Drawing.Point(4, 7);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(67, 30);
+            this.btn_regresar.TabIndex = 15;
+            this.btn_regresar.Text = "<--";
+            this.btn_regresar.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -288,6 +290,19 @@
             this.colum_estado.ReadOnly = true;
             this.colum_estado.Width = 80;
             // 
+            // btn_refrescar
+            // 
+            this.btn_refrescar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
+            this.btn_refrescar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_refrescar.Location = new System.Drawing.Point(623, 130);
+            this.btn_refrescar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_refrescar.Name = "btn_refrescar";
+            this.btn_refrescar.Size = new System.Drawing.Size(41, 30);
+            this.btn_refrescar.TabIndex = 16;
+            this.btn_refrescar.Text = "x";
+            this.btn_refrescar.UseVisualStyleBackColor = false;
+            this.btn_refrescar.Click += new System.EventHandler(this.btn_refrescar_Click);
+            // 
             // form_cita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -323,7 +338,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_regresar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_idCita;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_odontologo;
@@ -331,5 +346,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_paciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_tratamiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_estado;
+        private System.Windows.Forms.Button btn_refrescar;
     }
 }

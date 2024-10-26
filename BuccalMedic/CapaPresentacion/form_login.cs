@@ -18,7 +18,7 @@ namespace CapaPresentacion
         public form_login()
         {
             InitializeComponent();
-            form_cita formCitas = new form_cita();
+            form_citas_odontologo formCitas = new form_citas_odontologo();
             formCitas.Show();
         }
 
