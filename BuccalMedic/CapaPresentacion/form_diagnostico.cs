@@ -14,17 +14,30 @@ namespace CapaPresentacion
 {
     public partial class form_diagnostico : Form
     {
-
         public form_diagnostico()
         {
-
             InitializeComponent();
             Form form_login = new Form();
             form_login.Close();
             CargarTratamientos();
-
-
         }
+        public void ListarDiagnostico()
+        {
+            List<Diagnostico> diagnosticos = LogDiagnostico.Instancia.ListarDiagnostico();
+
+            if (diagnosticos.Count > 0)
+            {
+                // Asignar el primer diagnóstico a los controles del formulario
+                Diagnostico d = diagnosticos[0];
+                txtrecomendacionesd.Text = d.Recomendaciones;
+                txt_resultadod.Text = d.Resultado;
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron diagnósticos.");
+            }
+        }
+
         private void CargarTratamientos()
         {
             try
@@ -49,7 +62,39 @@ namespace CapaPresentacion
 
         private void btn_citasd_Click(object sender, EventArgs e)
         {
+            //insertar
+            try
+            {
+                Diagnostico d = new Diagnostico
+                {
+                    // No asignar valores a Id_diagnostico e Id_citaconsulta
+                    Recomendaciones = txtrecomendacionesd.Text.Trim(),
+                    Resultado = txt_resultadod.Text
+                };
 
+                bool resultado = LogDiagnostico.Instancia.InsertarDiagnostico(d);
+                if (resultado)
+                {
+                    MessageBox.Show("Diagnóstico insertado correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al insertar el diagnóstico.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            LimpiarVariables();
+            ListarDiagnostico();
+        }
+
+        private void LimpiarVariables()
+        {
+            txtrecomendacionesd.Clear();
+            txt_resultadod.Clear();
+            // Limpiar otros campos si es necesario
         }
     }
 }

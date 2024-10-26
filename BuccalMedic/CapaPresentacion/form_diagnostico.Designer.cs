@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtrecomendacionesd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_resultadod = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.chlbtratamientos = new System.Windows.Forms.CheckedListBox();
@@ -49,9 +49,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txtrecomendacionesd);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txt_resultadod);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.chlbtratamientos);
@@ -67,14 +67,14 @@
             this.panel1.Size = new System.Drawing.Size(778, 409);
             this.panel1.TabIndex = 0;
             // 
-            // textBox4
+            // txtrecomendacionesd
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
-            this.textBox4.Location = new System.Drawing.Point(369, 128);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(229, 100);
-            this.textBox4.TabIndex = 15;
+            this.txtrecomendacionesd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
+            this.txtrecomendacionesd.Location = new System.Drawing.Point(369, 128);
+            this.txtrecomendacionesd.Multiline = true;
+            this.txtrecomendacionesd.Name = "txtrecomendacionesd";
+            this.txtrecomendacionesd.Size = new System.Drawing.Size(229, 100);
+            this.txtrecomendacionesd.TabIndex = 15;
             // 
             // label6
             // 
@@ -86,17 +86,18 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Tratamiento";
             // 
-            // textBox3
+            // txt_resultadod
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
-            this.textBox3.Location = new System.Drawing.Point(43, 128);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(229, 99);
-            this.textBox3.TabIndex = 13;
+            this.txt_resultadod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
+            this.txt_resultadod.Location = new System.Drawing.Point(43, 128);
+            this.txt_resultadod.Multiline = true;
+            this.txt_resultadod.Name = "txt_resultadod";
+            this.txt_resultadod.Size = new System.Drawing.Size(229, 99);
+            this.txt_resultadod.TabIndex = 13;
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
             this.textBox2.Location = new System.Drawing.Point(524, 68);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(204, 22);
@@ -104,6 +105,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
             this.textBox1.Location = new System.Drawing.Point(90, 69);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(127, 22);
@@ -122,7 +124,7 @@
             // 
             this.btn_citasd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(241)))), ((int)(((byte)(244)))));
             this.btn_citasd.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_citasd.Location = new System.Drawing.Point(400, 295);
+            this.btn_citasd.Location = new System.Drawing.Point(402, 291);
             this.btn_citasd.Name = "btn_citasd";
             this.btn_citasd.Size = new System.Drawing.Size(156, 71);
             this.btn_citasd.TabIndex = 9;
@@ -215,9 +217,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_citasd;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtrecomendacionesd;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_resultadod;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.CheckedListBox chlbtratamientos;
