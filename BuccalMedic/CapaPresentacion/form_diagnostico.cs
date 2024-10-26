@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,35 +21,20 @@ namespace CapaPresentacion
             Form form_login = new Form();
             form_login.Close();
             CargarTratamientos();
+
         }
-        public void ListarDiagnostico()
+        private void LimpiarVariables()
         {
-            List<Diagnostico> diagnosticos = LogDiagnostico.Instancia.ListarDiagnostico();
-
-            if (diagnosticos.Count > 0)
-            {
-                // Asignar el primer diagnóstico a los controles del formulario
-                Diagnostico d = diagnosticos[0];
-                txtrecomendacionesd.Text = d.Recomendaciones;
-                txt_resultadod.Text = d.Resultado;
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron diagnósticos.");
-            }
+            txtrecomendacionesd.Clear();
+            txt_resultadod.Clear();
+            foreach (int index in chlbtratamientos.CheckedIndices)
+                chlbtratamientos.SetItemChecked(index, false);
         }
-
         private void CargarTratamientos()
         {
             try
             {
-                // Obtener la lista de tratamientos
                 List<Tratamiento> tratamientos = LogTratamiento.Instancia.ListarTratamientos();
-
-                // Limpiar el CheckedListBox antes de agregar elementos
-                chlbtratamientos.Items.Clear();
-
-                // Agregar cada tratamiento al CheckedListBox
                 foreach (var tratamiento in tratamientos)
                 {
                     chlbtratamientos.Items.Add(tratamiento.Nombre); // Asegúrate de que "Nombre" es la propiedad que quieres mostrar
@@ -59,42 +45,70 @@ namespace CapaPresentacion
                 MessageBox.Show($"Ocurrió un error al cargar los tratamientos: {ex.Message}");
             }
         }
-
-        private void btn_citasd_Click(object sender, EventArgs e)
+        
+        static string GenerarIDDiagnostico(int length)
         {
-            //insertar
-            try
-            {
-                Diagnostico d = new Diagnostico
-                {
-                    // No asignar valores a Id_diagnostico e Id_citaconsulta
-                    Recomendaciones = txtrecomendacionesd.Text.Trim(),
-                    Resultado = txt_resultadod.Text
-                };
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            Random random = new Random();
+            char[] stringChars = new char[length];
 
-                bool resultado = LogDiagnostico.Instancia.InsertarDiagnostico(d);
-                if (resultado)
+            for (int i = 0; i < length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+            return new string(stringChars);
+        }
+
+        private void btn_registrardiagnosticod_Click_1(object sender, EventArgs e)
+        {
+            Diagnostico diagnostico = new Diagnostico
+            {
+                Id_diagnostico = GenerarIDDiagnostico(12),
+                Id_citaconsulta = "abc6",
+                Resultado = txt_resultadod.Text,
+                Recomendaciones = txtrecomendacionesd.Text,
+            };
+
+
+            bool verificar = LogDiagnostico.Instancia.InsertarDiagnostico(diagnostico);
+            if (verificar)
+            {
+                MessageBox.Show("Todo bien");
+            }
+            else
+            {
+                MessageBox.Show("Todo mal, ya fue");
+            }
+            
+            //Obtener lista con tratamientos marcados
+            List<string> tratamientosmarcados = new List<string>();
+            // Iterar en los elementos marcados
+            foreach (var item in chlbtratamientos.CheckedItems)
+            {
+                tratamientosmarcados.Add(item.ToString());
+            }
+
+            List<Tratamiento> trt = LogTratamiento.Instancia.ListarTratamientos();
+            List<Tratamiento> tratamientosFiltrados = trt.FindAll(t => tratamientosmarcados.Contains(t.Nombre));
+
+            foreach (Tratamiento item in tratamientosFiltrados)
+            {
+                Tratamiento_diagnostico tratamientodiag = new Tratamiento_diagnostico();
+                tratamientodiag.Id_Tratamiento = item.Id_Tratamiento;
+                tratamientodiag.Id_diagnostico = diagnostico.Id_diagnostico;
+                MessageBox.Show(item.Id_Tratamiento.ToString());
+                bool verificax = LogTratamientoDiagnostico.Instancia.InsertarTratamientoDiagnostico(tratamientodiag);
+                if (verificax)
                 {
-                    MessageBox.Show("Diagnóstico insertado correctamente.");
+                    Debug.WriteLine(item.Nombre);
+                    MessageBox.Show($"Se inserto el tratamiento: {item.Nombre}, con el diagnostico {diagnostico.Id_diagnostico}");
                 }
                 else
                 {
-                    MessageBox.Show("Error al insertar el diagnóstico.");
+                    MessageBox.Show("Repostea si ya fue");
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
             LimpiarVariables();
-            ListarDiagnostico();
-        }
-
-        private void LimpiarVariables()
-        {
-            txtrecomendacionesd.Clear();
-            txt_resultadod.Clear();
-            // Limpiar otros campos si es necesario
         }
     }
 }

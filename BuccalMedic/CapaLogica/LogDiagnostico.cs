@@ -18,14 +18,9 @@ namespace CapaLogica
         public static LogDiagnostico Instancia { get { return LogDiagnostico._instancia; } }
         #endregion
 
-        public List<Diagnostico> ListarDiagnostico()
-        {
-            return DatDiagnostico.Instancia.ListarDiagnosticos();
-        }
-
         public bool InsertarDiagnostico(Diagnostico diagn)
         {
-            return DatDiagnostico.Instancia.InsertarDiagnostico(diagn);
+            return DatDiagnostico.Instancia.InsertarDiagnosticos(diagn);
         }
     }
 }

@@ -41,7 +41,8 @@ namespace CapaDatos
                 {
                     Tratamiento tratamiento = new Tratamiento
                     {
-                        Nombre = fila["Nombre"].ToString()
+                        Nombre = fila["Nombre"].ToString(),
+                        Id_Tratamiento = int.Parse(fila["Id_Tratamiento"].ToString())
                     };
                     tratamientos.Add(tratamiento); 
                 }

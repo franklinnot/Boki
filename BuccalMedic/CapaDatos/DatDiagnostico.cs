@@ -23,67 +23,41 @@ namespace CapaDatos
         public static DatDiagnostico Instancia { get { return DatDiagnostico._instancia; } }
         #endregion
 
-        private List<Diagnostico> ToList(string peziduri)
+        public bool InsertarDiagnosticos(Diagnostico diagnostico)
         {
-            List<Diagnostico> diagnosticos = new List<Diagnostico>();
-            DataTable data = Conexion.Instancia.PeziDuri(peziduri);
+            SqlCommand comando = null;
+            bool resultado = false;
 
-            if (data.Rows.Count > 0)
-            {
-                foreach (DataRow fila in data.Rows)
-                {
-                    Diagnostico diagnostico = new Diagnostico
-                    {
-                        Id_diagnostico = fila["Id_diagnostico"].ToString(),
-                        Id_citaconsulta = fila["Id_citaconsulta"].ToString(),
-                        Recomendaciones = fila["Recomendaciones"].ToString(),
-                        Resultado = fila["Resultado"].ToString(),
-                    };
-
-                    diagnosticos.Add(diagnostico);
-                }
-            }
-            else
-            {
-                Debug.WriteLine("El DataTable está vacío.");
-            }
-            return diagnosticos;
-        }
-
-        public List<Diagnostico> ListarDiagnosticos()
-        {
-            return ToList("SP_Listardiagnostico");
-        }
-
-        public bool InsertarDiagnostico(Diagnostico diagn)
-        {
-            bool inserta = false;
             try
             {
-                using (SqlConnection cn = Conexion.Instancia.Conectar())
-                {
-                    using (SqlCommand cmd = new SqlCommand("SP_RegistarDiagnostico", cn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id_diagnostico", diagn.Id_diagnostico);
-                        cmd.Parameters.AddWithValue("@id_citaconsulta", diagn.Id_citaconsulta);
-                        cmd.Parameters.AddWithValue("@recomendacion", diagn.Recomendaciones);
-                        cmd.Parameters.AddWithValue("@resultado", diagn.Resultado);
+                SqlConnection conexion = Conexion.Instancia.Conectar();
+                comando = new SqlCommand("SP_RegistarDiagnostico", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
 
-                        cn.Open();
-                        int i = cmd.ExecuteNonQuery();
-                        if (i > 0)
-                        {
-                            inserta = true;
-                        }
-                    }
-                }
+                // Añadir los parámetros necesarios para el procedimiento almacenado
+                comando.Parameters.AddWithValue("@id_diagnostico", diagnostico.Id_diagnostico);
+                comando.Parameters.AddWithValue("@id_citaconsulta", diagnostico.Id_citaconsulta);
+                comando.Parameters.AddWithValue("@recomendacion", diagnostico.Recomendaciones);
+                comando.Parameters.AddWithValue("@resultado", diagnostico.Resultado);
+
+                conexion.Open();
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                // Verificar si se insertó al menos una fila
+                resultado = filasAfectadas > 0;
             }
             catch (Exception e)
             {
-                Debug.WriteLine($"Error: {e.Message}");
+                Debug.WriteLine(e.Message);
             }
-            return inserta;
+            finally
+            {
+                if (comando != null)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            return resultado;
         }
     }
 }

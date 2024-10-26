@@ -35,7 +35,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.chlbtratamientos = new System.Windows.Forms.CheckedListBox();
-            this.btn_citasd = new System.Windows.Forms.Button();
+            this.btn_registrardiagnosticod = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.chlbtratamientos);
-            this.panel1.Controls.Add(this.btn_citasd);
+            this.panel1.Controls.Add(this.btn_registrardiagnosticod);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
@@ -120,17 +120,17 @@
             this.chlbtratamientos.Size = new System.Drawing.Size(229, 123);
             this.chlbtratamientos.TabIndex = 10;
             // 
-            // btn_citasd
+            // btn_registrardiagnosticod
             // 
-            this.btn_citasd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(241)))), ((int)(((byte)(244)))));
-            this.btn_citasd.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_citasd.Location = new System.Drawing.Point(402, 291);
-            this.btn_citasd.Name = "btn_citasd";
-            this.btn_citasd.Size = new System.Drawing.Size(156, 71);
-            this.btn_citasd.TabIndex = 9;
-            this.btn_citasd.Text = "Registrar";
-            this.btn_citasd.UseVisualStyleBackColor = false;
-            this.btn_citasd.Click += new System.EventHandler(this.btn_citasd_Click);
+            this.btn_registrardiagnosticod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(241)))), ((int)(((byte)(244)))));
+            this.btn_registrardiagnosticod.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_registrardiagnosticod.Location = new System.Drawing.Point(402, 291);
+            this.btn_registrardiagnosticod.Name = "btn_registrardiagnosticod";
+            this.btn_registrardiagnosticod.Size = new System.Drawing.Size(156, 71);
+            this.btn_registrardiagnosticod.TabIndex = 9;
+            this.btn_registrardiagnosticod.Text = "Registrar";
+            this.btn_registrardiagnosticod.UseVisualStyleBackColor = false;
+            this.btn_registrardiagnosticod.Click += new System.EventHandler(this.btn_registrardiagnosticod_Click_1);
             // 
             // label5
             // 
@@ -216,7 +216,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_citasd;
+        private System.Windows.Forms.Button btn_registrardiagnosticod;
         private System.Windows.Forms.TextBox txtrecomendacionesd;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_resultadod;
