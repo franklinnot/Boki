@@ -105,7 +105,7 @@ namespace CapaPresentacion
             {
                 string estadoCita = dgv_cita.Rows[dgv_cita.CurrentRow.Index].Cells["colum_estado"].Value.ToString();
 
-                if (estadoCita == "Anulado")
+                if (estadoCita == "ANULADO")
                 {
                     MessageBox.Show("La cita ya ha sido anulada.");
                     return; 

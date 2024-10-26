@@ -18,8 +18,7 @@ namespace CapaPresentacion
         public form_login()
         {
             InitializeComponent();
-            form_citas_odontologo formCitas = new form_citas_odontologo();
-            formCitas.Show();
+            
         }
 
         private void form_login_Load(object sender, EventArgs e)
@@ -42,9 +41,22 @@ namespace CapaPresentacion
 
             if (empleado != null) 
             {
-                // Hace falta implementar el formulario para el odontologo
-                form_recepcion form_Recepcion = new form_recepcion(empleado);
-                form_Recepcion.ShowDialog();
+                if(empleado.Cargo == "ODONTOLOGO")
+                {
+                    form_citas_odontologo form_Odontologo = new form_citas_odontologo(empleado);
+                    form_Odontologo.ShowDialog();
+
+                }
+
+                else if (empleado.Cargo == "RECEPCIONISTA")
+                {
+                    form_recepcion form_Recepcion = new form_recepcion(empleado);
+                    form_Recepcion.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Cargo desconocido, no se puede abrir el formulario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 this.Hide();
             }
             else

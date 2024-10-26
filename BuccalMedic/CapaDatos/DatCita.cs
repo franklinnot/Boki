@@ -134,7 +134,82 @@ namespace CapaDatos
 
         /* CITAS ODONTOLOGO */
 
+        private List<Dictionary<string, string>> TCitasOdontologo(String peziduri, List<SqlParameter> parameters)
+        {
+            List<Dictionary<string, string>> citas = new List<Dictionary<string, string>>();
+            DataTable dataTable = new DataTable();
+            SqlConnection conexion = Conexion.Instancia.Conectar();
+            SqlCommand cmd = new SqlCommand(peziduri, conexion);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            foreach (SqlParameter parametro in parameters)
+            {
+                cmd.Parameters.Add(parametro);
+            }
+            conexion.Open();
+
+            SqlDataReader query = cmd.ExecuteReader();
+            dataTable.Load(query);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow fila in dataTable.Rows)
+                {
+                    Dictionary<string, string> cita = new Dictionary<string, string>
+                    {
+                        { "Id_Cita", fila["Id_Cita"].ToString() },
+                        { "Fecha_Registro", fila["Fecha_Registro"].ToString() },
+                        { "DNI", fila["DNI"].ToString() },
+                        { "NombreCliente", fila["Paciente"].ToString() },
+                        { "Tratamiento", fila["Tratamiento"].ToString() },
+                        { "Estado", fila["Estado"].ToString() }
+                    };
+                    citas.Add(cita);
+                }
+            }
+            else
+            {
+                Debug.WriteLine("El DataTable está vacío.");
+            }
+
+            return citas;
+        }
+
+        public List<Dictionary<string, string>> ListarCitaOdontologo(int idEmpleado, string cargo ,string dni = null, string paciente = null, DateTime? fecha = null)
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@Id_Empleado", idEmpleado));
+            parameters.Add(new SqlParameter("@Cargo", cargo));
+
+            if (!string.IsNullOrEmpty(dni))
+                parameters.Add(new SqlParameter("@DNI", dni));
+
+            if (!string.IsNullOrEmpty(paciente))
+                parameters.Add(new SqlParameter("@Paciente", paciente));
+
+            if (fecha.HasValue)
+                parameters.Add(new SqlParameter("@FechaRegistro", fecha.Value));
+
+            return TCitasOdontologo("spListaCitasPorOdontologo", parameters);
+        }
 
 
+        // Modificar estado 
+
+        public void ModificarEstado(int idCita)
+        {
+            using (SqlConnection conexion = Conexion.Instancia.Conectar())
+            {
+                using (SqlCommand cmd = new SqlCommand("spAtenderCita", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@Id_Cita", idCita));
+
+                    conexion.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
