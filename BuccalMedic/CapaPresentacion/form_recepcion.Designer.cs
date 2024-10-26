@@ -34,7 +34,6 @@
             this.cmb_tratamiento = new System.Windows.Forms.ComboBox();
             this.cbx_tratamiento = new System.Windows.Forms.CheckBox();
             this.cmb_horario = new System.Windows.Forms.ComboBox();
-            this.cmb_fecha = new System.Windows.Forms.ComboBox();
             this.cmb_odontologo = new System.Windows.Forms.ComboBox();
             this.txt_DNI = new System.Windows.Forms.TextBox();
             this.lbl_nombreR = new System.Windows.Forms.Label();
@@ -42,18 +41,19 @@
             this.btn_nuevo_cliente = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_registrarCita = new System.Windows.Forms.Button();
+            this.dtp_registroCitas = new System.Windows.Forms.DateTimePicker();
             this.panel_Recepcion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Recepcion
             // 
+            this.panel_Recepcion.Controls.Add(this.dtp_registroCitas);
             this.panel_Recepcion.Controls.Add(this.pictureBox1);
             this.panel_Recepcion.Controls.Add(this.label1);
             this.panel_Recepcion.Controls.Add(this.cmb_tratamiento);
             this.panel_Recepcion.Controls.Add(this.cbx_tratamiento);
             this.panel_Recepcion.Controls.Add(this.cmb_horario);
-            this.panel_Recepcion.Controls.Add(this.cmb_fecha);
             this.panel_Recepcion.Controls.Add(this.cmb_odontologo);
             this.panel_Recepcion.Controls.Add(this.txt_DNI);
             this.panel_Recepcion.Controls.Add(this.lbl_nombreR);
@@ -126,17 +126,6 @@
             this.cmb_horario.Size = new System.Drawing.Size(125, 21);
             this.cmb_horario.TabIndex = 32;
             // 
-            // cmb_fecha
-            // 
-            this.cmb_fecha.BackColor = System.Drawing.Color.Lavender;
-            this.cmb_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cmb_fecha.FormattingEnabled = true;
-            this.cmb_fecha.Location = new System.Drawing.Point(42, 343);
-            this.cmb_fecha.Margin = new System.Windows.Forms.Padding(2);
-            this.cmb_fecha.Name = "cmb_fecha";
-            this.cmb_fecha.Size = new System.Drawing.Size(141, 21);
-            this.cmb_fecha.TabIndex = 31;
-            // 
             // cmb_odontologo
             // 
             this.cmb_odontologo.BackColor = System.Drawing.Color.Lavender;
@@ -147,6 +136,7 @@
             this.cmb_odontologo.Name = "cmb_odontologo";
             this.cmb_odontologo.Size = new System.Drawing.Size(141, 21);
             this.cmb_odontologo.TabIndex = 30;
+            this.cmb_odontologo.SelectedIndexChanged += new System.EventHandler(this.cmb_odontologo_SelectedIndexChanged);
             this.cmb_odontologo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmb_odontologo_MouseClick);
             // 
             // txt_DNI
@@ -223,26 +213,14 @@
             this.btn_registrarCita.UseVisualStyleBackColor = false;
             this.btn_registrarCita.Click += new System.EventHandler(this.btn_registrarCita_Click);
             // 
-            // pictureBox1
+            // dtp_registroCitas
             // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.loguito;
-            this.pictureBox1.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 68);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 132);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 24);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Registro de citas";
+            this.dtp_registroCitas.Location = new System.Drawing.Point(42, 344);
+            this.dtp_registroCitas.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            this.dtp_registroCitas.Name = "dtp_registroCitas";
+            this.dtp_registroCitas.Size = new System.Drawing.Size(141, 24);
+            this.dtp_registroCitas.TabIndex = 36;
+            this.dtp_registroCitas.ValueChanged += new System.EventHandler(this.dtp_registroCitas_ValueChanged);
             // 
             // form_recepcion
             // 
@@ -269,7 +247,6 @@
         private System.Windows.Forms.ComboBox cmb_tratamiento;
         private System.Windows.Forms.CheckBox cbx_tratamiento;
         private System.Windows.Forms.ComboBox cmb_horario;
-        private System.Windows.Forms.ComboBox cmb_fecha;
         private System.Windows.Forms.ComboBox cmb_odontologo;
         private System.Windows.Forms.TextBox txt_DNI;
         private System.Windows.Forms.Label lbl_nombreR;
@@ -279,5 +256,6 @@
         private System.Windows.Forms.Button btn_registrarCita;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtp_registroCitas;
     }
 }

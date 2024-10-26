@@ -20,7 +20,7 @@ namespace CapaPresentacion
         public form_login()
         {
             InitializeComponent();
-            empleado = new Empleado();
+            
         }
 
         private void form_login_Load(object sender, EventArgs e)
