@@ -74,3 +74,42 @@ AS
 BEGIN
     SELECT * FROM Empleado where Cargo = 'ODONTOLOGO'
 END
+
+
+-- helado para modificar los datos de un cliente
+CREATE OR ALTER PROCEDURE sp_modificarCliente
+	@Nombre VARCHAR(128),
+	@Genero VARCHAR(50),
+	@Fecha_nacimiento datetime,
+	@DNI VARCHAR(50),
+	@Estado VARCHAR(50)
+AS
+BEGIN
+	IF EXISTS(SELECT 1 FROM Cliente WHERE DNI = @DNI)
+	BEGIN
+		IF (@Nombre IS NOT NULL AND @Nombre != '')
+		BEGIN
+			UPDATE Cliente SET Nombre = @Nombre WHERE DNI = @DNI
+		END
+
+		IF (@Genero IS NOT NULL AND @Genero != '')
+		BEGIN
+			UPDATE Cliente SET Genero = @Genero WHERE DNI = @DNI
+		END
+
+		IF (@Fecha_nacimiento IS NOT NULL)
+		BEGIN
+			UPDATE Cliente SET Fecha_nacimiento = @Fecha_nacimiento WHERE DNI = @DNI
+		END
+
+		IF (@DNI IS NOT NULL AND @DNI != '')
+		BEGIN
+			UPDATE Cliente SET DNI = @DNI WHERE DNI = @DNI
+		END
+
+		IF (@Estado IS NOT NULL AND @Estado != '')
+		BEGIN
+			UPDATE Cliente SET Estado = @Estado WHERE DNI = @DNI
+		END
+	END
+END;
