@@ -101,5 +101,10 @@ namespace CapaPresentacion
         {
             CargarCitas();
         }
+
+        private void cirugia_dtp_fecha_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarCitas();
+        }
     }
 }

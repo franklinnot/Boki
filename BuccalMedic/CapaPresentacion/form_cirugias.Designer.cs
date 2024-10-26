@@ -30,9 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_cirugias));
             this.panel_cirugias = new System.Windows.Forms.Panel();
+            this.btn_limpiar = new System.Windows.Forms.Button();
             this.cirugia_btn_Consultar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cirugias_dgv = new System.Windows.Forms.DataGridView();
+            this.IdCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cirugia_codigocita = new System.Windows.Forms.ComboBox();
             this.cirugia_cmbox_paciente = new System.Windows.Forms.ComboBox();
             this.cirugia_dtp_fecha = new System.Windows.Forms.DateTimePicker();
@@ -41,10 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_limpiar = new System.Windows.Forms.Button();
-            this.IdCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_cirugias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cirugias_dgv)).BeginInit();
@@ -71,6 +71,16 @@
             this.panel_cirugias.Name = "panel_cirugias";
             this.panel_cirugias.Size = new System.Drawing.Size(810, 539);
             this.panel_cirugias.TabIndex = 2;
+            // 
+            // btn_limpiar
+            // 
+            this.btn_limpiar.Location = new System.Drawing.Point(676, 446);
+            this.btn_limpiar.Name = "btn_limpiar";
+            this.btn_limpiar.Size = new System.Drawing.Size(118, 42);
+            this.btn_limpiar.TabIndex = 14;
+            this.btn_limpiar.Text = "Limpiar";
+            this.btn_limpiar.UseVisualStyleBackColor = true;
+            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
             // 
             // cirugia_btn_Consultar
             // 
@@ -110,6 +120,27 @@
             this.cirugias_dgv.Size = new System.Drawing.Size(502, 271);
             this.cirugias_dgv.TabIndex = 7;
             // 
+            // IdCita
+            // 
+            this.IdCita.HeaderText = "IdCita";
+            this.IdCita.MinimumWidth = 6;
+            this.IdCita.Name = "IdCita";
+            this.IdCita.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.MinimumWidth = 6;
+            this.Fecha.Name = "Fecha";
+            this.Fecha.Width = 125;
+            // 
             // cirugia_codigocita
             // 
             this.cirugia_codigocita.FormattingEnabled = true;
@@ -133,6 +164,7 @@
             this.cirugia_dtp_fecha.Name = "cirugia_dtp_fecha";
             this.cirugia_dtp_fecha.Size = new System.Drawing.Size(200, 22);
             this.cirugia_dtp_fecha.TabIndex = 4;
+            this.cirugia_dtp_fecha.ValueChanged += new System.EventHandler(this.cirugia_dtp_fecha_ValueChanged);
             // 
             // label4
             // 
@@ -185,37 +217,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(807, 103);
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
-            // 
-            // btn_limpiar
-            // 
-            this.btn_limpiar.Location = new System.Drawing.Point(676, 446);
-            this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(118, 42);
-            this.btn_limpiar.TabIndex = 14;
-            this.btn_limpiar.Text = "Limpiar";
-            this.btn_limpiar.UseVisualStyleBackColor = true;
-            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
-            // 
-            // IdCita
-            // 
-            this.IdCita.HeaderText = "IdCita";
-            this.IdCita.MinimumWidth = 6;
-            this.IdCita.Name = "IdCita";
-            this.IdCita.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.MinimumWidth = 6;
-            this.Fecha.Name = "Fecha";
-            this.Fecha.Width = 125;
             // 
             // form_cirugias
             // 
