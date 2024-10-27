@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaLogica
 {
-    internal class LogCita
+    public class LogCita
     {
     }
 }

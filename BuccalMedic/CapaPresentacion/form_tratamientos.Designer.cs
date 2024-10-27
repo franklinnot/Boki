@@ -42,6 +42,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.idTratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_tratamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tratamientos_dgv)).BeginInit();
@@ -79,6 +82,7 @@
             this.tratamiento_btn_Modificar.TabIndex = 15;
             this.tratamiento_btn_Modificar.Text = "Modificar";
             this.tratamiento_btn_Modificar.UseVisualStyleBackColor = false;
+            this.tratamiento_btn_Modificar.Click += new System.EventHandler(this.tratamiento_btn_Modificar_Click);
             // 
             // tratamiento_btn_Inhabilitar
             // 
@@ -115,6 +119,7 @@
             this.tratamiento_btn_Registrar.TabIndex = 11;
             this.tratamiento_btn_Registrar.Text = "Registrar";
             this.tratamiento_btn_Registrar.UseVisualStyleBackColor = false;
+            this.tratamiento_btn_Registrar.Click += new System.EventHandler(this.tratamiento_btn_Registrar_Click);
             // 
             // pictureBox1
             // 
@@ -131,12 +136,17 @@
             // tratamientos_dgv
             // 
             this.tratamientos_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tratamientos_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idTratamiento,
+            this.Nombre,
+            this.Descripcion});
             this.tratamientos_dgv.Location = new System.Drawing.Point(56, 312);
             this.tratamientos_dgv.Name = "tratamientos_dgv";
             this.tratamientos_dgv.RowHeadersWidth = 51;
             this.tratamientos_dgv.RowTemplate.Height = 24;
             this.tratamientos_dgv.Size = new System.Drawing.Size(463, 185);
             this.tratamientos_dgv.TabIndex = 7;
+            this.tratamientos_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tratamientos_dgv_CellContentClick);
             // 
             // label4
             // 
@@ -190,6 +200,27 @@
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
+            // idTratamiento
+            // 
+            this.idTratamiento.HeaderText = "idTratamiento";
+            this.idTratamiento.MinimumWidth = 6;
+            this.idTratamiento.Name = "idTratamiento";
+            this.idTratamiento.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 125;
+            // 
             // form_tratamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -223,5 +254,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTratamiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }
