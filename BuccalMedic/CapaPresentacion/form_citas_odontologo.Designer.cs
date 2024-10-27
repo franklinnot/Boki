@@ -85,7 +85,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.logoBucalMedic;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.BuccalMedic;
             this.pictureBox1.Location = new System.Drawing.Point(525, 14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(221, 50);
