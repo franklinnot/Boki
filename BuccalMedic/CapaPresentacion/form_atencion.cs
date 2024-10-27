@@ -63,19 +63,35 @@ namespace CapaPresentacion
 
         private void atencion_btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (atencion_cmbx_tratamiento.SelectedItem == null)
-            {
-                MessageBox.Show("selecciona un tratamiento");
-                return;
-            }
+            
+
             try
-            {
+            {   
+                
+                if (atencion_cmbx_tratamiento.SelectedItem == null)
+                {
+                    MessageBox.Show("selecciona un tratamiento");
+                    return;
+                }
+                
+                
+                // Verificar que haya una cita seleccionada
+                /*
+                if (citas_cmbx.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, selecciona una cita.");
+                    return;
+                }
+
+                // Obtener el idcita de la cita seleccionada
+                var selectedCita = (dynamic)citas_cmbx.SelectedItem;
+                string idCita = selectedCita.Value;*/
 
                 Cita_tratamiento atencion = new Cita_tratamiento
                 {
                     Id_citatratamiento = GenerarIDCitaTratamiento(12),
-                    Id_cita ="CITA003", // Manteniendo el valor original de Id_cita como string
-                    Id_Tratamiento = atencion_cmbx_tratamiento.SelectedIndex + 1, // Asegúrate que este índice corresponde a los IDs en la base de datos
+                    Id_cita ="CITA003", //cuando se obtenga el valor de idcita de otro formulario, esto cambia 
+                    Id_Tratamiento = atencion_cmbx_tratamiento.SelectedIndex + 1, 
                     Recomendaciones = atencion_txtRecomendaciones.Text,
                     Procedimiento = atencion_txtProcedimientos.Text
                 };
