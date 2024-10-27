@@ -21,16 +21,11 @@ namespace CapaPresentacion
             form_login.Close();
             CargarCitas();
             CargarCombobox();
+            //para que el datetimepicker no se inicialize con ninguna fecha
+            cirugia_dtp_fecha.ShowCheckBox = true;
+            cirugia_dtp_fecha.Checked = false;
 
 
-            foreach (Dictionary<string, string> item in LogCitaTratamiento.Instancia.ListarCitaTratamiento("23456789"))
-            {
-                foreach (var element in item)
-                {
-                    Debug.WriteLine(element.Key, element.Value);
-
-                }
-            }
         }
         private void CargarCitas(DateTime? fecha = null, string paciente = null, string idcita = null)
         {
@@ -71,12 +66,9 @@ namespace CapaPresentacion
         }
         private void FiltrarCitas()
         {
-            string idCita = cirugia_codigocita.SelectedItem?.ToString();
-            idCita = string.IsNullOrEmpty(idCita) ? null : idCita;
-
-            string paciente = cirugia_cmbox_paciente.SelectedItem?.ToString();
-            paciente = string.IsNullOrEmpty(paciente) ? null : paciente;
-
+            // obtenemos el dato seleccionado de los objetos, si no selecciono nada lo pondremos como null
+            string idCita = !string.IsNullOrEmpty(cirugia_codigocita.Text) ? cirugia_codigocita.Text : null;
+            string paciente = !string.IsNullOrEmpty(cirugia_cmbox_paciente.Text) ? cirugia_cmbox_paciente.Text : null;
             DateTime? fecha = cirugia_dtp_fecha.Checked ? cirugia_dtp_fecha.Value : (DateTime?)null;
 
             CargarCitas(fecha, paciente, idCita);
@@ -88,21 +80,27 @@ namespace CapaPresentacion
 
         }
 
-        private void cirugia_btn_Consultar_Click(object sender, EventArgs e)
-        {
-            //ListarCitaTratamiento(string )
-            string paciente = cirugia_cmbox_paciente.Text;
-            string idcita = cirugia_codigocita.Text;
-            CargarCitas(paciente: paciente, idcita: idcita);
 
+
+        private void cirugia_dtp_fecha_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarCitas();
         }
 
-        private void btn_limpiar_Click(object sender, EventArgs e)
+        private void cirugia_btn_Limpiar_Click(object sender, EventArgs e)
         {
+            cirugia_codigocita.Text = null;
+            cirugia_cmbox_paciente.Text = null;
+            cirugia_dtp_fecha.Text = null;
             CargarCitas();
         }
 
-        private void cirugia_dtp_fecha_ValueChanged(object sender, EventArgs e)
+        private void cirugia_cmbox_paciente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarCitas();
+        }
+
+        private void cirugia_codigocita_SelectedIndexChanged(object sender, EventArgs e)
         {
             FiltrarCitas();
         }

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_cirugias));
             this.panel_cirugias = new System.Windows.Forms.Panel();
-            this.btn_limpiar = new System.Windows.Forms.Button();
-            this.cirugia_btn_Consultar = new System.Windows.Forms.Button();
+            this.evaluaciones_btn_regresar = new System.Windows.Forms.Button();
+            this.cirugia_btn_Limpiar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cirugias_dgv = new System.Windows.Forms.DataGridView();
             this.IdCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,8 +55,8 @@
             // 
             this.panel_cirugias.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_cirugias.BackColor = System.Drawing.Color.White;
-            this.panel_cirugias.Controls.Add(this.btn_limpiar);
-            this.panel_cirugias.Controls.Add(this.cirugia_btn_Consultar);
+            this.panel_cirugias.Controls.Add(this.evaluaciones_btn_regresar);
+            this.panel_cirugias.Controls.Add(this.cirugia_btn_Limpiar);
             this.panel_cirugias.Controls.Add(this.pictureBox1);
             this.panel_cirugias.Controls.Add(this.cirugias_dgv);
             this.panel_cirugias.Controls.Add(this.cirugia_codigocita);
@@ -72,27 +72,28 @@
             this.panel_cirugias.Size = new System.Drawing.Size(810, 539);
             this.panel_cirugias.TabIndex = 2;
             // 
-            // btn_limpiar
+            // evaluaciones_btn_regresar
             // 
-            this.btn_limpiar.Location = new System.Drawing.Point(676, 446);
-            this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(118, 42);
-            this.btn_limpiar.TabIndex = 14;
-            this.btn_limpiar.Text = "Limpiar";
-            this.btn_limpiar.UseVisualStyleBackColor = true;
-            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
+            this.evaluaciones_btn_regresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
+            this.evaluaciones_btn_regresar.Location = new System.Drawing.Point(17, 464);
+            this.evaluaciones_btn_regresar.Margin = new System.Windows.Forms.Padding(4);
+            this.evaluaciones_btn_regresar.Name = "evaluaciones_btn_regresar";
+            this.evaluaciones_btn_regresar.Size = new System.Drawing.Size(89, 44);
+            this.evaluaciones_btn_regresar.TabIndex = 17;
+            this.evaluaciones_btn_regresar.Text = "<--";
+            this.evaluaciones_btn_regresar.UseVisualStyleBackColor = false;
             // 
-            // cirugia_btn_Consultar
+            // cirugia_btn_Limpiar
             // 
-            this.cirugia_btn_Consultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(241)))), ((int)(((byte)(244)))));
-            this.cirugia_btn_Consultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cirugia_btn_Consultar.Location = new System.Drawing.Point(83, 419);
-            this.cirugia_btn_Consultar.Name = "cirugia_btn_Consultar";
-            this.cirugia_btn_Consultar.Size = new System.Drawing.Size(133, 51);
-            this.cirugia_btn_Consultar.TabIndex = 11;
-            this.cirugia_btn_Consultar.Text = "Consultar";
-            this.cirugia_btn_Consultar.UseVisualStyleBackColor = false;
-            this.cirugia_btn_Consultar.Click += new System.EventHandler(this.cirugia_btn_Consultar_Click);
+            this.cirugia_btn_Limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(241)))), ((int)(((byte)(244)))));
+            this.cirugia_btn_Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cirugia_btn_Limpiar.Location = new System.Drawing.Point(661, 457);
+            this.cirugia_btn_Limpiar.Name = "cirugia_btn_Limpiar";
+            this.cirugia_btn_Limpiar.Size = new System.Drawing.Size(133, 51);
+            this.cirugia_btn_Limpiar.TabIndex = 11;
+            this.cirugia_btn_Limpiar.Text = "Limpiar";
+            this.cirugia_btn_Limpiar.UseVisualStyleBackColor = false;
+            this.cirugia_btn_Limpiar.Click += new System.EventHandler(this.cirugia_btn_Limpiar_Click);
             // 
             // pictureBox1
             // 
@@ -148,6 +149,7 @@
             this.cirugia_codigocita.Name = "cirugia_codigocita";
             this.cirugia_codigocita.Size = new System.Drawing.Size(121, 24);
             this.cirugia_codigocita.TabIndex = 6;
+            this.cirugia_codigocita.SelectedIndexChanged += new System.EventHandler(this.cirugia_codigocita_SelectedIndexChanged);
             // 
             // cirugia_cmbox_paciente
             // 
@@ -156,6 +158,7 @@
             this.cirugia_cmbox_paciente.Name = "cirugia_cmbox_paciente";
             this.cirugia_cmbox_paciente.Size = new System.Drawing.Size(200, 24);
             this.cirugia_cmbox_paciente.TabIndex = 5;
+            this.cirugia_cmbox_paciente.SelectedIndexChanged += new System.EventHandler(this.cirugia_cmbox_paciente_SelectedIndexChanged);
             // 
             // cirugia_dtp_fecha
             // 
@@ -239,7 +242,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_cirugias;
-        private System.Windows.Forms.Button cirugia_btn_Consultar;
+        private System.Windows.Forms.Button cirugia_btn_Limpiar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView cirugias_dgv;
         private System.Windows.Forms.ComboBox cirugia_codigocita;
@@ -250,9 +253,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btn_limpiar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCita;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.Button evaluaciones_btn_regresar;
     }
 }
