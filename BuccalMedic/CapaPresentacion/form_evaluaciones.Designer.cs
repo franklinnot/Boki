@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_evaluaciones));
             this.panel_evaluaciones = new System.Windows.Forms.Panel();
-            this.evaluacion_btn_Consultar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.evaluaciones_dgv = new System.Windows.Forms.DataGridView();
             this.evaluacion_codigocita = new System.Windows.Forms.ComboBox();
@@ -41,6 +40,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.IdConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_Registro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evaluacion_btn_Limpiar = new System.Windows.Forms.Button();
+            this.evaluaciones_btn_regresar = new System.Windows.Forms.Button();
             this.panel_evaluaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.evaluaciones_dgv)).BeginInit();
@@ -51,7 +55,8 @@
             // 
             this.panel_evaluaciones.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_evaluaciones.BackColor = System.Drawing.Color.White;
-            this.panel_evaluaciones.Controls.Add(this.evaluacion_btn_Consultar);
+            this.panel_evaluaciones.Controls.Add(this.evaluaciones_btn_regresar);
+            this.panel_evaluaciones.Controls.Add(this.evaluacion_btn_Limpiar);
             this.panel_evaluaciones.Controls.Add(this.pictureBox1);
             this.panel_evaluaciones.Controls.Add(this.evaluaciones_dgv);
             this.panel_evaluaciones.Controls.Add(this.evaluacion_codigocita);
@@ -66,17 +71,6 @@
             this.panel_evaluaciones.Name = "panel_evaluaciones";
             this.panel_evaluaciones.Size = new System.Drawing.Size(810, 539);
             this.panel_evaluaciones.TabIndex = 2;
-            // 
-            // evaluacion_btn_Consultar
-            // 
-            this.evaluacion_btn_Consultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(241)))), ((int)(((byte)(244)))));
-            this.evaluacion_btn_Consultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.evaluacion_btn_Consultar.Location = new System.Drawing.Point(83, 419);
-            this.evaluacion_btn_Consultar.Name = "evaluacion_btn_Consultar";
-            this.evaluacion_btn_Consultar.Size = new System.Drawing.Size(133, 51);
-            this.evaluacion_btn_Consultar.TabIndex = 11;
-            this.evaluacion_btn_Consultar.Text = "Consultar";
-            this.evaluacion_btn_Consultar.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -93,6 +87,10 @@
             // evaluaciones_dgv
             // 
             this.evaluaciones_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.evaluaciones_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdConsulta,
+            this.Paciente,
+            this.Fecha_Registro});
             this.evaluaciones_dgv.Location = new System.Drawing.Point(294, 151);
             this.evaluaciones_dgv.Name = "evaluaciones_dgv";
             this.evaluaciones_dgv.RowHeadersWidth = 51;
@@ -107,6 +105,7 @@
             this.evaluacion_codigocita.Name = "evaluacion_codigocita";
             this.evaluacion_codigocita.Size = new System.Drawing.Size(121, 24);
             this.evaluacion_codigocita.TabIndex = 6;
+            this.evaluacion_codigocita.SelectedIndexChanged += new System.EventHandler(this.evaluacion_codigocita_SelectedIndexChanged);
             // 
             // evaluacion_cmbox_paciente
             // 
@@ -115,6 +114,7 @@
             this.evaluacion_cmbox_paciente.Name = "evaluacion_cmbox_paciente";
             this.evaluacion_cmbox_paciente.Size = new System.Drawing.Size(200, 24);
             this.evaluacion_cmbox_paciente.TabIndex = 5;
+            this.evaluacion_cmbox_paciente.SelectedIndexChanged += new System.EventHandler(this.evaluacion_cmbox_paciente_SelectedIndexChanged);
             // 
             // evaluacion_dtp_fecha
             // 
@@ -123,6 +123,7 @@
             this.evaluacion_dtp_fecha.Name = "evaluacion_dtp_fecha";
             this.evaluacion_dtp_fecha.Size = new System.Drawing.Size(200, 22);
             this.evaluacion_dtp_fecha.TabIndex = 4;
+            this.evaluacion_dtp_fecha.ValueChanged += new System.EventHandler(this.evaluacion_dtp_fecha_ValueChanged);
             // 
             // label4
             // 
@@ -176,6 +177,50 @@
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
+            // IdConsulta
+            // 
+            this.IdConsulta.HeaderText = "IdConsulta";
+            this.IdConsulta.MinimumWidth = 6;
+            this.IdConsulta.Name = "IdConsulta";
+            this.IdConsulta.Width = 125;
+            // 
+            // Paciente
+            // 
+            this.Paciente.HeaderText = "Paciente";
+            this.Paciente.MinimumWidth = 6;
+            this.Paciente.Name = "Paciente";
+            this.Paciente.Width = 125;
+            // 
+            // Fecha_Registro
+            // 
+            this.Fecha_Registro.HeaderText = "Fecha_Registro";
+            this.Fecha_Registro.MinimumWidth = 6;
+            this.Fecha_Registro.Name = "Fecha_Registro";
+            this.Fecha_Registro.Width = 125;
+            // 
+            // evaluacion_btn_Limpiar
+            // 
+            this.evaluacion_btn_Limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(241)))), ((int)(((byte)(244)))));
+            this.evaluacion_btn_Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.evaluacion_btn_Limpiar.Location = new System.Drawing.Point(661, 455);
+            this.evaluacion_btn_Limpiar.Name = "evaluacion_btn_Limpiar";
+            this.evaluacion_btn_Limpiar.Size = new System.Drawing.Size(133, 51);
+            this.evaluacion_btn_Limpiar.TabIndex = 12;
+            this.evaluacion_btn_Limpiar.Text = "Limpiar";
+            this.evaluacion_btn_Limpiar.UseVisualStyleBackColor = false;
+            this.evaluacion_btn_Limpiar.Click += new System.EventHandler(this.evaluacion_btn_Limpiar_Click);
+            // 
+            // evaluaciones_btn_regresar
+            // 
+            this.evaluaciones_btn_regresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
+            this.evaluaciones_btn_regresar.Location = new System.Drawing.Point(17, 462);
+            this.evaluaciones_btn_regresar.Margin = new System.Windows.Forms.Padding(4);
+            this.evaluaciones_btn_regresar.Name = "evaluaciones_btn_regresar";
+            this.evaluaciones_btn_regresar.Size = new System.Drawing.Size(89, 44);
+            this.evaluaciones_btn_regresar.TabIndex = 17;
+            this.evaluaciones_btn_regresar.Text = "<--";
+            this.evaluaciones_btn_regresar.UseVisualStyleBackColor = false;
+            // 
             // form_evaluaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -197,7 +242,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_evaluaciones;
-        private System.Windows.Forms.Button evaluacion_btn_Consultar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView evaluaciones_dgv;
         private System.Windows.Forms.ComboBox evaluacion_codigocita;
@@ -208,5 +252,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdConsulta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Paciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Registro;
+        private System.Windows.Forms.Button evaluaciones_btn_regresar;
+        private System.Windows.Forms.Button evaluacion_btn_Limpiar;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    internal class DatTratamientoDiagnostico
+    public class DatTratamientoDiagnostico
     {
     }
 }
