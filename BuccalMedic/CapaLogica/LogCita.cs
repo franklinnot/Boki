@@ -41,6 +41,28 @@ namespace CapaLogica
             int id = int.Parse(idCita);
             DatCita.Instancia.ModificarEstado(id);
         }
-    
+        
+
+        public Dictionary<string,string> TipoDeCita(string idCita)
+        {
+            return DatCita.Instancia.TipoDeCita(idCita);
+        }
+
+        public Dictionary<string,string> CitaConsulta(string idCita, string estado)
+        {
+            return DatCita.Instancia.CitaConsulta(idCita, estado);
+
+        }
+
+        public Dictionary<string, string> CitaTratamiento(string idCita, string estado)
+        {
+            return DatCita.Instancia.CitaTratamiento(idCita, estado);
+
+        }
+
+        public List<string> TratamientosDiagnostico(string idCita)
+        {
+            return DatCita.Instancia.TratamientosDiagnosticos(idCita);
+        }
     }
 }

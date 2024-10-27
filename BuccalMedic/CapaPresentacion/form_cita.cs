@@ -16,11 +16,16 @@ namespace CapaPresentacion
 {
     public partial class form_cita : Form
     {
+        public static Dictionary<string,string> detalleCita;
+        public static string tipoCita, estado;
+     
         public form_cita()
         {
             InitializeComponent();
             CargarCitas();
             CargarCombobox();
+
+            detalleCita = new Dictionary<string,string>();
 
         }
 
@@ -49,7 +54,10 @@ namespace CapaPresentacion
             cmb_dni.Items.Clear();
             foreach (var item in citas)
             {
-                cmb_dni.Items.Add(item["DNI"]);
+                if (!cmb_dni.Items.Contains(item["DNI"]))
+                {
+                    cmb_dni.Items.Add(item["DNI"]);
+                }
             }
 
             cmb_odontologoC.Items.Clear();
@@ -127,6 +135,30 @@ namespace CapaPresentacion
         {
             if (!string.IsNullOrEmpty(selectedCitaId))
             {
+                string idCita = dgv_cita.CurrentRow.Cells[0].Value.ToString();
+                Dictionary<string,string> datosCita = LogCita.Instancia.TipoDeCita(idCita);
+                tipoCita = datosCita["tipoCita"];
+                estado = datosCita["estado"];
+
+
+                if ( tipoCita == "TRATAMIENTO")
+                {
+                    MessageBox.Show(tipoCita);
+                    detalleCita = LogCita.Instancia.CitaTratamiento(idCita, estado);
+
+
+                }
+                else if (tipoCita == "CONSULTA")
+                {
+                
+                    detalleCita = LogCita.Instancia.CitaConsulta(idCita, estado);
+           
+                }
+                else
+                {
+                    MessageBox.Show("Error, codigo cita");
+                }
+
                 form_detalleCita detalleCitaForm = new form_detalleCita();
                 detalleCitaForm.ShowDialog();
             }
@@ -162,7 +194,7 @@ namespace CapaPresentacion
             cmb_odontologoC.SelectedIndex = -1;
             cmb_pacienteC.SelectedIndex = -1;
             
-            CargarCombobox();
+            CargarCitas();
         }
     }
 }
