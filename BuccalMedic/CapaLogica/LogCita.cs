@@ -27,8 +27,8 @@ namespace CapaLogica
 
         public void Anular(string idCita)
         {
-            int id = int.Parse(idCita);
-            DatCita.Instancia.AnularCita(id);
+            //int id = int.Parse(idCita);
+            DatCita.Instancia.AnularCita(idCita);
         }
 
         public List<Dictionary<string, string>> ListarCitasOdontologo(int idEmpleado, string cargo ,string dni = null, string paciente = null, DateTime? fecha = null)
@@ -38,8 +38,8 @@ namespace CapaLogica
 
         public void Modificar(string idCita)
         {
-            int id = int.Parse(idCita);
-            DatCita.Instancia.ModificarEstado(id);
+            //int id = int.Parse(idCita);
+            DatCita.Instancia.ModificarEstado(idCita);
         }
         
 

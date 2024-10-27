@@ -119,7 +119,7 @@ namespace CapaDatos
         }
 
         // ANULAR CITAS
-        public void AnularCita(int idCita)
+        public void AnularCita(string idCita)
         {
             using (SqlConnection conn = Conexion.Instancia.Conectar())
             {
@@ -198,7 +198,7 @@ namespace CapaDatos
 
         // Modificar estado 
 
-        public void ModificarEstado(int idCita)
+        public void ModificarEstado(string idCita)
         {
             using (SqlConnection conexion = Conexion.Instancia.Conectar())
             {

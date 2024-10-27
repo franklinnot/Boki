@@ -143,16 +143,11 @@ namespace CapaPresentacion
 
                 if ( tipoCita == "TRATAMIENTO")
                 {
-                    MessageBox.Show(tipoCita);
                     detalleCita = LogCita.Instancia.CitaTratamiento(idCita, estado);
-
-
                 }
                 else if (tipoCita == "CONSULTA")
                 {
-                
                     detalleCita = LogCita.Instancia.CitaConsulta(idCita, estado);
-           
                 }
                 else
                 {

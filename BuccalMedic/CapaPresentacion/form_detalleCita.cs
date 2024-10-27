@@ -43,6 +43,7 @@ namespace CapaPresentacion
 
                 if (estado == "ATENDIDO")
                 {
+                    lbl_estado.ForeColor = Color.Green;
                     lbl_resultado.Text = $"Resultados:\n{detalleCita["Resultado"]}";
                     lbl_recomendacionD.Text = $"Recomendaciones:\n{detalleCita["Recomendaciones"]}";
                     // tratamientosssss del diagnostico 
@@ -55,6 +56,10 @@ namespace CapaPresentacion
                         lsv_tratamientos.Items.Add(li);
                     }
                 }
+                else 
+                { 
+                    lbl_estado.ForeColor = Color.Red; 
+                }
 
             }
             else if (tipoCita == "TRATAMIENTO")
@@ -64,9 +69,14 @@ namespace CapaPresentacion
 
                 if (estado == "ATENDIDO")
                 {
+                    lbl_estado.ForeColor = Color.Green;
                     lbl_tratamiento.Text = $"Tratamiento:\n{detalleCita["Tratamiento"]}";
                     lbl_procedimiento.Text = $"Procedimientos Realizados:\n{detalleCita["Procedimiento"]}";
                     lbl_recomendacionT.Text = $"Recomendaciones:\n{detalleCita["Recomendaciones"]}";
+                }
+                else
+                {
+                    lbl_estado.ForeColor = Color.Red;
                 }
 
             }
