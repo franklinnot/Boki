@@ -17,8 +17,6 @@ namespace CapaPresentacion
         public form_tratamientos()
         {
             InitializeComponent();
-            Form form_login = new Form();
-            form_login.Close();
             CargarTratamientos();
             // Registra el evento para cargar datos en los textbox al hacer clic en una fila
             tratamientos_dgv.CellClick += tratamientos_dgv_CellContentClick;

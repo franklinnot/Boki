@@ -116,5 +116,6 @@ namespace CapaDatos
             finally { cmd.Connection.Close(); }
             return edita;
         }
+
     }
 }
