@@ -112,7 +112,6 @@ namespace CapaDatos
 
         public bool BuscarClienteDNI_bool(string dni)
         {
-
             SqlCommand comando = null;
             try
             {
@@ -129,7 +128,7 @@ namespace CapaDatos
 
                         if (data.HasRows)
                         {
-                            Debug.WriteLine("No tiene ningun registro");
+                            Debug.WriteLine("Si se encontraron registros");
                             return true;
                         }
                     }
@@ -181,13 +180,47 @@ namespace CapaDatos
             return clientes;
         }
 
-
-
         public List<Cliente> ListarClientes()
         {
             return ToList("sp_ListarClientes");
         }
 
+        public bool ModificarCliente(Cliente cliente)
+        {
+            SqlCommand comando = null;
+            bool resultado = false;
+
+            try
+            {
+                SqlConnection conexion = Conexion.Instancia.Conectar();
+                comando = new SqlCommand("sp_modificarCliente", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                // Añadir los parámetros necesarios para el procedimiento almacenado
+                comando.Parameters.AddWithValue("@Nombre", cliente.Nombre);
+                comando.Parameters.AddWithValue("@Fecha_nacimiento", cliente.Fecha_nacimiento.HasValue ? (object)cliente.Fecha_nacimiento.Value : DBNull.Value);
+                comando.Parameters.AddWithValue("@DNI", cliente.DNI);
+                comando.Parameters.AddWithValue("@Estado", cliente.Estado);
+
+                conexion.Open();
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                // Verificar si se insertó al menos una fila
+                resultado = filasAfectadas > 0;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            finally
+            {
+                if (comando != null)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            return resultado;
+        }
 
     }
 }

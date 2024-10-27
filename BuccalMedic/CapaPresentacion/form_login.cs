@@ -25,9 +25,17 @@ namespace CapaPresentacion
 
         private void form_login_Load(object sender, EventArgs e)
         {
+            bool verificar = LogCliente.Instancia.BuscarClienteDNI_bool("12345678");
 
+            if (verificar)
+            {
+                Debug.WriteLine("Si existe");
+            }
+            else
+            {
+                Debug.WriteLine("No Existe");
+            }
         }
-
         private void btn_iniciar_sesion_Click(object sender, EventArgs e)
         {
             string usuario = txt_usuario.Text.Trim();

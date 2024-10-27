@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics.Contracts;
+using System.Diagnostics;
 
 namespace CapaLogica
 {
@@ -28,6 +29,7 @@ namespace CapaLogica
 
         public bool InsertarCliente(Cliente cliente) 
         {
+            // si ya existe
             if (BuscarClienteDNI_bool(cliente.DNI)) 
             {
                 return false;
@@ -38,6 +40,17 @@ namespace CapaLogica
         public List<Cliente> ListarClientes() 
         {
             return DatCliente.Instancia.ListarClientes();
+        }
+
+        public bool ModificarCliente(Cliente cliente)
+        {
+            // si no existe
+            if (!BuscarClienteDNI_bool(cliente.DNI))
+            {
+                Debug.WriteLine("El dni no existe");
+                return false;
+            }
+            return DatCliente.Instancia.ModificarCliente(cliente);
         }
 
     }
