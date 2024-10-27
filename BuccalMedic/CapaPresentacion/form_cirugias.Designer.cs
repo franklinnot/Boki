@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_cirugias));
             this.panel_cirugias = new System.Windows.Forms.Panel();
-            this.evaluaciones_btn_regresar = new System.Windows.Forms.Button();
+            this.cirugias_btn_regresar = new System.Windows.Forms.Button();
             this.cirugia_btn_Limpiar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cirugias_dgv = new System.Windows.Forms.DataGridView();
@@ -55,7 +55,7 @@
             // 
             this.panel_cirugias.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_cirugias.BackColor = System.Drawing.Color.White;
-            this.panel_cirugias.Controls.Add(this.evaluaciones_btn_regresar);
+            this.panel_cirugias.Controls.Add(this.cirugias_btn_regresar);
             this.panel_cirugias.Controls.Add(this.cirugia_btn_Limpiar);
             this.panel_cirugias.Controls.Add(this.pictureBox1);
             this.panel_cirugias.Controls.Add(this.cirugias_dgv);
@@ -72,16 +72,16 @@
             this.panel_cirugias.Size = new System.Drawing.Size(810, 539);
             this.panel_cirugias.TabIndex = 2;
             // 
-            // evaluaciones_btn_regresar
+            // cirugias_btn_regresar
             // 
-            this.evaluaciones_btn_regresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
-            this.evaluaciones_btn_regresar.Location = new System.Drawing.Point(17, 464);
-            this.evaluaciones_btn_regresar.Margin = new System.Windows.Forms.Padding(4);
-            this.evaluaciones_btn_regresar.Name = "evaluaciones_btn_regresar";
-            this.evaluaciones_btn_regresar.Size = new System.Drawing.Size(89, 44);
-            this.evaluaciones_btn_regresar.TabIndex = 17;
-            this.evaluaciones_btn_regresar.Text = "<--";
-            this.evaluaciones_btn_regresar.UseVisualStyleBackColor = false;
+            this.cirugias_btn_regresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
+            this.cirugias_btn_regresar.Location = new System.Drawing.Point(17, 464);
+            this.cirugias_btn_regresar.Margin = new System.Windows.Forms.Padding(4);
+            this.cirugias_btn_regresar.Name = "cirugias_btn_regresar";
+            this.cirugias_btn_regresar.Size = new System.Drawing.Size(89, 44);
+            this.cirugias_btn_regresar.TabIndex = 17;
+            this.cirugias_btn_regresar.Text = "<--";
+            this.cirugias_btn_regresar.UseVisualStyleBackColor = false;
             // 
             // cirugia_btn_Limpiar
             // 
@@ -256,6 +256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCita;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.Button evaluaciones_btn_regresar;
+        private System.Windows.Forms.Button cirugias_btn_regresar;
     }
 }
