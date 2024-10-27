@@ -36,6 +36,11 @@ namespace CapaLogica
             return DatEmpleado.Instancia.BuscarEmpleadoLogin(usuario: usuario, password: password);
         }
 
+        public Empleado BuscarEmpleadoNombre(string nombre)
+        {
+            return DatEmpleado.Instancia.BuscarEmpleadoNombre(nombre);
+        }
+
 
     }
 }

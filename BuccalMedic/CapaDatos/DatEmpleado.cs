@@ -115,6 +115,51 @@ namespace CapaDatos
             return empleado;
         }
 
+        public Empleado BuscarEmpleadoNombre(string nombre)
+        {
+            SqlCommand comando = null;
+            Empleado empleado = new Empleado();
+            try
+            {
+                SqlConnection conexion = Conexion.Instancia.Conectar();
+                comando = new SqlCommand("sp_BuscarEmpleadoNombre", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Nombre", nombre);
+
+                conexion.Open();
+                SqlDataReader data = comando.ExecuteReader();
+
+                DataTable dataTable = new DataTable();
+                dataTable.Load(data);
+                foreach (DataRow fila in dataTable.Rows)
+                {
+                    Empleado emp = new Empleado
+                    {
+                        Id_empleado = Convert.ToInt32(fila["Id_empleado"]),
+                        Usuario = fila["Usuario"].ToString(),
+                        Password = fila["Password"].ToString(),
+                        Cargo = fila["Cargo"].ToString(),
+                        Nombre = fila["Nombre"].ToString()
+                    };
+
+                    empleado = emp;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            finally
+            {
+                if (comando != null)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            return empleado;
+        }
+
         public Empleado BuscarEmpleadoLogin(string usuario, string password) 
         {
             SqlCommand comando = null;

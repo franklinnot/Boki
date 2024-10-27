@@ -47,7 +47,7 @@ namespace CapaPresentacion
             string dni = txt_DNI.Text.Trim();
             string nombre = txt_NombreCliente.Text.Trim();
             string genero = cmb_genero.SelectedItem.ToString();
-            DateTime fecha_nacimieto = DateTime.Parse(dtp_fecha_nacimiento.Value.ToShortDateString());
+            DateTime fecha_nacimiento = DateTime.Parse(dtp_fecha_nacimiento.Value.ToShortDateString());
 
             if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(genero) || string.IsNullOrEmpty(genero))
             {
@@ -62,7 +62,7 @@ namespace CapaPresentacion
                 Nombre = nombre,
                 Genero = genero,
                 Estado = "ACTIVO",
-                Fecha_nacimiento = fecha_nacimieto
+                Fecha_nacimiento = fecha_nacimiento
             };
 
             bool verificar_registro = LogCliente.Instancia.InsertarCliente(cliente);

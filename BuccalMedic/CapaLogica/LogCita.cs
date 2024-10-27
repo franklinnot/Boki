@@ -20,5 +20,10 @@ namespace CapaLogica
         {
             return DatCita.Instancia.ObtenerCitasPorEmpleado(id);
         }
+
+        public bool InsertarCita(Cita cita)
+        {
+            return DatCita.Instancia.InsertarCita(cita);
+        }
     }
 }

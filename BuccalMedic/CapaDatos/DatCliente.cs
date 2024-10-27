@@ -160,7 +160,7 @@ namespace CapaDatos
             {
                 foreach (DataRow fila in data.Rows)
                 {
-                    Cliente empleado = new Cliente
+                    Cliente cli = new Cliente
                     {
                         Id_cliente = Convert.ToInt32(fila["Id_cliente"]),
                         Nombre = fila["Nombre"].ToString(),
@@ -170,7 +170,7 @@ namespace CapaDatos
                         Estado = fila["Estado"].ToString()
                     };
 
-                    clientes.Add(empleado);
+                    clientes.Add(cli);
                 }
             }
             else

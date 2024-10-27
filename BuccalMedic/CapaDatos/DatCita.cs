@@ -12,6 +12,7 @@ namespace CapaDatos
 {
     public class DatCita
     {
+
         #region Constructor y patron singleton
         static readonly DatCita _instancia = new DatCita();
 
@@ -78,6 +79,46 @@ namespace CapaDatos
             }
 
             return citas;
+        }
+
+        public bool InsertarCita(Cita cita)
+        {
+            SqlCommand comando = null;
+            bool resultado = false;
+
+            try
+            {
+                SqlConnection conexion = Conexion.Instancia.Conectar();
+                comando = new SqlCommand("sp_InsertarCita", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                // Añadir los parámetros necesarios para el procedimiento almacenado
+                comando.Parameters.AddWithValue("@Id_cita", cita.Id_cita);
+                comando.Parameters.AddWithValue("@Id_cliente", cita.Id_cliente);
+                comando.Parameters.AddWithValue("@Fecha_registro", DateTime.Now);
+                comando.Parameters.AddWithValue("@Fecha_inicio", cita.Fecha_inicio);
+                comando.Parameters.AddWithValue("@Estado", cita.Estado);
+                //comando.Parameters.AddWithValue("@Fecha_fin", cita.Fecha_fin);
+                comando.Parameters.AddWithValue("@Id_empleado", cita.id_empleado);
+
+                conexion.Open();
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                // Verificar si se insertó al menos una fila
+                resultado = filasAfectadas > 0;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            finally
+            {
+                if (comando != null)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            return resultado;
         }
 
     }
