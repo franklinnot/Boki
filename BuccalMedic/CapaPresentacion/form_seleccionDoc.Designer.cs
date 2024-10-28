@@ -93,6 +93,7 @@
             this.btn_intervencionesd.TabIndex = 4;
             this.btn_intervencionesd.Text = "Historial de Tratamientos";
             this.btn_intervencionesd.UseVisualStyleBackColor = false;
+            this.btn_intervencionesd.Click += new System.EventHandler(this.btn_intervencionesd_Click);
             // 
             // btn_evaluacionesd
             // 

@@ -191,7 +191,7 @@ namespace CapaDatos
             if (fecha.HasValue)
                 parameters.Add(new SqlParameter("@FechaRegistro", fecha.Value));
 
-            return ToList("spListaCitasTratamientoFiltradas", parameters);
+            return ToList("spHistorialTratamiento", parameters);
         }
     }
 }

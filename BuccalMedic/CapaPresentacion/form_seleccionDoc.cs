@@ -35,5 +35,11 @@ namespace CapaPresentacion
             //form_diagnostico form_Diagnostico = new form_diagnostico();
             //form_Diagnostico.ShowDialog();
         }
+
+        private void btn_intervencionesd_Click(object sender, EventArgs e)
+        {
+            form_cirugias form_Cirugias = new form_cirugias();
+            form_Cirugias.ShowDialog();
+        }
     }
 }
