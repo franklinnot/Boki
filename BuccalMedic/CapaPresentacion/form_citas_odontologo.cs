@@ -19,12 +19,12 @@ namespace CapaPresentacion
     {
         Empleado empleado;
 
-        public form_citas_odontologo(Empleado emp)
+        public form_citas_odontologo()
         {
             InitializeComponent();
 
             empleado = new Empleado();
-            empleado = emp;
+            empleado = form_login.empleado;
 
             CargarCitas(empleado.Id_empleado,empleado.Cargo);
             CargarCombobox();
@@ -101,18 +101,27 @@ namespace CapaPresentacion
                 return;
             }
 
+
             string estado = dgv_cita.Rows[dgv_cita.CurrentCell.RowIndex].Cells["colum_estado"].Value.ToString();
             string tratamiento = dgv_cita.Rows[dgv_cita.CurrentCell.RowIndex].Cells["colum_tratamiento"].Value.ToString();
 
+
             if (estado == "PENDIENTE")
             {
+                string idCita = dgv_cita.CurrentRow.Cells[0].Value.ToString();
+
                 if (!string.IsNullOrEmpty(tratamiento))
                 {
                     MessageBox.Show("Formulario de Tratamiento", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Formulario de Diagnóstico", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    form_diagnostico form_Diagnostico = new form_diagnostico(idCita);
+                    form_Diagnostico.ShowDialog();
+
+
                 }
                 
 

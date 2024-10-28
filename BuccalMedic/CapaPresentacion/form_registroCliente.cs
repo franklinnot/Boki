@@ -167,9 +167,9 @@ namespace CapaPresentacion
                 DNI = dni,
                 Nombre = "",
                 Fecha_nacimiento = DateTime.Now,
-                Estado = "INHABILITADO"
+                Estado = "INACTIVO"
             };
-
+            MessageBox.Show(cliente.DNI);
             bool verificar_modificacion = LogCliente.Instancia.ModificarCliente(cliente);
             if (verificar_modificacion)
             {
@@ -181,13 +181,5 @@ namespace CapaPresentacion
                 MessageBox.Show("El DNI ingresado no se encuentra registrado en el sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-
-
-
-
-
     }
 }

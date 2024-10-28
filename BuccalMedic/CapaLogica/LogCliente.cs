@@ -47,7 +47,7 @@ namespace CapaLogica
             // si no existe
             if (!BuscarClienteDNI_bool(cliente.DNI))
             {
-                Debug.WriteLine("El dni no existe");
+                Debug.WriteLine("El dni no existe -- BuscarClienteDNI_bool");
                 return false;
             }
             return DatCliente.Instancia.ModificarCliente(cliente);

@@ -105,5 +105,39 @@ namespace CapaDatos
         }
 
 
+        public string IdConsulta(string idCita)
+        {
+            string idConsulta = string.Empty;
+            DataTable dataTable = new DataTable();
+            SqlConnection conexion = Conexion.Instancia.Conectar();
+            SqlCommand cmd = new SqlCommand("spIdConsulta", conexion);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdCita", idCita);
+
+
+            conexion.Open();
+
+            SqlDataReader query = cmd.ExecuteReader();
+            dataTable.Load(query);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                Debug.WriteLine("Si tiene registros");
+                foreach (DataRow fila in dataTable.Rows)
+                {
+                    idConsulta = fila["Id_citaconsulta"].ToString();
+
+                }
+            }
+            else
+            {
+                Debug.WriteLine("El DataTable está vacío.");
+            }
+
+            return idConsulta;
+        }
+
     }
 }

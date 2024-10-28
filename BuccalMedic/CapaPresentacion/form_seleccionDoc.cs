@@ -21,5 +21,18 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btn_citasd_Click(object sender, EventArgs e)
+        {
+            form_citas_odontologo citasOdontologo = new form_citas_odontologo();
+            citasOdontologo.ShowDialog();
+            
+        }
+
+        private void btn_evaluacionesd_Click(object sender, EventArgs e)
+        {
+            //form_diagnostico form_Diagnostico = new form_diagnostico();
+            //form_Diagnostico.ShowDialog();
+        }
     }
 }

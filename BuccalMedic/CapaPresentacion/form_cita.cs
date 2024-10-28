@@ -151,7 +151,7 @@ namespace CapaPresentacion
                 }
                 else if (tipoCita == "CONSULTA")
                 {
-                    detalleCita = LogCitaTratamiento.Instancia.DetalleCitaTratamiento(idCita, estado);
+                    detalleCita = LogCitaConsulta.Instancia.DetalleCitaConsulta(idCita, estado);
                 }
                 else
                 {

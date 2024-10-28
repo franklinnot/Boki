@@ -15,12 +15,22 @@ namespace CapaPresentacion
 {
     public partial class form_diagnostico : Form
     {
-        public form_diagnostico()
+        Dictionary<string,string> datosCita ;
+        string idCita;
+
+        public form_diagnostico(string id_Cita)
         {
             InitializeComponent();
             Form form_login = new Form();
             form_login.Close();
             CargarTratamientos();
+            datosCita = LogCitaConsulta.Instancia.DetalleCitaConsulta(id_Cita, "PENDIENTE");
+            idCita = id_Cita;
+        }
+        private void form_diagnostico_Load(object sender, EventArgs e)
+        {
+            txtDni.Text = datosCita["DNI"].ToString();
+            txtNombre.Text = datosCita["Paciente"].ToString();
 
         }
         private void LimpiarVariables()
@@ -61,10 +71,11 @@ namespace CapaPresentacion
 
         private void btn_registrardiagnosticod_Click_1(object sender, EventArgs e)
         {
+            string idConsulta = LogCitaConsulta.Instancia.IdConsulta(idCita);
             Diagnostico diagnostico = new Diagnostico
             {
                 Id_diagnostico = GenerarIDDiagnostico(12),
-                Id_citaconsulta = "abc6",
+                Id_citaconsulta = idConsulta,
                 Resultado = txt_resultadod.Text,
                 Recomendaciones = txtrecomendacionesd.Text,
             };
@@ -109,5 +120,6 @@ namespace CapaPresentacion
             }
             LimpiarVariables();
         }
+
     }
 }

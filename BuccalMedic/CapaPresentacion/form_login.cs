@@ -25,16 +25,7 @@ namespace CapaPresentacion
 
         private void form_login_Load(object sender, EventArgs e)
         {
-            bool verificar = LogCliente.Instancia.BuscarClienteDNI_bool("12345678");
-
-            if (verificar)
-            {
-                Debug.WriteLine("Si existe");
-            }
-            else
-            {
-                Debug.WriteLine("No Existe");
-            }
+     
         }
         private void btn_iniciar_sesion_Click(object sender, EventArgs e)
         {
@@ -47,18 +38,19 @@ namespace CapaPresentacion
                 return;
             }
 
-            Empleado emp = LogEmpleado.Instancia.BuscarEmpleadoLogin(usuario, password);
+            empleado = LogEmpleado.Instancia.BuscarEmpleadoLogin(usuario, password);
 
-            if (!string.IsNullOrEmpty(emp.Nombre))
+            if (!string.IsNullOrEmpty(empleado.Nombre))
             {
-                if(emp.Cargo == "ODONTOLOGO")
+                if(empleado.Cargo == "ODONTOLOGO")
                 {
-                    form_citas_odontologo form_Odontologo = new form_citas_odontologo(emp);
+                    
+                    form_seleccionDoc form_Odontologo = new form_seleccionDoc();
                     form_Odontologo.ShowDialog();
 
                 }
 
-                else if (emp.Cargo == "RECEPCIONISTA")
+                else if (empleado.Cargo == "RECEPCIONISTA")
                 {
                     form_recepcion form_Recepcion = new form_recepcion();
                     form_Recepcion.ShowDialog();
@@ -67,7 +59,7 @@ namespace CapaPresentacion
                 {
                     MessageBox.Show("Cargo desconocido, no se puede abrir el formulario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                this.Hide();
+                
             }
             else
             {

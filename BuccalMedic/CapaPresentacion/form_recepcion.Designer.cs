@@ -62,18 +62,19 @@
             this.panel_Recepcion.Controls.Add(this.btn_cancelar);
             this.panel_Recepcion.Controls.Add(this.btn_registrarCita);
             this.panel_Recepcion.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_Recepcion.Location = new System.Drawing.Point(114, 34);
+            this.panel_Recepcion.Location = new System.Drawing.Point(113, 42);
             this.panel_Recepcion.Margin = new System.Windows.Forms.Padding(2);
             this.panel_Recepcion.Name = "panel_Recepcion";
-            this.panel_Recepcion.Size = new System.Drawing.Size(546, 456);
+            this.panel_Recepcion.Size = new System.Drawing.Size(546, 436);
             this.panel_Recepcion.TabIndex = 0;
             // 
             // dtp_registroCitas
             // 
-            this.dtp_registroCitas.Location = new System.Drawing.Point(42, 344);
+            this.dtp_registroCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dtp_registroCitas.Location = new System.Drawing.Point(42, 322);
             this.dtp_registroCitas.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtp_registroCitas.Name = "dtp_registroCitas";
-            this.dtp_registroCitas.Size = new System.Drawing.Size(141, 24);
+            this.dtp_registroCitas.Size = new System.Drawing.Size(141, 20);
             this.dtp_registroCitas.TabIndex = 36;
             this.dtp_registroCitas.ValueChanged += new System.EventHandler(this.dtp_registroCitas_ValueChanged);
             // 
@@ -103,10 +104,10 @@
             this.cmb_tratamiento.BackColor = System.Drawing.Color.Lavender;
             this.cmb_tratamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cmb_tratamiento.FormattingEnabled = true;
-            this.cmb_tratamiento.Location = new System.Drawing.Point(216, 343);
+            this.cmb_tratamiento.Location = new System.Drawing.Point(216, 251);
             this.cmb_tratamiento.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_tratamiento.Name = "cmb_tratamiento";
-            this.cmb_tratamiento.Size = new System.Drawing.Size(125, 21);
+            this.cmb_tratamiento.Size = new System.Drawing.Size(141, 21);
             this.cmb_tratamiento.TabIndex = 34;
             this.cmb_tratamiento.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmb_tratamiento_MouseClick_1);
             // 
@@ -116,7 +117,7 @@
             this.cbx_tratamiento.BackColor = System.Drawing.Color.AliceBlue;
             this.cbx_tratamiento.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbx_tratamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbx_tratamiento.Location = new System.Drawing.Point(216, 321);
+            this.cbx_tratamiento.Location = new System.Drawing.Point(216, 229);
             this.cbx_tratamiento.Margin = new System.Windows.Forms.Padding(2);
             this.cbx_tratamiento.Name = "cbx_tratamiento";
             this.cbx_tratamiento.Size = new System.Drawing.Size(88, 18);
@@ -129,10 +130,10 @@
             this.cmb_horario.BackColor = System.Drawing.Color.Lavender;
             this.cmb_horario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cmb_horario.FormattingEnabled = true;
-            this.cmb_horario.Location = new System.Drawing.Point(216, 263);
+            this.cmb_horario.Location = new System.Drawing.Point(216, 321);
             this.cmb_horario.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_horario.Name = "cmb_horario";
-            this.cmb_horario.Size = new System.Drawing.Size(125, 21);
+            this.cmb_horario.Size = new System.Drawing.Size(141, 21);
             this.cmb_horario.TabIndex = 32;
             // 
             // cmb_odontologo
@@ -140,7 +141,7 @@
             this.cmb_odontologo.BackColor = System.Drawing.Color.Lavender;
             this.cmb_odontologo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cmb_odontologo.FormattingEnabled = true;
-            this.cmb_odontologo.Location = new System.Drawing.Point(42, 263);
+            this.cmb_odontologo.Location = new System.Drawing.Point(42, 251);
             this.cmb_odontologo.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_odontologo.Name = "cmb_odontologo";
             this.cmb_odontologo.Size = new System.Drawing.Size(141, 21);
@@ -152,7 +153,7 @@
             // 
             this.txt_DNI.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txt_DNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt_DNI.Location = new System.Drawing.Point(42, 194);
+            this.txt_DNI.Location = new System.Drawing.Point(42, 186);
             this.txt_DNI.Margin = new System.Windows.Forms.Padding(2);
             this.txt_DNI.Name = "txt_DNI";
             this.txt_DNI.Size = new System.Drawing.Size(141, 20);
@@ -164,7 +165,7 @@
             // 
             this.lbl_nombreR.AutoSize = true;
             this.lbl_nombreR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lbl_nombreR.Location = new System.Drawing.Point(187, 197);
+            this.lbl_nombreR.Location = new System.Drawing.Point(187, 189);
             this.lbl_nombreR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_nombreR.Name = "lbl_nombreR";
             this.lbl_nombreR.Size = new System.Drawing.Size(35, 13);
@@ -175,7 +176,7 @@
             // 
             this.btn_mostrar_citas.BackColor = System.Drawing.Color.Gold;
             this.btn_mostrar_citas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btn_mostrar_citas.Location = new System.Drawing.Point(390, 359);
+            this.btn_mostrar_citas.Location = new System.Drawing.Point(390, 332);
             this.btn_mostrar_citas.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mostrar_citas.Name = "btn_mostrar_citas";
             this.btn_mostrar_citas.Size = new System.Drawing.Size(112, 48);
@@ -188,7 +189,7 @@
             // 
             this.btn_nuevo_cliente.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btn_nuevo_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btn_nuevo_cliente.Location = new System.Drawing.Point(390, 293);
+            this.btn_nuevo_cliente.Location = new System.Drawing.Point(390, 261);
             this.btn_nuevo_cliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_nuevo_cliente.Name = "btn_nuevo_cliente";
             this.btn_nuevo_cliente.Size = new System.Drawing.Size(112, 49);
@@ -202,7 +203,7 @@
             this.btn_cancelar.BackColor = System.Drawing.Color.Crimson;
             this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btn_cancelar.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelar.Location = new System.Drawing.Point(390, 232);
+            this.btn_cancelar.Location = new System.Drawing.Point(390, 207);
             this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(112, 40);
@@ -214,7 +215,7 @@
             // 
             this.btn_registrarCita.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btn_registrarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btn_registrarCita.Location = new System.Drawing.Point(390, 175);
+            this.btn_registrarCita.Location = new System.Drawing.Point(390, 141);
             this.btn_registrarCita.Margin = new System.Windows.Forms.Padding(2);
             this.btn_registrarCita.Name = "btn_registrarCita";
             this.btn_registrarCita.Size = new System.Drawing.Size(112, 40);

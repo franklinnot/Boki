@@ -30,5 +30,9 @@ namespace CapaLogica
 
         }
 
+        public string IdConsulta(string idCita)
+        {
+            return DatCitaConsulta.Instancia.IdConsulta(idCita);
+        }
     }
 }

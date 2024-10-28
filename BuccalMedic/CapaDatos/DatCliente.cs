@@ -198,7 +198,6 @@ namespace CapaDatos
 
                 // Añadir los parámetros necesarios para el procedimiento almacenado
                 comando.Parameters.AddWithValue("@Nombre", cliente.Nombre);
-                comando.Parameters.AddWithValue("@Fecha_nacimiento", cliente.Fecha_nacimiento.HasValue ? (object)cliente.Fecha_nacimiento.Value : DBNull.Value);
                 comando.Parameters.AddWithValue("@DNI", cliente.DNI);
                 comando.Parameters.AddWithValue("@Estado", cliente.Estado);
 

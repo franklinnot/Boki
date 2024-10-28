@@ -34,7 +34,7 @@ namespace CapaDatos
             try
             {
                 SqlConnection conexion = Conexion.Instancia.Conectar();
-                comando = new SqlCommand("sp_InsertarConsulta", conexion);
+                comando = new SqlCommand("sp_InsertarCitaTratamiento", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
 
                 // Añadir los parámetros necesarios para el procedimiento almacenado
