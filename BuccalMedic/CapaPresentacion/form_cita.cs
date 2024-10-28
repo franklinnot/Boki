@@ -18,6 +18,7 @@ namespace CapaPresentacion
     {
         public static Dictionary<string,string> detalleCita;
         public static string tipoCita, estado;
+        private string selectedCitaId; 
      
         public form_cita()
         {
@@ -94,8 +95,6 @@ namespace CapaPresentacion
             CargarCitas(dni,odontologo,paciente,fecha);
         }
 
-
-        private string selectedCitaId; 
         private void dgv_cita_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -119,11 +118,16 @@ namespace CapaPresentacion
                     return; 
                 }
 
-                LogCita.Instancia.Anular(selectedCitaId);
-                dgv_cita.Rows.Clear(); 
-
-                CargarCitas();
-                MessageBox.Show("Cita anulada exitosamente.");
+                bool verificar = LogCita.Instancia.AnularCita(selectedCitaId);
+                if (verificar) 
+                {
+                    MessageBox.Show("Cita anulada exitosamente."); 
+                    CargarCitas();
+                }
+                else
+                {
+                    MessageBox.Show("Error al anular la cita.");
+                }                
             }
             else
             {
@@ -143,11 +147,11 @@ namespace CapaPresentacion
 
                 if ( tipoCita == "TRATAMIENTO")
                 {
-                    detalleCita = LogCita.Instancia.CitaTratamiento(idCita, estado);
+                    detalleCita = LogCitaTratamiento.Instancia.DetalleCitaTratamiento(idCita, estado);
                 }
                 else if (tipoCita == "CONSULTA")
                 {
-                    detalleCita = LogCita.Instancia.CitaConsulta(idCita, estado);
+                    detalleCita = LogCitaTratamiento.Instancia.DetalleCitaTratamiento(idCita, estado);
                 }
                 else
                 {

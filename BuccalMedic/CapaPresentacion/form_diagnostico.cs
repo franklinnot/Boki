@@ -73,11 +73,11 @@ namespace CapaPresentacion
             bool verificar = LogDiagnostico.Instancia.InsertarDiagnostico(diagnostico);
             if (verificar)
             {
-                MessageBox.Show("Todo bien");
+                MessageBox.Show("Diagnóstico registrado exitosamente.");
             }
             else
             {
-                MessageBox.Show("Todo mal, ya fue");
+                MessageBox.Show("Hubo un error al registrar el diagnóstico");
             }
             
             //Obtener lista con tratamientos marcados
@@ -96,16 +96,15 @@ namespace CapaPresentacion
                 Tratamiento_diagnostico tratamientodiag = new Tratamiento_diagnostico();
                 tratamientodiag.Id_Tratamiento = item.Id_Tratamiento;
                 tratamientodiag.Id_diagnostico = diagnostico.Id_diagnostico;
-                MessageBox.Show(item.Id_Tratamiento.ToString());
+     
                 bool verificax = LogTratamientoDiagnostico.Instancia.InsertarTratamientoDiagnostico(tratamientodiag);
                 if (verificax)
                 {
-                    Debug.WriteLine(item.Nombre);
-                    MessageBox.Show($"Se inserto el tratamiento: {item.Nombre}, con el diagnostico {diagnostico.Id_diagnostico}");
+                    Debug.WriteLine($"Se inserto el tratamiento: {item.Nombre}, con el diagnostico {diagnostico.Id_diagnostico}");
                 }
                 else
                 {
-                    MessageBox.Show("Repostea si ya fue");
+                    Debug.WriteLine($"Hubo un error al registrar los tratamiendos recomendados en el diagnóstico.");
                 }
             }
             LimpiarVariables();

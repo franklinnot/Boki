@@ -48,7 +48,7 @@ namespace CapaPresentacion
                     lbl_recomendacionD.Text = $"Recomendaciones:\n{detalleCita["Recomendaciones"]}";
                     // tratamientosssss del diagnostico 
                     List<string> tratamientos = new List<string>();
-                    tratamientos = LogCita.Instancia.TratamientosDiagnostico(detalleCita["Id_Cita"]);
+                    tratamientos = LogDiagnostico.Instancia.Tratamientos_Diagnostico(detalleCita["Id_Cita"]);
 
                     foreach( string item in tratamientos)
                     {

@@ -106,7 +106,6 @@ namespace CapaPresentacion
 
             if (estado == "PENDIENTE")
             {
-                LogCita.Instancia.Modificar(selectedCitaId);
                 if (!string.IsNullOrEmpty(tratamiento))
                 {
                     MessageBox.Show("Formulario de Tratamiento", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -115,6 +114,7 @@ namespace CapaPresentacion
                 {
                     MessageBox.Show("Formulario de Diagnóstico", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                
 
                 dgv_cita.Rows.Clear();
                 CargarCitas(empleado.Id_empleado, empleado.Cargo);

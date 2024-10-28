@@ -22,5 +22,11 @@ namespace CapaLogica
         {
             return DatDiagnostico.Instancia.InsertarDiagnosticos(diagn);
         }
+
+        public List<string> Tratamientos_Diagnostico(string idCita)
+        {
+            return DatDiagnostico.Instancia.Tratamientos_Diagnostico(idCita);
+        }
+
     }
 }

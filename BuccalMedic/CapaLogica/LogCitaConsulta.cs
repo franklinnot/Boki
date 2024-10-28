@@ -24,5 +24,11 @@ namespace CapaLogica
 
         }
 
+        public Dictionary<string, string> DetalleCitaConsulta(string idCita, string estado)
+        {
+            return DatCitaConsulta.Instancia.DetalleCitaConsulta(idCita, estado);
+
+        }
+
     }
 }

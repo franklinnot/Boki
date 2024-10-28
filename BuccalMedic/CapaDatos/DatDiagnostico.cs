@@ -31,14 +31,14 @@ namespace CapaDatos
             try
             {
                 SqlConnection conexion = Conexion.Instancia.Conectar();
-                comando = new SqlCommand("SP_RegistarDiagnostico", conexion);
+                comando = new SqlCommand("sp_RegistrarDiagnostico", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
 
                 // Añadir los parámetros necesarios para el procedimiento almacenado
-                comando.Parameters.AddWithValue("@id_diagnostico", diagnostico.Id_diagnostico);
-                comando.Parameters.AddWithValue("@id_citaconsulta", diagnostico.Id_citaconsulta);
-                comando.Parameters.AddWithValue("@recomendacion", diagnostico.Recomendaciones);
-                comando.Parameters.AddWithValue("@resultado", diagnostico.Resultado);
+                comando.Parameters.AddWithValue("@Id_diagnostico", diagnostico.Id_diagnostico);
+                comando.Parameters.AddWithValue("@Id_citaconsulta", diagnostico.Id_citaconsulta);
+                comando.Parameters.AddWithValue("@Recomendaciones", diagnostico.Recomendaciones);
+                comando.Parameters.AddWithValue("@Resultado", diagnostico.Resultado);
 
                 conexion.Open();
                 int filasAfectadas = comando.ExecuteNonQuery();
@@ -59,5 +59,42 @@ namespace CapaDatos
             }
             return resultado;
         }
+
+
+        public List<string> Tratamientos_Diagnostico(string idCita)
+        {
+            List<string> tratamientos = new List<string>();
+            DataTable dataTable = new DataTable();
+            SqlConnection conexion = Conexion.Instancia.Conectar();
+            SqlCommand cmd = new SqlCommand("spTratamientosDiagnostico", conexion);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Id_Cita", idCita);
+
+
+            conexion.Open();
+
+            SqlDataReader query = cmd.ExecuteReader();
+            dataTable.Load(query);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                Debug.WriteLine("Si tiene registros");
+                foreach (DataRow fila in dataTable.Rows)
+                {
+                    tratamientos.Add(fila["Tratamiento"].ToString());
+
+                }
+            }
+            else
+            {
+                Debug.WriteLine("El DataTable está vacío.");
+            }
+
+            return tratamientos;
+        }
+
+
     }
 }

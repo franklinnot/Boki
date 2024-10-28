@@ -61,5 +61,52 @@ namespace CapaDatos
             }
             return resultado;
         }
+
+        public Dictionary<string, string> DetalleCitaTratamiento(string idCita, string estado)
+        {
+            Dictionary<string, string> detalleCita = new Dictionary<string, string>();
+            DataTable dataTable = new DataTable();
+            SqlConnection conexion = Conexion.Instancia.Conectar();
+            SqlCommand cmd = new SqlCommand("spDatosTratamiento", conexion);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Id_Cita", idCita);
+            cmd.Parameters.AddWithValue("@Estado", estado);
+
+            conexion.Open();
+
+            SqlDataReader query = cmd.ExecuteReader();
+            dataTable.Load(query);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                Debug.WriteLine("Si tiene registros");
+                foreach (DataRow fila in dataTable.Rows)
+                {
+                    detalleCita.Add("Id_Cita", fila["Id_Cita"].ToString());
+                    detalleCita.Add("Fecha_Registro", fila["Fecha_Registro"].ToString());
+                    detalleCita.Add("Odontologo", fila["Odontologo"].ToString());
+                    detalleCita.Add("DNI", fila["DNI"].ToString());
+                    detalleCita.Add("Paciente", fila["Paciente"].ToString());
+                    detalleCita.Add("Estado", fila["Estado"].ToString());
+
+                    if (estado == "ATENDIDO")
+                    {
+                        detalleCita.Add("Tratamiento", fila["Tratamiento"].ToString());
+                        detalleCita.Add("Procedimiento", fila["Procedimiento"].ToString());
+                        detalleCita.Add("Recomendaciones", fila["Recomendaciones"].ToString());
+                    }
+                }
+            }
+            else
+            {
+                Debug.WriteLine("El DataTable está vacío.");
+            }
+
+            return detalleCita;
+        }
+
+
     }
 }

@@ -25,37 +25,6 @@ namespace CapaDatos
         public static DatCita Instancia { get { return DatCita._instancia; } }
         #endregion
 
-        // LISTAR CITAS
-        private List<Dictionary<string, string>> ToList(String peziduri)
-        {
-            List<Dictionary<string, string>> citas = new List<Dictionary<string, string>>();
-            DataTable data = Conexion.Instancia.PeziDuri(peziduri);
-
-            if (data.Rows.Count > 0)
-            {
-                foreach (DataRow fila in data.Rows)
-                {
-                    Dictionary<string, string> cita = new Dictionary<string, string>
-                    {
-                        { "Id_Cita", fila["Id_Cita"].ToString() },
-                        { "Fecha_Registro", fila["Fecha_Registro"].ToString() },
-                        { "NombreOdontologo", fila["Odontologo"].ToString() },
-                        { "DNI", fila["DNI"].ToString() },
-                        { "NombreCliente", fila["Paciente"].ToString() },
-                        { "Tratamiento", fila["Tratamiento"].ToString() },
-                        { "Estado", fila["Estado"].ToString() }
-                    };
-                    citas.Add(cita);
-                }
-            }
-            else
-            {
-                Debug.WriteLine("El DataTable está vacío.");
-            }
-
-            return citas;
-        }
-
         private List<Dictionary<string, string>> ToList(String peziduri, List<SqlParameter> parameters)
         {
             List<Dictionary<string, string>> citas = new List<Dictionary<string, string>>();
@@ -93,7 +62,7 @@ namespace CapaDatos
             }
             else
             {
-                Debug.WriteLine("El DataTable está vacío.");
+                Debug.WriteLine($"No se encontró ningún registro al listar y filtrar Citas.\nStore procedure: {peziduri}");
             }
 
             return citas;
@@ -102,35 +71,32 @@ namespace CapaDatos
         public List<Dictionary<string, string>> ListarCita(string dni = null, string odontologo = null, string paciente = null, DateTime? fecha = null)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
-
+            Debug.WriteLine("Filtros agregados: ");
             if (!string.IsNullOrEmpty(dni))
+            {
                 parameters.Add(new SqlParameter("@DNI", dni));
+                Console.Write(" -DNI- ");
+            }
 
             if (!string.IsNullOrEmpty(odontologo))
+            {
                 parameters.Add(new SqlParameter("@Odontologo", odontologo));
+                Console.Write(" -Odontologo- ");
+            }
 
-            if (!string.IsNullOrEmpty(paciente))
+            if (!string.IsNullOrEmpty(paciente)) 
+            {
                 parameters.Add(new SqlParameter("@Paciente", paciente));
+                Console.Write(" -Paciente- ");
+            }
 
-            if (fecha.HasValue)
+            if (fecha.HasValue) 
+            {
                 parameters.Add(new SqlParameter("@FechaRegistro", fecha.Value));
+                Console.Write(" -FechaRegistro- ");
+            }
 
             return ToList("spListaCitasFiltradas", parameters);
-        }
-
-        // ANULAR CITAS
-        public void AnularCita(string idCita)
-        {
-            using (SqlConnection conn = Conexion.Instancia.Conectar())
-            {
-                using (SqlCommand cmd = new SqlCommand("spAnularCita", conn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id_Cita", idCita);
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-            }
         }
 
         /* CITAS ODONTOLOGO */
@@ -198,19 +164,21 @@ namespace CapaDatos
 
         // Modificar estado 
 
-        public void ModificarEstado(string idCita)
+        public bool AnularCita(string idCita)
         {
+            bool result = false;
             using (SqlConnection conexion = Conexion.Instancia.Conectar())
             {
-                using (SqlCommand cmd = new SqlCommand("spAtenderCita", conexion))
+                using (SqlCommand cmd = new SqlCommand("spAnularCita", conexion))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@Id_Cita", idCita));
 
                     conexion.Open();
-                    cmd.ExecuteNonQuery();
+                    result = cmd.ExecuteNonQuery() > 0;
                 }
             }
+            return result;
         }
 
 
@@ -250,129 +218,6 @@ namespace CapaDatos
             return tipoCita;
         }
 
-        public Dictionary<string, string> CitaConsulta(string idCita, string estado)
-        {
-            Dictionary<string, string> detalleCita = new Dictionary<string, string>();
-            DataTable dataTable = new DataTable();
-            SqlConnection conexion = Conexion.Instancia.Conectar();
-            SqlCommand cmd = new SqlCommand("spDatosCita", conexion);
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@Id_Cita", idCita);
-            cmd.Parameters.AddWithValue("@Estado", estado);
-
-            conexion.Open();
-
-            SqlDataReader query = cmd.ExecuteReader();
-            dataTable.Load(query);
-
-            if (dataTable.Rows.Count > 0)
-            {
-                Debug.WriteLine("Si tiene registros");
-                foreach (DataRow fila in dataTable.Rows)
-                {
-                    detalleCita.Add("Id_Cita", fila["Id_Cita"].ToString());
-                    detalleCita.Add("Fecha_Registro", fila["Fecha_Registro"].ToString());
-                    detalleCita.Add("Odontologo", fila["Odontologo"].ToString());
-                    detalleCita.Add("DNI", fila["DNI"].ToString());
-                    detalleCita.Add("Paciente", fila["Paciente"].ToString());
-                    detalleCita.Add("Estado", fila["Estado"].ToString());
-
-                    if (estado == "ATENDIDO")
-                    {
-                        detalleCita.Add("Recomendaciones", fila["Recomendaciones"].ToString());
-                        detalleCita.Add("Resultado", fila["Resultado"].ToString());
-                    }
-                }
-            }
-            else
-            {
-                Debug.WriteLine("El DataTable está vacío.");
-            }
-
-            return detalleCita;
-        }
-
-        public Dictionary<string, string> CitaTratamiento(string idCita, string estado)
-        {
-            Dictionary<string, string> detalleCita = new Dictionary<string, string>();
-            DataTable dataTable = new DataTable();
-            SqlConnection conexion = Conexion.Instancia.Conectar();
-            SqlCommand cmd = new SqlCommand("spDatosTratamiento", conexion);
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@Id_Cita", idCita);
-            cmd.Parameters.AddWithValue("@Estado", estado);
-
-            conexion.Open();
-
-            SqlDataReader query = cmd.ExecuteReader();
-            dataTable.Load(query);
-
-            if (dataTable.Rows.Count > 0)
-            {
-                Debug.WriteLine("Si tiene registros");
-                foreach (DataRow fila in dataTable.Rows)
-                {
-                    detalleCita.Add("Id_Cita", fila["Id_Cita"].ToString());
-                    detalleCita.Add("Fecha_Registro", fila["Fecha_Registro"].ToString());
-                    detalleCita.Add("Odontologo", fila["Odontologo"].ToString());
-                    detalleCita.Add("DNI", fila["DNI"].ToString());
-                    detalleCita.Add("Paciente", fila["Paciente"].ToString());
-                    detalleCita.Add("Estado", fila["Estado"].ToString());
-
-                    if (estado == "ATENDIDO")
-                    {
-                        detalleCita.Add("Tratamiento", fila["Tratamiento"].ToString());
-                        detalleCita.Add("Procedimiento", fila["Procedimiento"].ToString());
-                        detalleCita.Add("Recomendaciones", fila["Recomendaciones"].ToString());
-                    }
-                }
-            }
-            else
-            {
-                Debug.WriteLine("El DataTable está vacío.");
-            }
-
-            return detalleCita;
-        }
-
-
-        public List<string> TratamientosDiagnosticos(string idCita)
-        {
-            List<string> tratamientos = new List<string>();
-            DataTable dataTable = new DataTable();
-            SqlConnection conexion = Conexion.Instancia.Conectar();
-            SqlCommand cmd = new SqlCommand("spTratamientosDiagnostico", conexion);
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@Id_Cita", idCita);
-          
-
-            conexion.Open();
-
-            SqlDataReader query = cmd.ExecuteReader();
-            dataTable.Load(query);
-
-            if (dataTable.Rows.Count > 0)
-            {
-                Debug.WriteLine("Si tiene registros");
-                foreach (DataRow fila in dataTable.Rows)
-                {
-                    tratamientos.Add(fila["Tratamiento"].ToString());
-                    
-                }
-            }
-            else
-            {
-                Debug.WriteLine("El DataTable está vacío.");
-            }
-
-            return tratamientos;
-        }
 
         public List<Cita> ObtenerCitasPorEmpleado(int id_empleado)
         {
@@ -430,6 +275,7 @@ namespace CapaDatos
 
             return citas;
         }
+
 
         public bool InsertarCita(Cita cita)
         {

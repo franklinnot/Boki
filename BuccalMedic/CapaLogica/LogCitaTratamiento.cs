@@ -24,6 +24,11 @@ namespace CapaLogica
         }
 
 
+        public Dictionary<string, string> DetalleCitaTratamiento(string idCita, string estado)
+        {
+            return DatCitaTratamiento.Instancia.DetalleCitaTratamiento(idCita, estado);
+
+        }
 
     }
 }
