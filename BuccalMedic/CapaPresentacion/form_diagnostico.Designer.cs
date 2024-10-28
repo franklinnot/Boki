@@ -63,7 +63,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(9, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(584, 332);
             this.panel1.TabIndex = 0;
@@ -72,7 +72,7 @@
             // 
             this.txtrecomendacionesd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
             this.txtrecomendacionesd.Location = new System.Drawing.Point(277, 104);
-            this.txtrecomendacionesd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtrecomendacionesd.Margin = new System.Windows.Forms.Padding(2);
             this.txtrecomendacionesd.Multiline = true;
             this.txtrecomendacionesd.Name = "txtrecomendacionesd";
             this.txtrecomendacionesd.Size = new System.Drawing.Size(173, 82);
@@ -93,7 +93,7 @@
             // 
             this.txt_resultadod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
             this.txt_resultadod.Location = new System.Drawing.Point(32, 104);
-            this.txt_resultadod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_resultadod.Margin = new System.Windows.Forms.Padding(2);
             this.txt_resultadod.Multiline = true;
             this.txt_resultadod.Name = "txt_resultadod";
             this.txt_resultadod.Size = new System.Drawing.Size(173, 81);
@@ -103,7 +103,7 @@
             // 
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
             this.txtNombre.Location = new System.Drawing.Point(393, 55);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(154, 20);
             this.txtNombre.TabIndex = 12;
@@ -112,7 +112,7 @@
             // 
             this.txtDni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
             this.txtDni.Location = new System.Drawing.Point(68, 56);
-            this.txtDni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(2);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(96, 20);
             this.txtDni.TabIndex = 11;
@@ -122,7 +122,7 @@
             this.chlbtratamientos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(243)))));
             this.chlbtratamientos.FormattingEnabled = true;
             this.chlbtratamientos.Location = new System.Drawing.Point(32, 218);
-            this.chlbtratamientos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chlbtratamientos.Margin = new System.Windows.Forms.Padding(2);
             this.chlbtratamientos.Name = "chlbtratamientos";
             this.chlbtratamientos.Size = new System.Drawing.Size(173, 94);
             this.chlbtratamientos.TabIndex = 10;
@@ -132,7 +132,7 @@
             this.btn_registrardiagnosticod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(241)))), ((int)(((byte)(244)))));
             this.btn_registrardiagnosticod.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrardiagnosticod.Location = new System.Drawing.Point(302, 236);
-            this.btn_registrardiagnosticod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_registrardiagnosticod.Margin = new System.Windows.Forms.Padding(2);
             this.btn_registrardiagnosticod.Name = "btn_registrardiagnosticod";
             this.btn_registrardiagnosticod.Size = new System.Drawing.Size(117, 58);
             this.btn_registrardiagnosticod.TabIndex = 9;
@@ -158,9 +158,9 @@
             this.label4.Location = new System.Drawing.Point(208, 11);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 27);
+            this.label4.Size = new System.Drawing.Size(155, 27);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Diagnostico";
+            this.label4.Text = "Cita Consulta";
             // 
             // label1
             // 
@@ -200,7 +200,7 @@
             this.pictureBox1.BackgroundImage = global::CapaPresentacion.Properties.Resources.BuccalMedic;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(446, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(136, 45);
             this.pictureBox1.TabIndex = 0;
@@ -212,7 +212,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 352);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "form_diagnostico";
             this.Text = "form_diagnostico";
             this.Load += new System.EventHandler(this.form_diagnostico_Load);

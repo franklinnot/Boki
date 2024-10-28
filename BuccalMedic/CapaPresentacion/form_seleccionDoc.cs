@@ -19,7 +19,8 @@ namespace CapaPresentacion
 
         private void btn_tratamientod_Click(object sender, EventArgs e)
         {
-
+            form_tratamientos form_Tratamientos = new form_tratamientos();
+            form_Tratamientos.ShowDialog();
         }
 
         private void btn_citasd_Click(object sender, EventArgs e)

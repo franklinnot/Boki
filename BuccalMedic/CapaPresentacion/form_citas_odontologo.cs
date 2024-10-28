@@ -113,7 +113,8 @@ namespace CapaPresentacion
                 if (!string.IsNullOrEmpty(tratamiento))
                 {
                     MessageBox.Show("Formulario de Tratamiento", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+                    form_atencion form_Atencion = new form_atencion(idCita);
+                    form_Atencion.ShowDialog();
                 }
                 else
                 {

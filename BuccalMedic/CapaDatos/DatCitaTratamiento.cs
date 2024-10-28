@@ -90,10 +90,10 @@ namespace CapaDatos
                     detalleCita.Add("DNI", fila["DNI"].ToString());
                     detalleCita.Add("Paciente", fila["Paciente"].ToString());
                     detalleCita.Add("Estado", fila["Estado"].ToString());
+                    detalleCita.Add("Tratamiento", fila["Tratamiento"].ToString());
 
                     if (estado == "ATENDIDO")
                     {
-                        detalleCita.Add("Tratamiento", fila["Tratamiento"].ToString());
                         detalleCita.Add("Procedimiento", fila["Procedimiento"].ToString());
                         detalleCita.Add("Recomendaciones", fila["Recomendaciones"].ToString());
                     }
@@ -118,9 +118,7 @@ namespace CapaDatos
                 comando = new SqlCommand("SP_RegistrarAtencion", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
 
-                comando.Parameters.AddWithValue("@Id_citatratamiento", tratamiento.Id_citatratamiento);
                 comando.Parameters.AddWithValue("@Id_Cita", tratamiento.Id_cita);
-                comando.Parameters.AddWithValue("@Id_Tratamiento", tratamiento.Id_Tratamiento);
                 comando.Parameters.AddWithValue("@Procedimiento", tratamiento.Procedimiento);
                 comando.Parameters.AddWithValue("@Recomendaciones", tratamiento.Recomendaciones);
 

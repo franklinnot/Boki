@@ -15,83 +15,36 @@ namespace CapaPresentacion
 {
     public partial class form_atencion : Form
     {
-        public form_atencion()
+        Dictionary<string, string> datosCita;
+        string idCita;
+        public form_atencion(string id_Cita)
         {
             InitializeComponent();
-            CargarTratamientos();
+            idCita = id_Cita;
+            datosCita = LogCitaTratamiento.Instancia.DetalleCitaTratamiento(id_Cita, "PENDIENTE");
         }
 
         private void form_atencion_Load(object sender, EventArgs e)
         {
+            atencion_txtDNI.Text = datosCita["DNI"].ToString();
+            atencion_txtNombres.Text = datosCita["Paciente"].ToString();
+            txtTratamiento.Text = datosCita["Tratamiento"].ToString();
 
         }
         private void LimpiarVariables()
         {
             atencion_txtRecomendaciones.Clear();
             atencion_txtProcedimientos.Clear();
-            atencion_cmbx_tratamiento.SelectedIndex = -1;
-
+            txtTratamiento.Clear();
         }
-        private void CargarTratamientos()
-        {
-            try
-            {
-                List<Tratamiento> tratamientos = LogTratamiento.Instancia.ListarTratamientos();
-                foreach (var tratamiento in tratamientos)
-                {
-                    atencion_cmbx_tratamiento.Items.Add(tratamiento.Nombre); 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al cargar los tratamientos: {ex.Message}");
-            }
-        }
-
-        static string GenerarIDCitaTratamiento(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            Random random = new Random();
-            char[] stringChars = new char[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                stringChars[i] = chars[random.Next(chars.Length)];
-            }
-            return new string(stringChars);
-        }
-
+       
         private void atencion_btnRegistrar_Click(object sender, EventArgs e)
         {
-            
-
             try
-            {   
-                
-                if (atencion_cmbx_tratamiento.SelectedItem == null)
-                {
-                    MessageBox.Show("selecciona un tratamiento");
-                    return;
-                }
-                
-                
-                // Verificar que haya una cita seleccionada
-                /*
-                if (citas_cmbx.SelectedItem == null)
-                {
-                    MessageBox.Show("Por favor, selecciona una cita.");
-                    return;
-                }
-
-                // Obtener el idcita de la cita seleccionada
-                var selectedCita = (dynamic)citas_cmbx.SelectedItem;
-                string idCita = selectedCita.Value;*/
-
+            {               
                 Cita_tratamiento atencion = new Cita_tratamiento
                 {
-                    Id_citatratamiento = GenerarIDCitaTratamiento(12),
-                    Id_cita ="CITA003", //cuando se obtenga el valor de idcita de otro formulario, esto cambia 
-                    Id_Tratamiento = atencion_cmbx_tratamiento.SelectedIndex + 1, 
+                    Id_cita = idCita,
                     Recomendaciones = atencion_txtRecomendaciones.Text,
                     Procedimiento = atencion_txtProcedimientos.Text
                 };
@@ -105,8 +58,6 @@ namespace CapaPresentacion
                 {
                     MessageBox.Show("No fue posible registrar");
                 }
-
-                
 
                 LimpiarVariables();
             }

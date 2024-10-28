@@ -21,8 +21,6 @@ namespace CapaPresentacion
         public form_diagnostico(string id_Cita)
         {
             InitializeComponent();
-            Form form_login = new Form();
-            form_login.Close();
             CargarTratamientos();
             datosCita = LogCitaConsulta.Instancia.DetalleCitaConsulta(id_Cita, "PENDIENTE");
             idCita = id_Cita;
