@@ -21,5 +21,12 @@ namespace CapaLogica
             return DatTratamiento.Instancia.ListarTratamientos();
         }
 
+        public static LogTratamiento Instancia { get { return LogTratamiento._instancia; } }
+        #endregion
+
+        public List<Tratamiento> ListarTratamientos()
+        {
+            return DatTratamiento.Instancia.ListarTratamientos();
+        }
     }
 }

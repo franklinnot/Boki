@@ -51,22 +51,23 @@ namespace CapaPresentacion
 
             if (!string.IsNullOrEmpty(emp.Nombre))
             {
-                // Hace falta implementar el formulario para el odontologo
-                if (emp.Cargo.ToLower() == "recepcionista")
+                if(empleado.Cargo == "ODONTOLOGO")
                 {
-                    form_recepcion form_Recepcion = new form_recepcion();
+                    form_citas_odontologo form_Odontologo = new form_citas_odontologo(empleado);
+                    form_Odontologo.ShowDialog();
+
+                }
+
+                else if (empleado.Cargo == "RECEPCIONISTA")
+                {
+                    form_recepcion form_Recepcion = new form_recepcion(empleado);
                     form_Recepcion.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Esta sección aun se encuentra en desarrollo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Cargo desconocido, no se puede abrir el formulario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                empleado = emp;
-
-                // conforme se vaya desarrollando, se ira implementando el codigo para
-                // ocultar y volver a mostrar
-                // this.Hide();
+                this.Hide();
             }
             else
             {
