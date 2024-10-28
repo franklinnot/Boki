@@ -34,5 +34,9 @@ namespace CapaLogica
         {
             return DatCitaTratamiento.Instancia.InsertarAtencion(atenc);
         }
+        public List<Dictionary<string, string>> ListarCitaTratamiento(string idcita = null, string paciente = null, DateTime? fecha = null)
+        {
+            return DatCitaTratamiento.Instancia.ListarCitaTratamiento(idcita, paciente, fecha);
+        }
     }
 }
