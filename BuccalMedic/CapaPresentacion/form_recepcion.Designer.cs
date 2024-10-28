@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_Recepcion = new System.Windows.Forms.Panel();
+            this.dtp_registroCitas = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_tratamiento = new System.Windows.Forms.ComboBox();
@@ -41,7 +42,6 @@
             this.btn_nuevo_cliente = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_registrarCita = new System.Windows.Forms.Button();
-            this.dtp_registroCitas = new System.Windows.Forms.DateTimePicker();
             this.panel_Recepcion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,15 @@
             this.panel_Recepcion.Name = "panel_Recepcion";
             this.panel_Recepcion.Size = new System.Drawing.Size(546, 456);
             this.panel_Recepcion.TabIndex = 0;
+            // 
+            // dtp_registroCitas
+            // 
+            this.dtp_registroCitas.Location = new System.Drawing.Point(42, 344);
+            this.dtp_registroCitas.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            this.dtp_registroCitas.Name = "dtp_registroCitas";
+            this.dtp_registroCitas.Size = new System.Drawing.Size(141, 24);
+            this.dtp_registroCitas.TabIndex = 36;
+            this.dtp_registroCitas.ValueChanged += new System.EventHandler(this.dtp_registroCitas_ValueChanged);
             // 
             // pictureBox1
             // 
@@ -173,6 +182,7 @@
             this.btn_mostrar_citas.TabIndex = 27;
             this.btn_mostrar_citas.Text = "Mostrar \r\nCitas";
             this.btn_mostrar_citas.UseVisualStyleBackColor = false;
+            this.btn_mostrar_citas.Click += new System.EventHandler(this.btn_mostrar_citas_Click);
             // 
             // btn_nuevo_cliente
             // 
@@ -212,15 +222,6 @@
             this.btn_registrarCita.Text = "Registrar";
             this.btn_registrarCita.UseVisualStyleBackColor = false;
             this.btn_registrarCita.Click += new System.EventHandler(this.btn_registrarCita_Click);
-            // 
-            // dtp_registroCitas
-            // 
-            this.dtp_registroCitas.Location = new System.Drawing.Point(42, 344);
-            this.dtp_registroCitas.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
-            this.dtp_registroCitas.Name = "dtp_registroCitas";
-            this.dtp_registroCitas.Size = new System.Drawing.Size(141, 24);
-            this.dtp_registroCitas.TabIndex = 36;
-            this.dtp_registroCitas.ValueChanged += new System.EventHandler(this.dtp_registroCitas_ValueChanged);
             // 
             // form_recepcion
             // 

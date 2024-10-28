@@ -33,7 +33,7 @@ namespace CapaPresentacion
             #endregion
             
             btn_registrarCita.Enabled = false;
-            btn_nuevo_cliente.Enabled = true;
+            btn_nuevo_cliente.Enabled = false;
             
             empleado = form_login.empleado;
         }
@@ -196,11 +196,11 @@ namespace CapaPresentacion
                 Id_cita = GenerarStringAleatorio(10),
                 id_empleado = id_empleado,
                 Fecha_inicio = Fecha_inicio,
-                Estado = "pendiente",
+                Estado = "PENDIENTE",
 
             };
 
-            bool verificar_registro =LogCita.Instancia.InsertarCita(cita);
+            bool verificar_registro = LogCita.Instancia.InsertarCita(cita);
 
             if (!verificar_registro)
             {
@@ -208,6 +208,25 @@ namespace CapaPresentacion
             }
             else
             {
+                if (cbx_tratamiento.Checked)
+                {
+                    Cita_tratamiento citaTratamiento = new Cita_tratamiento();
+                    citaTratamiento.Id_citatratamiento = GenerarStringAleatorio(12);
+                    citaTratamiento.Id_cita = cita.Id_cita;
+                    List<Tratamiento> tratamientos = LogTratamiento.Instancia.ListarTratamientos();
+                    Tratamiento tr = tratamientos.Find(x => x.Nombre == cmb_tratamiento.SelectedItem.ToString());
+                    int idTratamiento = tr.Id_Tratamiento; 
+                    citaTratamiento.Id_Tratamiento = idTratamiento;
+                    
+                    LogCitaTratamiento.Instancia.InsertarCitaTratamiento(citaTratamiento);
+                }
+                else
+                {
+                    Cita_consulta citaConsulta = new Cita_consulta();
+                    citaConsulta.Id_citaconsulta = GenerarStringAleatorio(12);
+                    citaConsulta.Id_cita = cita.Id_cita;
+                    LogCitaConsulta.Instancia.InsertarCitaConsulta(citaConsulta);
+                }
                 LimpiarCampos();
                 MessageBox.Show("La cita se ha registrado correctamente", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -282,6 +301,10 @@ namespace CapaPresentacion
             MetodosUI.SetPlaceholder(cmb_tratamiento, "Tratamiento");
         }
 
-
+        private void btn_mostrar_citas_Click(object sender, EventArgs e)
+        {
+            form_cita form_Cita = new form_cita();
+            form_Cita.ShowDialog();
+        }
     }
 }

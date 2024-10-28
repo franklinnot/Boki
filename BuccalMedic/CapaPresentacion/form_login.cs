@@ -53,7 +53,7 @@ namespace CapaPresentacion
             {
                 if(emp.Cargo == "ODONTOLOGO")
                 {
-                    form_citas_odontologo form_Odontologo = new form_citas_odontologo(empleado);
+                    form_citas_odontologo form_Odontologo = new form_citas_odontologo(emp);
                     form_Odontologo.ShowDialog();
 
                 }
