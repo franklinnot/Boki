@@ -1,6 +1,7 @@
 ﻿using CapaEntidad;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
@@ -58,6 +59,61 @@ namespace CapaDatos
         public List<Tratamiento> ListarTratamientos()
         {
             return ToList("sp_ListarTratamiento");
+        }
+
+        public Boolean RegistrarTratamientos(Tratamiento tratamiento)
+        {
+            SqlCommand cmd = null;
+            Boolean inserta = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spRegistrarTratamientos", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@descripcion", tratamiento.Descripcion);
+                cmd.Parameters.AddWithValue("@nombre", tratamiento.Nombre);
+
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    inserta = true;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return inserta;
+        }
+
+        public Boolean EditarTratamiento(Tratamiento tratamiento)
+        {
+            SqlCommand cmd = null;
+            Boolean edita = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spEditarTratamiento", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idTratamiento", tratamiento.Id_Tratamiento);
+                cmd.Parameters.AddWithValue("@descripcion", tratamiento.Descripcion);
+                cmd.Parameters.AddWithValue("@nombre", tratamiento.Nombre);
+
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    edita = true;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return edita;
         }
     }
 }

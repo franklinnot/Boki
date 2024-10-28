@@ -30,5 +30,9 @@ namespace CapaLogica
 
         }
 
+        public bool InsertarAtencion(Cita_tratamiento atenc)
+        {
+            return DatCitaTratamiento.Instancia.InsertarAtencion(atenc);
+        }
     }
 }

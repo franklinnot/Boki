@@ -107,6 +107,39 @@ namespace CapaDatos
             return detalleCita;
         }
 
+        public bool InsertarAtencion(Cita_tratamiento tratamiento)
+        {
+            SqlCommand comando = null;
+            bool resultado = false;
 
+            try
+            {
+                SqlConnection conexion = Conexion.Instancia.Conectar();
+                comando = new SqlCommand("SP_RegistrarAtencion", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Id_citatratamiento", tratamiento.Id_citatratamiento);
+                comando.Parameters.AddWithValue("@Id_Cita", tratamiento.Id_cita);
+                comando.Parameters.AddWithValue("@Id_Tratamiento", tratamiento.Id_Tratamiento);
+                comando.Parameters.AddWithValue("@Procedimiento", tratamiento.Procedimiento);
+                comando.Parameters.AddWithValue("@Recomendaciones", tratamiento.Recomendaciones);
+
+                conexion.Open();
+                int filasAfectadas = comando.ExecuteNonQuery();
+                resultado = filasAfectadas > 0;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            finally
+            {
+                if (comando != null)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            return resultado;
+        }
     }
 }

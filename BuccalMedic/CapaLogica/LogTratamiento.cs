@@ -20,6 +20,13 @@ namespace CapaLogica
         {
             return DatTratamiento.Instancia.ListarTratamientos();
         }
-
+        public void InsertaTratamiento(Tratamiento tratamiento)
+        {
+            DatTratamiento.Instancia.RegistrarTratamientos(tratamiento);
+        }
+        public void EditaTratamiento(Tratamiento tratamiento)
+        {
+            DatTratamiento.Instancia.EditarTratamiento(tratamiento);
+        }
     }
 }

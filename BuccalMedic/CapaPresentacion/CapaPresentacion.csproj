@@ -85,8 +85,13 @@
     <Compile Include="form_diagnostico.Designer.cs">
       <DependentUpon>form_diagnostico.cs</DependentUpon>
     </Compile>
-    
-	 <Compile Include="form_login.cs">
+    <Compile Include="form_atencion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_atencion.Designer.cs">
+      <DependentUpon>form_atencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_login.Designer.cs">
@@ -138,6 +143,21 @@
     <EmbeddedResource Include="form_seleccionDoc.resx">
       <DependentUpon>form_seleccionDoc.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="form_tratamientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_tratamientos.Designer.cs">
+      <DependentUpon>form_tratamientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form_atencion.resx">
+      <DependentUpon>form_atencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_tratamientos.resx">
+      <DependentUpon>form_tratamientos.cs</DependentUpon>
+    </EmbeddedResource>
+
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
