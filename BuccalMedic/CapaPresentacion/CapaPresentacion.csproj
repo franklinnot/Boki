@@ -149,7 +149,6 @@
     <Compile Include="form_tratamientos.Designer.cs">
       <DependentUpon>form_tratamientos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="form_atencion.resx">
       <DependentUpon>form_atencion.cs</DependentUpon>
