@@ -316,5 +316,60 @@ namespace CapaDatos
             }
             return resultado;
         }
+
+        public List<Dictionary<string, string>> HistorialCitas(int idEmpleado, string tipoCita ,string paciente = null, DateTime? fecha = null, string idcita = null)
+        {
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            parameters.Add(new SqlParameter("@Id_Empleado", idEmpleado));
+            parameters.Add(new SqlParameter("@TipoCita", tipoCita));
+
+            if (!string.IsNullOrEmpty(paciente))
+                parameters.Add(new SqlParameter("@Nombre", paciente));
+
+            if (fecha.HasValue)
+                parameters.Add(new SqlParameter("@Fecha_Registro", fecha.Value));
+
+            if (!string.IsNullOrEmpty(idcita))
+                parameters.Add(new SqlParameter("@Id_Cita", idcita));
+
+            List<Dictionary<string, string>> citas = new List<Dictionary<string, string>>();
+            DataTable dataTable = new DataTable();
+            SqlConnection conexion = Conexion.Instancia.Conectar();
+            SqlCommand cmd = new SqlCommand("spHistorialDeCitas", conexion);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            foreach (SqlParameter parametro in parameters)
+            {
+                cmd.Parameters.Add(parametro);
+            }
+            conexion.Open();
+
+            SqlDataReader query = cmd.ExecuteReader();
+            dataTable.Load(query);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow fila in dataTable.Rows)
+                {
+                    Dictionary<string, string> cita = new Dictionary<string, string>
+                    {
+                        { "Id_Cita", fila["Id_Cita"].ToString() },
+                        { "Fecha_Registro", fila["Fecha_Registro"].ToString() },
+                        { "Paciente", fila["Paciente"].ToString() },
+                  
+                    };
+                    citas.Add(cita);
+                }
+            }
+            else
+            {
+                Debug.WriteLine($"No se encontró ningún registro al listar y filtrar Citas.\nStore procedure:spHistorialDeCitas");
+            }
+
+            return citas;
+        }
     }
 }

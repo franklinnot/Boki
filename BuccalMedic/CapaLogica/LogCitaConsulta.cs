@@ -35,9 +35,6 @@ namespace CapaLogica
             return DatCitaConsulta.Instancia.IdConsulta(idCita);
         }
 
-        public List<Dictionary<string, string>> ListarCitaConsulta(string paciente = null, DateTime? fecha = null, string idcita = null)
-        {
-            return DatCitaConsulta.Instancia.ListarCitaConsulta(paciente, fecha, idcita);
-        }
+       
     }
 }

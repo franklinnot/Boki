@@ -32,8 +32,8 @@ namespace CapaPresentacion
 
         private void btn_evaluacionesd_Click(object sender, EventArgs e)
         {
-            //form_diagnostico form_Diagnostico = new form_diagnostico();
-            //form_Diagnostico.ShowDialog();
+            form_evaluaciones form_Evaluaciones = new form_evaluaciones();
+            form_Evaluaciones.ShowDialog();
         }
 
         private void btn_intervencionesd_Click(object sender, EventArgs e)

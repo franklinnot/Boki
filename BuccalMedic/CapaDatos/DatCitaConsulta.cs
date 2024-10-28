@@ -179,21 +179,6 @@ namespace CapaDatos
             return citaConsultas;
         }
 
-        public List<Dictionary<string, string>> ListarCitaConsulta(string paciente = null, DateTime? fecha = null, string idcita = null)
-        {
-            List<SqlParameter> parameters = new List<SqlParameter>();
-
-            if (!string.IsNullOrEmpty(paciente))
-                parameters.Add(new SqlParameter("@Nombre", paciente));
-
-            if (fecha.HasValue)
-                parameters.Add(new SqlParameter("@Fecha_Registro", fecha.Value));
-
-            if (!string.IsNullOrEmpty(idcita))
-                parameters.Add(new SqlParameter("@Id_citaConsulta", idcita));
-
-            return ToList("[spListaCitasConsulta]", parameters);
-        }
 
     }
 }

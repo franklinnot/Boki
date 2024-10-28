@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_cita = new System.Windows.Forms.Panel();
+            this.btn_refrescar = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgv_cita = new System.Windows.Forms.DataGridView();
@@ -46,7 +47,6 @@
             this.cmb_dniRC = new System.Windows.Forms.ComboBox();
             this.cmb_pacienteRC = new System.Windows.Forms.ComboBox();
             this.dtp_fechaRC = new System.Windows.Forms.DateTimePicker();
-            this.btn_refrescar = new System.Windows.Forms.Button();
             this.panel_cita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cita)).BeginInit();
@@ -72,6 +72,19 @@
             this.panel_cita.Size = new System.Drawing.Size(764, 493);
             this.panel_cita.TabIndex = 1;
             // 
+            // btn_refrescar
+            // 
+            this.btn_refrescar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
+            this.btn_refrescar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_refrescar.Location = new System.Drawing.Point(682, 186);
+            this.btn_refrescar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_refrescar.Name = "btn_refrescar";
+            this.btn_refrescar.Size = new System.Drawing.Size(41, 30);
+            this.btn_refrescar.TabIndex = 18;
+            this.btn_refrescar.Text = "x";
+            this.btn_refrescar.UseVisualStyleBackColor = false;
+            this.btn_refrescar.Click += new System.EventHandler(this.btn_refrescar_Click);
+            // 
             // btn_regresar
             // 
             this.btn_regresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
@@ -86,9 +99,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.BuccalMedic;
-            this.pictureBox1.Location = new System.Drawing.Point(525, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(529, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(221, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(221, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
@@ -239,19 +252,6 @@
             this.dtp_fechaRC.Size = new System.Drawing.Size(291, 23);
             this.dtp_fechaRC.TabIndex = 2;
             this.dtp_fechaRC.ValueChanged += new System.EventHandler(this.dtp_fechaRC_ValueChanged);
-            // 
-            // btn_refrescar
-            // 
-            this.btn_refrescar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
-            this.btn_refrescar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_refrescar.Location = new System.Drawing.Point(682, 186);
-            this.btn_refrescar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_refrescar.Name = "btn_refrescar";
-            this.btn_refrescar.Size = new System.Drawing.Size(41, 30);
-            this.btn_refrescar.TabIndex = 18;
-            this.btn_refrescar.Text = "x";
-            this.btn_refrescar.UseVisualStyleBackColor = false;
-            this.btn_refrescar.Click += new System.EventHandler(this.btn_refrescar_Click);
             // 
             // form_citas_odontologo
             // 

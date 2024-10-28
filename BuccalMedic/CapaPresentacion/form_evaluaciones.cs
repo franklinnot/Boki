@@ -13,12 +13,11 @@ namespace CapaPresentacion
 {
     public partial class form_evaluaciones : Form
     {
+        int idEmpleado = form_login.empleado.Id_empleado;
+        string tipoCita = "CONSULTA";
         public form_evaluaciones()
         {
             InitializeComponent();
-            Form form_login = new Form();
-            form_login.Close();
-
             CargarCitas();
             CargarCombobox();
             //para que el datetimepicker no se inicialize con ninguna fecha
@@ -33,10 +32,10 @@ namespace CapaPresentacion
         private void CargarCitas(string paciente = null, DateTime? fecha = null, string idcita = null)
         {
             evaluaciones_dgv.Rows.Clear();
-            foreach (Dictionary<string, string> item in LogCitaConsulta.Instancia.ListarCitaConsulta(paciente, fecha, idcita))
+            foreach (Dictionary<string, string> item in LogCita.Instancia.HistorialCitas(idEmpleado,tipoCita, paciente, fecha, idcita))
             {
                 string pacienteC = item["Paciente"].ToString();
-                string idConsulta = item["Id_citaConsulta"].ToString();
+                string idConsulta = item["Id_Cita"].ToString();
                 string fechaC = DateTime.Parse(item["Fecha_Registro"].ToString()).ToShortDateString();
 
                 evaluaciones_dgv.Rows.Add(idConsulta, pacienteC, fechaC);
@@ -44,15 +43,15 @@ namespace CapaPresentacion
         }
         private void CargarCombobox()
         {
-            var citas = LogCitaConsulta.Instancia.ListarCitaConsulta();
+            var citas = LogCita.Instancia.HistorialCitas(idEmpleado,tipoCita);
 
 
             evaluacion_codigocita.Items.Clear();
             foreach (var item in citas)
             {
-                if (!evaluacion_codigocita.Items.Contains(item["Id_citaConsulta"]))
+                if (!evaluacion_codigocita.Items.Contains(item["Id_Cita"]))
                 {
-                    evaluacion_codigocita.Items.Add(item["Id_citaConsulta"]);
+                    evaluacion_codigocita.Items.Add(item["Id_Cita"]);
                 }
             }
 
@@ -69,7 +68,7 @@ namespace CapaPresentacion
         private void FiltrarCitas()
         {
             // obtenemos el dato seleccionado de los objetos, si no selecciono nada lo pondremos como null
-            string idCita = !string.IsNullOrEmpty(evaluacion_codigocita.Text) ? evaluacion_codigocita.Text : null;
+            string idCita = !string.IsNullOrEmpty(evaluacion_codigocita.Text) ? evaluacion_codigocita.Text: null;
             string paciente = !string.IsNullOrEmpty(evaluacion_cmbox_paciente.Text) ? evaluacion_cmbox_paciente.Text : null;
             DateTime? fecha = evaluacion_dtp_fecha.Checked ? evaluacion_dtp_fecha.Value : (DateTime?)null;
 

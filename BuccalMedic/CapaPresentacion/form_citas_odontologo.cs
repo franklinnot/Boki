@@ -35,12 +35,12 @@ namespace CapaPresentacion
             dgv_cita.Rows.Clear();
             foreach (Dictionary<string, string> item in LogCita.Instancia.ListarCitasOdontologo(idEmpleado, cargo, dni, paciente, fecha))
             {
+                string estado = item["Estado"].ToString();
                 string id = item["Id_Cita"].ToString();
                 string fechaC = DateTime.Parse(item["Fecha_Registro"].ToString()).ToShortDateString();
                 string dniC = item["DNI"].ToString();
                 string pacienteC = item["NombreCliente"].ToString();
                 string tratamiento = item["Tratamiento"].ToString();
-                string estado = item["Estado"].ToString();
 
                 dgv_cita.Rows.Add(id, fechaC, dniC, pacienteC, tratamiento, estado);
             }
