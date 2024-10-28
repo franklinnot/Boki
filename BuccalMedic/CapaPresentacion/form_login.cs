@@ -51,16 +51,16 @@ namespace CapaPresentacion
 
             if (!string.IsNullOrEmpty(emp.Nombre))
             {
-                if(empleado.Cargo == "ODONTOLOGO")
+                if(emp.Cargo == "ODONTOLOGO")
                 {
                     form_citas_odontologo form_Odontologo = new form_citas_odontologo(empleado);
                     form_Odontologo.ShowDialog();
 
                 }
 
-                else if (empleado.Cargo == "RECEPCIONISTA")
+                else if (emp.Cargo == "RECEPCIONISTA")
                 {
-                    form_recepcion form_Recepcion = new form_recepcion(empleado);
+                    form_recepcion form_Recepcion = new form_recepcion();
                     form_Recepcion.ShowDialog();
                 }
                 else
