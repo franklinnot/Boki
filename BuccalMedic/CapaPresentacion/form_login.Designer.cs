@@ -42,7 +42,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.loguito;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.BuccalMedic;
             this.pictureBox1.Location = new System.Drawing.Point(244, 85);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(275, 85);
