@@ -187,6 +187,11 @@ namespace CapaPresentacion
             FiltrarCitas();
         }
 
+        private void form_cita_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_refrescar_Click(object sender, EventArgs e)
         {
             cmb_dni.SelectedIndex = -1;

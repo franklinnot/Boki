@@ -371,6 +371,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "form_cita";
             this.Text = "form_cita";
+            this.Load += new System.EventHandler(this.form_cita_Load);
             this.panel_cita.ResumeLayout(false);
             this.panel_cita.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cita)).EndInit();
