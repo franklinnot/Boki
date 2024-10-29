@@ -22,11 +22,6 @@ namespace CapaPresentacion
             InitializeComponent();
             
         }
-
-        private void form_login_Load(object sender, EventArgs e)
-        {
-     
-        }
         private void btn_iniciar_sesion_Click(object sender, EventArgs e)
         {
             string usuario = txt_usuario.Text.Trim();
