@@ -48,6 +48,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel_atencion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -60,6 +61,7 @@
             // panel_atencion
             // 
             this.panel_atencion.BackColor = System.Drawing.Color.White;
+            this.panel_atencion.Controls.Add(this.label7);
             this.panel_atencion.Controls.Add(this.pictureBox2);
             this.panel_atencion.Controls.Add(this.label6);
             this.panel_atencion.Controls.Add(this.pictureBox4);
@@ -213,7 +215,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
             this.label6.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(79, 23);
+            this.label6.Location = new System.Drawing.Point(79, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(200, 41);
             this.label6.TabIndex = 42;
@@ -233,16 +235,16 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 18);
+            this.pictureBox4.Location = new System.Drawing.Point(0, 12);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(349, 49);
+            this.pictureBox4.Size = new System.Drawing.Size(349, 65);
             this.pictureBox4.TabIndex = 43;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(103)))), ((int)(((byte)(196)))));
-            this.pictureBox5.Location = new System.Drawing.Point(-25, 51);
+            this.pictureBox5.Location = new System.Drawing.Point(-25, 54);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(392, 31);
             this.pictureBox5.TabIndex = 45;
@@ -268,6 +270,17 @@
             this.pictureBox1.Size = new System.Drawing.Size(209, 50);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(114, 56);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 18);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "citas de tratamiento";
             // 
             // form_atencion
             // 
@@ -312,5 +325,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label7;
     }
 }
