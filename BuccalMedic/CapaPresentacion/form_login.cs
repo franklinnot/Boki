@@ -21,9 +21,7 @@ namespace CapaPresentacion
 
         public form_login()
         {
-            InitializeComponent();
-            //probar();
-            
+            InitializeComponent();            
         }
         private void btn_iniciar_sesion_Click(object sender, EventArgs e)
         {
@@ -37,8 +35,6 @@ namespace CapaPresentacion
             }
 
             empleado = LogEmpleado.Instancia.BuscarEmpleadoLogin(usuario, password);
-            MessageBox.Show(empleado.Usuario);
-
             if (!string.IsNullOrEmpty(empleado.Nombre))
             {
                 if(empleado.Cargo == "ODONTOLOGO")
@@ -66,34 +62,7 @@ namespace CapaPresentacion
             }
 
         }
-        private void probar()
-        {
-            string idCita = "C0001";
-           
-            Dictionary<string, string> datosCita = LogCita.Instancia.TipoDeCita(idCita);
-            string tipoCita = datosCita["tipoCita"];
-            string estado = datosCita["estado"];
-            MessageBox.Show(tipoCita + " " + estado);
-
-            if (tipoCita == "TRATAMIENTO")
-            {
-                //detalleCita = LogCitaTratamiento.Instancia.DetalleCitaTratamiento(idCita, estado);
-            }
-            else if (tipoCita == "CONSULTA")
-            {
-
-                Dictionary<string,string> detalleCita = LogCitaConsulta.Instancia.DetalleCitaConsulta(idCita, estado);
-                foreach(var clave in detalleCita.Keys)
-                {
-                    MessageBox.Show(clave + " " + detalleCita[clave]);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error, codigo cita");
-            }
-
-        }
+       
 
     }
 }

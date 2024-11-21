@@ -109,5 +109,12 @@ namespace CapaPresentacion
                 tratamiento_tbx_Descripcion.Text = filaSeleccionada.Cells["Descripcion"].Value.ToString();
             }
         }
+
+        private void tratamiento_btn_Inhabilitar_Click(object sender, EventArgs e)
+        {
+
+            // TODAVIA NO HACE NADA 
+
+        }
     }
 }
