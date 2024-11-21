@@ -36,7 +36,7 @@ namespace CapaDatos
 
                 // Añadir los parámetros necesarios para el procedimiento almacenado
                 comando.Parameters.AddWithValue("@Id_diagnostico", diagnostico.Id_diagnostico);
-                comando.Parameters.AddWithValue("@Id_citaconsulta", diagnostico.Id_citaconsulta);
+                comando.Parameters.AddWithValue("@CitaID", diagnostico.Id_citaconsulta);
                 comando.Parameters.AddWithValue("@Recomendaciones", diagnostico.Recomendaciones);
                 comando.Parameters.AddWithValue("@Resultado", diagnostico.Resultado);
 

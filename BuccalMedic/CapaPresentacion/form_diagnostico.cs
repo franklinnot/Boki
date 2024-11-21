@@ -69,11 +69,11 @@ namespace CapaPresentacion
 
         private void btn_registrardiagnosticod_Click_1(object sender, EventArgs e)
         {
-            string idConsulta = LogCitaConsulta.Instancia.IdConsulta(idCita);
+            MessageBox.Show(idCita);
             Diagnostico diagnostico = new Diagnostico
             {
                 Id_diagnostico = GenerarIDDiagnostico(12),
-                Id_citaconsulta = idConsulta,
+                Id_citaconsulta = idCita,
                 Resultado = txt_resultadod.Text,
                 Recomendaciones = txtrecomendacionesd.Text,
             };

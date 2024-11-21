@@ -142,9 +142,9 @@ namespace CapaDatos
                 {
                     Empleado emp = new Empleado
                     {
-                        Id_empleado = Convert.ToInt32(fila["Id_empleado"]),
+                        Id_empleado = Convert.ToInt32(fila["EmpleadoID"]),
                         Usuario = fila["Usuario"].ToString(),
-                        Password = fila["Password"].ToString(),
+                        Password = fila["Contraseña"].ToString(),
                         Cargo = fila["Cargo"].ToString(),
                         Nombre = fila["Nombre"].ToString()
                     };

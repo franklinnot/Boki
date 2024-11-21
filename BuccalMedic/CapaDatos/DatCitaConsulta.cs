@@ -69,8 +69,8 @@ namespace CapaDatos
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Id_Cita", "C0001");
-            cmd.Parameters.AddWithValue("@Estado", "PENDIENTE");
+            cmd.Parameters.AddWithValue("@Id_Cita", idCita);
+            cmd.Parameters.AddWithValue("@Estado", estado);
 
             conexion.Open();
 
@@ -127,7 +127,7 @@ namespace CapaDatos
                 Debug.WriteLine("Si tiene registros");
                 foreach (DataRow fila in dataTable.Rows)
                 {
-                    idConsulta = fila["Id_citaconsulta"].ToString();
+                    idConsulta = fila["DiagnosticoID"].ToString();
 
                 }
             }

@@ -47,6 +47,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_precio = new System.Windows.Forms.TextBox();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_tratamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tratamientos_dgv)).BeginInit();
@@ -129,7 +130,7 @@
             // tratamiento_tbx_Descripcion
             // 
             this.tratamiento_tbx_Descripcion.BackColor = System.Drawing.Color.AliceBlue;
-            this.tratamiento_tbx_Descripcion.Location = new System.Drawing.Point(42, 164);
+            this.tratamiento_tbx_Descripcion.Location = new System.Drawing.Point(251, 112);
             this.tratamiento_tbx_Descripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tratamiento_tbx_Descripcion.Name = "tratamiento_tbx_Descripcion";
             this.tratamiento_tbx_Descripcion.Size = new System.Drawing.Size(168, 20);
@@ -138,10 +139,10 @@
             // tratamiento_tbx_Nombre_Tratamiento
             // 
             this.tratamiento_tbx_Nombre_Tratamiento.BackColor = System.Drawing.Color.AliceBlue;
-            this.tratamiento_tbx_Nombre_Tratamiento.Location = new System.Drawing.Point(209, 114);
+            this.tratamiento_tbx_Nombre_Tratamiento.Location = new System.Drawing.Point(42, 112);
             this.tratamiento_tbx_Nombre_Tratamiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tratamiento_tbx_Nombre_Tratamiento.Name = "tratamiento_tbx_Nombre_Tratamiento";
-            this.tratamiento_tbx_Nombre_Tratamiento.Size = new System.Drawing.Size(155, 20);
+            this.tratamiento_tbx_Nombre_Tratamiento.Size = new System.Drawing.Size(195, 20);
             this.tratamiento_tbx_Nombre_Tratamiento.TabIndex = 12;
             // 
             // tratamiento_btn_Registrar
@@ -163,13 +164,14 @@
             this.tratamientos_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idTratamiento,
             this.Nombre,
-            this.Descripcion});
+            this.Descripcion,
+            this.Precio});
             this.tratamientos_dgv.Location = new System.Drawing.Point(42, 254);
             this.tratamientos_dgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tratamientos_dgv.Name = "tratamientos_dgv";
             this.tratamientos_dgv.RowHeadersWidth = 51;
             this.tratamientos_dgv.RowTemplate.Height = 24;
-            this.tratamientos_dgv.Size = new System.Drawing.Size(348, 150);
+            this.tratamientos_dgv.Size = new System.Drawing.Size(377, 150);
             this.tratamientos_dgv.TabIndex = 7;
             this.tratamientos_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tratamientos_dgv_CellContentClick);
             // 
@@ -209,7 +211,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 147);
+            this.label3.Location = new System.Drawing.Point(248, 95);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 15);
@@ -220,7 +222,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 118);
+            this.label2.Location = new System.Drawing.Point(42, 95);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 15);
@@ -242,7 +244,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(233, 147);
+            this.label1.Location = new System.Drawing.Point(42, 147);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 15);
@@ -252,11 +254,16 @@
             // txt_precio
             // 
             this.txt_precio.BackColor = System.Drawing.Color.AliceBlue;
-            this.txt_precio.Location = new System.Drawing.Point(236, 164);
+            this.txt_precio.Location = new System.Drawing.Point(42, 164);
             this.txt_precio.Margin = new System.Windows.Forms.Padding(2);
             this.txt_precio.Name = "txt_precio";
             this.txt_precio.Size = new System.Drawing.Size(168, 20);
             this.txt_precio.TabIndex = 24;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
             // 
             // form_tratamientos
             // 
@@ -297,5 +304,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_precio;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }

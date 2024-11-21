@@ -25,6 +25,8 @@ namespace CapaEntidad
         [StringLength(128)]
         public string Nombre { get; set; }
 
+        public double Precio { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cita_tratamiento> Cita_tratamiento { get; set; }
 

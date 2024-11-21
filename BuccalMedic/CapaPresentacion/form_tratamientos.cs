@@ -32,13 +32,14 @@ namespace CapaPresentacion
             List<Tratamiento> tratamientos = LogTratamiento.Instancia.ListarTratamientos();
             foreach (var tratamiento in tratamientos)
             {
-                tratamientos_dgv.Rows.Add(tratamiento.Id_Tratamiento, tratamiento.Nombre, tratamiento.Descripcion);
+                tratamientos_dgv.Rows.Add(tratamiento.Id_Tratamiento, tratamiento.Nombre, tratamiento.Descripcion, tratamiento.Precio);
             }
         }
         void limpiarVariables()
         {
             tratamiento_tbx_Nombre_Tratamiento.Text = "";
             tratamiento_tbx_Descripcion.Text = "";
+            txt_precio.Text = " ";
         }
         private int idTratamientoSeleccionado = -1;
 
@@ -49,7 +50,8 @@ namespace CapaPresentacion
                 Tratamiento c = new Tratamiento
                 {
                     Nombre = tratamiento_tbx_Nombre_Tratamiento.Text.Trim(),
-                    Descripcion = tratamiento_tbx_Descripcion.Text.Trim()
+                    Descripcion = tratamiento_tbx_Descripcion.Text.Trim(),
+                    Precio = int.Parse(txt_precio.Text.Trim())
                 };
                 LogTratamiento.Instancia.InsertaTratamiento(c);
 
@@ -75,7 +77,8 @@ namespace CapaPresentacion
                     {
                         Id_Tratamiento = idTratamientoSeleccionado,
                         Nombre = tratamiento_tbx_Nombre_Tratamiento.Text.Trim(),
-                        Descripcion = tratamiento_tbx_Descripcion.Text.Trim()
+                        Descripcion = tratamiento_tbx_Descripcion.Text.Trim(),
+                        Precio = int.Parse(txt_precio.Text.Trim())
                     };
 
                     LogTratamiento.Instancia.EditaTratamiento(tratamiento);
@@ -107,6 +110,8 @@ namespace CapaPresentacion
 
                 tratamiento_tbx_Nombre_Tratamiento.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
                 tratamiento_tbx_Descripcion.Text = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+                txt_precio.Text = filaSeleccionada.Cells["Precio"].Value.ToString();
+
             }
         }
 

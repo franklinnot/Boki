@@ -40,7 +40,8 @@ namespace CapaDatos
                         Id_Tratamiento = Convert.ToInt32(fila["TratamientoID"]),
                         Descripcion = fila["Descripcion"].ToString(),
                         Nombre = fila["NombreTratamiento"].ToString(),
-                        
+                        Precio = Convert.ToDouble(fila["Precio"].ToString())
+
                     };
 
                     tratamientos.Add(tratamiento);
@@ -72,6 +73,8 @@ namespace CapaDatos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@descripcion", tratamiento.Descripcion);
                 cmd.Parameters.AddWithValue("@nombre", tratamiento.Nombre);
+                cmd.Parameters.AddWithValue("@precio", tratamiento.Precio);
+
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
@@ -100,6 +103,8 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@idTratamiento", tratamiento.Id_Tratamiento);
                 cmd.Parameters.AddWithValue("@descripcion", tratamiento.Descripcion);
                 cmd.Parameters.AddWithValue("@nombre", tratamiento.Nombre);
+                cmd.Parameters.AddWithValue("@precio", tratamiento.Precio);
+
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();

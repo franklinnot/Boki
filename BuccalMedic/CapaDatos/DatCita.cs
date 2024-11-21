@@ -289,13 +289,13 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
 
                 // Añadir los parámetros necesarios para el procedimiento almacenado
-                comando.Parameters.AddWithValue("@Id_cita", cita.Id_cita);
+                comando.Parameters.AddWithValue("@Id_Cita", cita.Id_cita);
                 comando.Parameters.AddWithValue("@Id_cliente", cita.Id_cliente);
-                comando.Parameters.AddWithValue("@Fecha_registro", DateTime.Now);
+                comando.Parameters.AddWithValue("@Fecha_registro", cita.Fecha_Registro);
                 comando.Parameters.AddWithValue("@Fecha_inicio", cita.Fecha_inicio);
                 comando.Parameters.AddWithValue("@Estado", cita.Estado);
                 //comando.Parameters.AddWithValue("@Fecha_fin", cita.Fecha_fin);
-                comando.Parameters.AddWithValue("@Id_empleado", cita.id_empleado);
+                comando.Parameters.AddWithValue("@id_empleado", cita.id_empleado);
 
                 conexion.Open();
                 int filasAfectadas = comando.ExecuteNonQuery();
