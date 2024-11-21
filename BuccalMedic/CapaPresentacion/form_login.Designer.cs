@@ -56,20 +56,20 @@
             this.panel_login.Controls.Add(this.label1);
             this.panel_login.Controls.Add(this.label3);
             this.panel_login.Controls.Add(this.label2);
-            this.panel_login.Location = new System.Drawing.Point(601, 276);
-            this.panel_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_login.Location = new System.Drawing.Point(451, 224);
+            this.panel_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_login.Name = "panel_login";
-            this.panel_login.Size = new System.Drawing.Size(295, 249);
+            this.panel_login.Size = new System.Drawing.Size(221, 202);
             this.panel_login.TabIndex = 5;
             // 
             // btn_iniciar_sesion
             // 
             this.btn_iniciar_sesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(60)))), ((int)(((byte)(44)))));
             this.btn_iniciar_sesion.ForeColor = System.Drawing.Color.White;
-            this.btn_iniciar_sesion.Location = new System.Drawing.Point(31, 177);
-            this.btn_iniciar_sesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_iniciar_sesion.Location = new System.Drawing.Point(23, 144);
+            this.btn_iniciar_sesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_iniciar_sesion.Name = "btn_iniciar_sesion";
-            this.btn_iniciar_sesion.Size = new System.Drawing.Size(227, 39);
+            this.btn_iniciar_sesion.Size = new System.Drawing.Size(170, 32);
             this.btn_iniciar_sesion.TabIndex = 6;
             this.btn_iniciar_sesion.Text = "Iniciar sesión";
             this.btn_iniciar_sesion.UseVisualStyleBackColor = false;
@@ -77,27 +77,30 @@
             // 
             // txt_usuario
             // 
-            this.txt_usuario.Location = new System.Drawing.Point(31, 72);
-            this.txt_usuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_usuario.Location = new System.Drawing.Point(23, 58);
+            this.txt_usuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_usuario.MaxLength = 30;
             this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(225, 22);
+            this.txt_usuario.Size = new System.Drawing.Size(170, 20);
             this.txt_usuario.TabIndex = 1;
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(31, 127);
-            this.txt_password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_password.Location = new System.Drawing.Point(23, 103);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_password.Name = "txt_password";
-            this.txt_password.Size = new System.Drawing.Size(225, 22);
+            this.txt_password.PasswordChar = '*';
+            this.txt_password.Size = new System.Drawing.Size(170, 20);
             this.txt_password.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 47);
+            this.label1.Location = new System.Drawing.Point(21, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 18);
+            this.label1.Size = new System.Drawing.Size(53, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
             // 
@@ -105,9 +108,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 100);
+            this.label3.Location = new System.Drawing.Point(21, 81);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 18);
+            this.label3.Size = new System.Drawing.Size(73, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Contraseña:";
             // 
@@ -115,9 +119,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(112, 14);
+            this.label2.Location = new System.Drawing.Point(84, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 24);
+            this.label2.Size = new System.Drawing.Size(49, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Login";
             // 
@@ -125,18 +130,20 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(-2, -14);
+            this.pictureBox2.Location = new System.Drawing.Point(-2, -11);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1074, 694);
+            this.pictureBox2.Size = new System.Drawing.Size(806, 564);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(52)))), ((int)(((byte)(148)))));
-            this.pictureBox3.Location = new System.Drawing.Point(559, 183);
+            this.pictureBox3.Location = new System.Drawing.Point(419, 149);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(374, 372);
+            this.pictureBox3.Size = new System.Drawing.Size(280, 302);
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
@@ -149,27 +156,26 @@
             this.pictureBox1.BackgroundImage = global::CapaPresentacion.Properties.Resources.BuccalMedic;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(648, 139);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(486, 113);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 95);
+            this.pictureBox1.Size = new System.Drawing.Size(150, 78);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
             // form_login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1072, 666);
+            this.ClientSize = new System.Drawing.Size(804, 541);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel_login);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "form_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "BuccalMedic - Login";

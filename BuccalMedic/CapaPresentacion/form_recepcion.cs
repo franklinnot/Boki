@@ -12,15 +12,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
-
 namespace CapaPresentacion
 {
     public partial class form_recepcion : Form
     {
-        Empleado empleado;
-        private static Random random = new Random();
+
         public form_recepcion()
         {
             InitializeComponent();
@@ -34,13 +30,9 @@ namespace CapaPresentacion
             
             btn_registrarCita.Enabled = false;
             btn_nuevo_cliente.Enabled = false;
-            
-            empleado = form_login.empleado;
-        }
 
-        private void form_recepcion_Load(object sender, EventArgs e)
-        {
-
+            getTratamientos(cmb_tratamiento);
+            getOdontologos(cmb_odontologo);
         }
 
         private void btn_nuevo_cliente_Click(object sender, EventArgs e)
@@ -50,133 +42,10 @@ namespace CapaPresentacion
 
         }
 
-        public void getTratamientos(ComboBox comboBox)
-        {
-           
-            comboBox.Items.Clear();
-
-           
-            List<Tratamiento> listaTratamientos = LogTratamiento.Instancia.ListarTratamientos();
-
-            
-            foreach (var tratamiento in listaTratamientos)
-            {
-                comboBox.Items.Add(tratamiento.Nombre);
-            }
-
-           
-        }
-
-        public void getOdontologos(ComboBox comboBox)
-        {
-
-            comboBox.Items.Clear();
-
-
-            List<Empleado> empleado = LogEmpleado.Instancia.ListarOdontologos();
-
-
-            foreach (var emp in empleado)
-            {
-                comboBox.Items.Add(emp.Nombre);
-            }
-
-
-        }
-
-        public static string GenerarStringAleatorio(int tamañoMaximo)
-        {
-            const string caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            return new string(Enumerable.Repeat(caracteres, tamañoMaximo)
-                                         .Select(s => s[random.Next(s.Length)])
-                                         .ToArray());
-        }
-
-
-        private void txt_DNI_TextChanged(object sender, EventArgs e)
-        {
-            string dni = txt_DNI.Text;
-            if (dni.Length > 8)
-            {
-                txt_DNI.Text = txt_DNI.Text.Substring(0, 8);
-                txt_DNI.SelectionStart = txt_DNI.Text.Length;
-                btn_registrarCita.Enabled = false;
-
-            }
-            if (dni.Length < 8)
-            {
-                lbl_nombreR.Text = "complete DNI";
-                btn_registrarCita.Enabled = false;
-                
-                btn_nuevo_cliente.Enabled = false;
-               
-
-            }
-
-            if (dni.Length == 8)
-            {
-                bool c = LogCliente.Instancia.BuscarClienteDNI_bool(dni);
-                if (c)
-                {
-                    Cliente cliente = LogCliente.Instancia.BuscarClienteDNI(dni);
-                    lbl_nombreR.Text = cliente.Nombre;
-                    btn_registrarCita.Enabled = true;
-                    btn_nuevo_cliente.Enabled = false;
-                   
-
-                }
-                else
-                {
-                    lbl_nombreR.Text = "not found";
-                    btn_nuevo_cliente.Enabled = true;
-                    btn_registrarCita.Enabled = false;
-                    
-
-                }
-
-            }
-        }
-
-
-        public static List<Tuple<TimeSpan, TimeSpan>> GenerarHorasDia()
-        {
-            var horas = new List<Tuple<TimeSpan, TimeSpan>>();
-            try
-            {
-                for (int i = 0; i < 24; i++)
-                {
-                    TimeSpan horaInicio = new TimeSpan(i, 0, 0); 
-                    TimeSpan horaFin = new TimeSpan(i + 1, 0, 0); 
-                    horas.Add(new Tuple<TimeSpan, TimeSpan>(horaInicio, horaFin));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Se produjo un error: {ex.Message}");
-            }
-            return horas;
-        }
-
-
-
-        public static void getHorarios(ComboBox comboBox)
-        {
-            comboBox.Items.Clear();
-            var horas = GenerarHorasDia();
-            foreach (var hora in horas)
-            {
-                comboBox.Items.Add($"{hora.Item1} - {hora.Item2}");
-            }
-        }
-        private void cmb_tratamiento_MouseClick_1(object sender, MouseEventArgs e)
-        {
-            getTratamientos(cmb_tratamiento);
-        }
-
         private void btn_registrarCita_Click(object sender, EventArgs e)
         {
             //para id_cliente
-            Cliente cliente=LogCliente.Instancia.BuscarClienteDNI(txt_DNI.Text.Trim());
+            Cliente cliente = LogCliente.Instancia.BuscarClienteDNI(txt_DNI.Text.Trim());
             int id_cliente = cliente.Id_cliente;
 
             //para id_empleado
@@ -235,9 +104,41 @@ namespace CapaPresentacion
 
         }
 
-        private void cmb_odontologo_MouseClick(object sender, MouseEventArgs e)
+        private void btn_mostrar_citas_Click(object sender, EventArgs e)
         {
-            getOdontologos(cmb_odontologo);
+            form_cita form_Cita = new form_cita();
+            form_Cita.ShowDialog();
+        }
+
+        private void txt_DNI_TextChanged(object sender, EventArgs e)
+        {
+            string dni = txt_DNI.Text.Trim();
+
+            if (dni.Length == 8)
+            {
+                bool c = LogCliente.Instancia.BuscarClienteDNI_bool(dni);
+                if (c)
+                {
+                    Cliente cliente = LogCliente.Instancia.BuscarClienteDNI(dni);
+                    txt_nombreCliente.Text = cliente.Nombre;
+                    btn_registrarCita.Enabled = true;
+                    btn_nuevo_cliente.Enabled = false;
+                   
+
+                }
+                else
+                {
+                    txt_nombreCliente.Text = "not found";
+                    btn_nuevo_cliente.Enabled = true;
+                    btn_registrarCita.Enabled = false;
+                }
+            }
+            else
+            {
+                txt_nombreCliente.Text = "complete DNI";
+                btn_registrarCita.Enabled = false;
+                btn_nuevo_cliente.Enabled = false;
+            }
         }
 
         private void cmb_odontologo_SelectedIndexChanged(object sender, EventArgs e)
@@ -294,6 +195,83 @@ namespace CapaPresentacion
                 MessageBox.Show($"Se produjo un error: {ex.Message}");
             }
         }
+
+
+
+
+
+        public void getTratamientos(ComboBox comboBox)
+        {
+           
+            comboBox.Items.Clear();
+
+           
+            List<Tratamiento> listaTratamientos = LogTratamiento.Instancia.ListarTratamientos();
+
+            
+            foreach (var tratamiento in listaTratamientos)
+            {
+                comboBox.Items.Add(tratamiento.Nombre);
+            }
+
+           
+        }
+
+        public void getOdontologos(ComboBox comboBox)
+        {
+
+            comboBox.Items.Clear();
+
+
+            List<Empleado> empleados = LogEmpleado.Instancia.ListarOdontologos();
+
+
+            foreach (var emp in empleados)
+            {
+                comboBox.Items.Add(emp.Nombre);
+            }
+
+
+        }
+
+        public static string GenerarStringAleatorio(int tamañoMaximo)
+        {
+            Random random = new Random();
+            const string caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            return new string(Enumerable.Repeat(caracteres, tamañoMaximo)
+                                         .Select(s => s[random.Next(s.Length)])
+                                         .ToArray());
+        }
+
+        public static List<Tuple<TimeSpan, TimeSpan>> GenerarHorasDia()
+        {
+            var horas = new List<Tuple<TimeSpan, TimeSpan>>();
+            try
+            {
+                for (int i = 0; i < 24; i++)
+                {
+                    TimeSpan horaInicio = new TimeSpan(i, 0, 0); 
+                    TimeSpan horaFin = new TimeSpan(i + 1, 0, 0); 
+                    horas.Add(new Tuple<TimeSpan, TimeSpan>(horaInicio, horaFin));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Se produjo un error: {ex.Message}");
+            }
+            return horas;
+        }
+
+        public static void getHorarios(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+            var horas = GenerarHorasDia();
+            foreach (var hora in horas)
+            {
+                comboBox.Items.Add($"{hora.Item1} - {hora.Item2}");
+            }
+        }
+
         public void LimpiarCampos()
         {
             MetodosUI.SetPlaceholder(txt_DNI, "DNI");
@@ -303,10 +281,8 @@ namespace CapaPresentacion
             MetodosUI.SetPlaceholder(cmb_tratamiento, "Tratamiento");
         }
 
-        private void btn_mostrar_citas_Click(object sender, EventArgs e)
-        {
-            form_cita form_Cita = new form_cita();
-            form_Cita.ShowDialog();
-        }
+
+
+
     }
 }
