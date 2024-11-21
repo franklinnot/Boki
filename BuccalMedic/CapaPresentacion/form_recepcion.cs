@@ -199,12 +199,8 @@ namespace CapaPresentacion
                 Estado = "PENDIENTE",
                 Fecha_Registro = DateTime.Now
             };
-            MessageBox.Show(cita.Id_cliente.ToString());
-            MessageBox.Show(cita.Id_cita.ToString());
-            MessageBox.Show(cita.id_empleado.ToString());
-            MessageBox.Show(cita.Fecha_inicio.ToString());
-            MessageBox.Show(cita.Fecha_Registro.ToString());
-            MessageBox.Show(cita.Estado.ToString());
+
+
 
             bool verificar_registro = LogCita.Instancia.InsertarCita(cita);
 

@@ -84,8 +84,8 @@ namespace CapaDatos
                 Debug.WriteLine("Si tiene registros");
                 foreach (DataRow fila in dataTable.Rows)
                 {
-                    detalleCita.Add("Id_Cita", fila["Id_Cita"].ToString());
-                    detalleCita.Add("Fecha_Registro", fila["Fecha_Registro"].ToString());
+                    detalleCita.Add("Id_Cita", fila["CitaID"].ToString());
+                    detalleCita.Add("Fecha_Registro", fila["FechaRegistroCita"].ToString());
                     detalleCita.Add("Odontologo", fila["Odontologo"].ToString());
                     detalleCita.Add("DNI", fila["DNI"].ToString());
                     detalleCita.Add("Paciente", fila["Paciente"].ToString());
