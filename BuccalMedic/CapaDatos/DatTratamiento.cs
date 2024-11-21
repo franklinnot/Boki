@@ -37,9 +37,9 @@ namespace CapaDatos
                 {
                     Tratamiento tratamiento = new Tratamiento
                     {
-                        Id_Tratamiento = Convert.ToInt32(fila["Id_Tratamiento"]),
+                        Id_Tratamiento = Convert.ToInt32(fila["TratamientoID"]),
                         Descripcion = fila["Descripcion"].ToString(),
-                        Nombre = fila["Nombre"].ToString(),
+                        Nombre = fila["NombreTratamiento"].ToString(),
                         
                     };
 

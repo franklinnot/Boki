@@ -35,8 +35,8 @@ namespace CapaPresentacion
             dgv_cita.Rows.Clear();
             foreach (Dictionary<string, string> item in LogCita.Instancia.ListarCitas(dni, odontologo, paciente, fecha))
             {
-                string id = item["Id_Cita"].ToString();
-                string fechaC = DateTime.Parse(item["Fecha_Registro"].ToString()).ToShortDateString();
+                string id = item["CitaID"].ToString();
+                string fechaC = DateTime.Parse(item["FechaRegistroCita"].ToString()).ToShortDateString();
                 string odontologoC = item["NombreOdontologo"].ToString();
                 string dniC = item["DNI"].ToString();
                 string pacienteC = item["NombreCliente"].ToString();
@@ -140,10 +140,11 @@ namespace CapaPresentacion
             if (!string.IsNullOrEmpty(selectedCitaId))
             {
                 string idCita = dgv_cita.CurrentRow.Cells[0].Value.ToString();
+                MessageBox.Show(idCita);
                 Dictionary<string,string> datosCita = LogCita.Instancia.TipoDeCita(idCita);
                 tipoCita = datosCita["tipoCita"];
                 estado = datosCita["estado"];
-
+                MessageBox.Show(tipoCita + " " + estado);
 
                 if ( tipoCita == "TRATAMIENTO")
                 {

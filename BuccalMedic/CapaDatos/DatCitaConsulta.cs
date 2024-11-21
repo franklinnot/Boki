@@ -69,8 +69,8 @@ namespace CapaDatos
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Id_Cita", idCita);
-            cmd.Parameters.AddWithValue("@Estado", estado);
+            cmd.Parameters.AddWithValue("@Id_Cita", "C0001");
+            cmd.Parameters.AddWithValue("@Estado", "PENDIENTE");
 
             conexion.Open();
 
@@ -82,8 +82,8 @@ namespace CapaDatos
                 Debug.WriteLine("Si tiene registros");
                 foreach (DataRow fila in dataTable.Rows)
                 {
-                    detalleCita.Add("Id_Cita", fila["Id_Cita"].ToString());
-                    detalleCita.Add("Fecha_Registro", fila["Fecha_Registro"].ToString());
+                    detalleCita.Add("Id_Cita", fila["CitaID"].ToString());
+                    detalleCita.Add("Fecha_Registro", fila["FechaRegistroCita"].ToString());
                     detalleCita.Add("Odontologo", fila["Odontologo"].ToString());
                     detalleCita.Add("DNI", fila["DNI"].ToString());
                     detalleCita.Add("Paciente", fila["Paciente"].ToString());
@@ -91,7 +91,7 @@ namespace CapaDatos
 
                     if (estado == "ATENDIDO")
                     {
-                        detalleCita.Add("Recomendaciones", fila["Recomendaciones"].ToString());
+                        detalleCita.Add("Recomendaciones", fila["Recomendacion"].ToString());
                         detalleCita.Add("Resultado", fila["Resultado"].ToString());
                     }
                 }

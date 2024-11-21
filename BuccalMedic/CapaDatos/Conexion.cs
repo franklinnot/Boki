@@ -27,7 +27,8 @@ namespace CapaDatos
             // Solo cambiar los datos de server o database si falla algo en la conexion
             // Asegurarse antes de cambiar estos datos.
             string server = "localhost";
-            string database = "Bucal"; // Asegurarse que la base de datos tenga este nombre
+            //string database = "Bucal"; // Asegurarse que la base de datos tenga este nombre
+            string database = "BuccalMedicDB";
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = $"Data Source={server}; Initial Catalog = {database}; Integrated Security=true; TrustServerCertificate=True;";

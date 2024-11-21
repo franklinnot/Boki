@@ -83,10 +83,10 @@ namespace CapaDatos
                 {
                     Cliente cli = new Cliente
                     {
-                        Id_cliente = Convert.ToInt32(fila["Id_cliente"]),
+                        Id_cliente = Convert.ToInt32(fila["ClienteID"]),
                         Nombre = fila["Nombre"].ToString(),
                         Genero = fila["Genero"].ToString(),
-                        Fecha_nacimiento = (DateTime?)fila["Fecha_nacimiento"],
+                        Fecha_nacimiento = (DateTime?)fila["FechaNacimiento"],
                         DNI = fila["DNI"].ToString(),
                         Estado = fila["Estado"].ToString()
                     };
@@ -161,10 +161,10 @@ namespace CapaDatos
                 {
                     Cliente cli = new Cliente
                     {
-                        Id_cliente = Convert.ToInt32(fila["Id_cliente"]),
+                        Id_cliente = Convert.ToInt32(fila["CLienteID"]),
                         Nombre = fila["Nombre"].ToString(),
                         Genero = fila["Genero"].ToString(),
-                        Fecha_nacimiento = DateTime.Parse(fila["Fecha_nacimiento"].ToString()),
+                        Fecha_nacimiento = DateTime.Parse(fila["FechaNacimiento"].ToString()),
                         DNI = fila["DNI"].ToString(),
                         Estado = fila["Estado"].ToString()
                     };

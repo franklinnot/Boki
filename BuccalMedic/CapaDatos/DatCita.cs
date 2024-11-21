@@ -49,8 +49,8 @@ namespace CapaDatos
                 {
                     Dictionary<string, string> cita = new Dictionary<string, string>
                     {
-                        { "Id_Cita", fila["Id_Cita"].ToString() },
-                        { "Fecha_Registro", fila["Fecha_Registro"].ToString() },
+                        { "CitaID", fila["CitaId"].ToString() },
+                        { "FechaRegistroCita", fila["FechaRegistroCita"].ToString() },
                         { "NombreOdontologo", fila["Odontologo"].ToString() },
                         { "DNI", fila["DNI"].ToString() },
                         { "NombreCliente", fila["Paciente"].ToString() },

@@ -117,7 +117,7 @@ namespace CapaPresentacion
                 DNI = dni,
                 Nombre = nombre,
                 Fecha_nacimiento = fecha_nacimieto,
-                Estado = ""
+                Estado = "ACTIVO"
             };
 
             bool verificar_modificacion = LogCliente.Instancia.ModificarCliente(cliente);
