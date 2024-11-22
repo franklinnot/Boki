@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaDatos
 {
@@ -26,7 +27,7 @@ namespace CapaDatos
         public static DatCitaTratamiento Instancia { get { return DatCitaTratamiento._instancia; } }
         #endregion
 
-        public bool InsertarCitaTratamiento(Cita_tratamiento cita)
+        public bool InsertarCitaTratamiento(Citatratamiento cita)
         {
             SqlCommand comando = null;
             bool resultado = false;
@@ -38,9 +39,8 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
 
                 // Añadir los parámetros necesarios para el procedimiento almacenado
-                comando.Parameters.AddWithValue("@Id_cita", cita.Id_cita);
-                comando.Parameters.AddWithValue("@Id_CitaTratamiento", cita.Id_citatratamiento);
-                comando.Parameters.AddWithValue("@Id_Tratamiento", cita.Id_Tratamiento);
+                comando.Parameters.AddWithValue("@Id_Cita", cita.CitaID);
+                comando.Parameters.AddWithValue("@Id_Tratamiento", cita.TratamientoID);
 
                 conexion.Open();
                 int filasAfectadas = comando.ExecuteNonQuery();
@@ -50,7 +50,8 @@ namespace CapaDatos
             }
             catch (Exception e)
             {
-                Debug.WriteLine(e.Message);
+                MessageBox.Show($"ERROR: {e.Message}");
+                Debug.WriteLine($"ERROR EN sp_InsertarCitaTratamiento: {e.Message}");
             }
             finally
             {
@@ -107,7 +108,7 @@ namespace CapaDatos
             return detalleCita;
         }
 
-        public bool InsertarAtencion(Cita_tratamiento tratamiento)
+        public bool InsertarAtencion(Citatratamiento tratamiento)
         {
             SqlCommand comando = null;
             bool resultado = false;
@@ -118,7 +119,7 @@ namespace CapaDatos
                 comando = new SqlCommand("SP_RegistrarAtencion", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
 
-                comando.Parameters.AddWithValue("@Id_Cita", tratamiento.Id_cita);
+                comando.Parameters.AddWithValue("@Id_Cita", tratamiento.CitaID);
                 comando.Parameters.AddWithValue("@Procedimiento", tratamiento.Procedimiento);
                 comando.Parameters.AddWithValue("@Recomendaciones", tratamiento.Recomendaciones);
 
@@ -139,6 +140,8 @@ namespace CapaDatos
             }
             return resultado;
         }
+
+
         private List<Dictionary<string, string>> ToList(String peziduri, List<SqlParameter> parameters)
         {
             List<Dictionary<string, string>> citaTratamientos = new List<Dictionary<string, string>>();
@@ -163,7 +166,7 @@ namespace CapaDatos
                 {
                     Dictionary<string, string> cita = new Dictionary<string, string>
                     {
-                        { "IdCita", fila["Id_cita"].ToString() },
+                        { "IdCita", fila["CitaID"].ToString() },
                         { "Paciente", fila["Paciente"].ToString() },
                         { "Fecha_Registro", fila["Fecha_Registro"].ToString() },
                     };

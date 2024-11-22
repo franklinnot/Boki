@@ -26,7 +26,7 @@ namespace CapaPresentacion
             empleado = new Empleado();
             empleado = form_login.empleado;
 
-            CargarCitas(empleado.Id_empleado,empleado.Cargo);
+            CargarCitas(empleado.EmpleadoID,empleado.Cargo);
             CargarCombobox();
         }
 
@@ -47,7 +47,7 @@ namespace CapaPresentacion
         }
         private void CargarCombobox()
         {
-            var citas = LogCita.Instancia.ListarCitasOdontologo(empleado.Id_empleado, empleado.Cargo);
+            var citas = LogCita.Instancia.ListarCitasOdontologo(empleado.EmpleadoID, empleado.Cargo);
 
             cmb_dniRC.Items.Clear();
             foreach (var item in citas)
@@ -76,7 +76,7 @@ namespace CapaPresentacion
 
             DateTime? fecha = dtp_fechaRC.Checked ? dtp_fechaRC.Value : (DateTime?)null;
 
-            CargarCitas(empleado.Id_empleado, empleado.Cargo, dni, paciente);
+            CargarCitas(empleado.EmpleadoID, empleado.Cargo, dni, paciente);
         }
 
 
@@ -127,7 +127,7 @@ namespace CapaPresentacion
                 
 
                 dgv_cita.Rows.Clear();
-                CargarCitas(empleado.Id_empleado, empleado.Cargo);
+                CargarCitas(empleado.EmpleadoID, empleado.Cargo);
             }
             else if (estado == "ATENDIDO")
             {

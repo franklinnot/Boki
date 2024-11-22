@@ -39,16 +39,18 @@ namespace CapaPresentacion
             {
                 if(empleado.Cargo == "ODONTOLOGO")
                 {
-                    
+                    this.Hide();
                     form_seleccionDoc form_Odontologo = new form_seleccionDoc();
                     form_Odontologo.ShowDialog();
-
+                    this.Show();
                 }
 
                 else if (empleado.Cargo == "RECEPCIONISTA")
                 {
+                    this.Hide();
                     form_recepcion form_Recepcion = new form_recepcion();
                     form_Recepcion.ShowDialog();
+                    this.Show();
                 }
                 else
                 {

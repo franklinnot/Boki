@@ -18,7 +18,7 @@ namespace CapaLogica
         public static LogTratamientoDiagnostico Instancia { get { return LogTratamientoDiagnostico._instancia; } }
         #endregion
 
-        public bool InsertarTratamientoDiagnostico(Tratamiento_diagnostico tratdiag)
+        public bool InsertarTratamientoDiagnostico(DiagnosticoTratamiento tratdiag)
         {
             return DatTratamientoDiagnostico.Instancia.InsertarTratamientoDiagnosticos(tratdiag);
         }

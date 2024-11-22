@@ -38,7 +38,7 @@ namespace CapaDatos
                 // Añadir los parámetros necesarios para el procedimiento almacenado
                 comando.Parameters.AddWithValue("@Nombre", cliente.Nombre);
                 comando.Parameters.AddWithValue("@Genero", cliente.Genero);
-                comando.Parameters.AddWithValue("@Fecha_nacimiento", cliente.Fecha_nacimiento.HasValue ? (object)cliente.Fecha_nacimiento.Value : DBNull.Value);
+                comando.Parameters.AddWithValue("@Fecha_nacimiento", cliente.FechaNacimiento.HasValue ? (object)cliente.FechaNacimiento.Value : DBNull.Value);
                 comando.Parameters.AddWithValue("@DNI", cliente.DNI);
                 comando.Parameters.AddWithValue("@Estado", cliente.Estado);
 
@@ -83,10 +83,10 @@ namespace CapaDatos
                 {
                     Cliente cli = new Cliente
                     {
-                        Id_cliente = Convert.ToInt32(fila["ClienteID"]),
+                        ClienteID = Convert.ToInt32(fila["ClienteID"]),
                         Nombre = fila["Nombre"].ToString(),
                         Genero = fila["Genero"].ToString(),
-                        Fecha_nacimiento = (DateTime?)fila["FechaNacimiento"],
+                        FechaNacimiento = (DateTime?)fila["FechaNacimiento"],
                         DNI = fila["DNI"].ToString(),
                         Estado = fila["Estado"].ToString()
                     };
@@ -161,10 +161,10 @@ namespace CapaDatos
                 {
                     Cliente cli = new Cliente
                     {
-                        Id_cliente = Convert.ToInt32(fila["CLienteID"]),
+                        ClienteID = Convert.ToInt32(fila["CLienteID"]),
                         Nombre = fila["Nombre"].ToString(),
                         Genero = fila["Genero"].ToString(),
-                        Fecha_nacimiento = DateTime.Parse(fila["FechaNacimiento"].ToString()),
+                        FechaNacimiento = DateTime.Parse(fila["FechaNacimiento"].ToString()),
                         DNI = fila["DNI"].ToString(),
                         Estado = fila["Estado"].ToString()
                     };

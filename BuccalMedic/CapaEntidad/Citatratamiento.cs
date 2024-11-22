@@ -6,22 +6,20 @@ namespace CapaEntidad
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Cita_tratamiento
+    [Table("Citatratamiento")]
+    public partial class Citatratamiento
     {
-        [Key]
-        [StringLength(16)]
-        public string Id_citatratamiento { get; set; }
+        public int CitatratamientoID { get; set; }
 
-        [Required]
-        [StringLength(16)]
-        public string Id_cita { get; set; }
+        [StringLength(50)]
+        public string CitaID { get; set; }
 
-        public int Id_Tratamiento { get; set; }
+        public int TratamientoID { get; set; }
 
-        [StringLength(512)]
+        [StringLength(50)]
         public string Procedimiento { get; set; }
 
-        [StringLength(512)]
+        [StringLength(50)]
         public string Recomendaciones { get; set; }
 
         public virtual Cita Cita { get; set; }

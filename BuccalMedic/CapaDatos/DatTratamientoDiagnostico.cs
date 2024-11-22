@@ -31,7 +31,7 @@ namespace CapaDatos
         }
         #endregion
 
-        public bool InsertarTratamientoDiagnosticos(Tratamiento_diagnostico tratdiag)
+        public bool InsertarTratamientoDiagnosticos(DiagnosticoTratamiento tratdiag)
         {
             SqlCommand comando = null;
             bool resultado = false;
@@ -43,8 +43,8 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
 
                 // Añadir los parámetros necesarios para el procedimiento almacenado
-                comando.Parameters.AddWithValue("@Id_diagnostico", tratdiag.Id_diagnostico);
-                comando.Parameters.AddWithValue("@Id_Tratamiento", tratdiag.Id_Tratamiento);
+                comando.Parameters.AddWithValue("@Id_diagnostico", tratdiag.DiagnosticoID);
+                comando.Parameters.AddWithValue("@Id_Tratamiento", tratdiag.TratamientoID);
 
                 conexion.Open();
                 int filasAfectadas = comando.ExecuteNonQuery();

@@ -13,7 +13,7 @@ namespace CapaPresentacion
 {
     public partial class form_evaluaciones : Form
     {
-        int idEmpleado = form_login.empleado.Id_empleado;
+        int idEmpleado = form_login.empleado.EmpleadoID;
         string tipoCita = "CONSULTA";
         public form_evaluaciones()
         {

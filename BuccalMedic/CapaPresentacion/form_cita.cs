@@ -36,7 +36,7 @@ namespace CapaPresentacion
             foreach (Dictionary<string, string> item in LogCita.Instancia.ListarCitas(dni, odontologo, paciente, fecha))
             {
                 string id = item["CitaID"].ToString();
-                string fechaC = DateTime.Parse(item["FechaRegistroCita"].ToString()).ToShortDateString();
+                string fechaC = item["FechaProgramacion"].ToString();
                 string odontologoC = item["NombreOdontologo"].ToString();
                 string dniC = item["DNI"].ToString();
                 string pacienteC = item["NombreCliente"].ToString();

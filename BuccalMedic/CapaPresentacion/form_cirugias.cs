@@ -15,7 +15,7 @@ namespace CapaPresentacion
 {
     public partial class form_cirugias : Form
     {
-        int idEmpleado = form_login.empleado.Id_empleado;
+        int idEmpleado = form_login.empleado.EmpleadoID;
         string tipoCita = "TRATAMIENTO";
         public form_cirugias()
         {

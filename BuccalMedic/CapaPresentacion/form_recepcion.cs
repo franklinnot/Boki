@@ -20,19 +20,19 @@ namespace CapaPresentacion
         public form_recepcion()
         {
             InitializeComponent();
-            #region placeholders de txt y comboboxs
-            MetodosUI.SetPlaceholder(txt_DNI, "DNI");
-            MetodosUI.SetPlaceholder(cmb_odontologo,"Odontólogo");
-            MetodosUI.SetPlaceholder(dtp_registroCitas,"Fecha");
-            MetodosUI.SetPlaceholder(cmb_horario,"Horario");
-            MetodosUI.SetPlaceholder(cmb_tratamiento,"Tratamiento");
-            #endregion
-            
-            btn_registrarCita.Enabled = false;
-            btn_nuevo_cliente.Enabled = false;
-
+            Placeholders();
+            dtp_registroCitas.MinDate = DateTime.Now;
             getTratamientos(cmb_tratamiento);
             getOdontologos(cmb_odontologo);
+        }
+
+        private void Placeholders() {
+            MetodosUI.SetPlaceholder(txt_DNI, "DNI");
+            MetodosUI.SetPlaceholder(cmb_odontologo, "Odontólogo");
+            MetodosUI.SetPlaceholder(dtp_registroCitas, "Fecha");
+            MetodosUI.SetPlaceholder(cmb_horario, "Horario");
+            MetodosUI.SetPlaceholder(cmb_tratamiento, "Tratamiento");
+            cmb_tratamiento.SelectedIndex = -1;
         }
 
         private void btn_nuevo_cliente_Click(object sender, EventArgs e)
@@ -44,32 +44,41 @@ namespace CapaPresentacion
 
         private void btn_registrarCita_Click(object sender, EventArgs e)
         {
+            string tratamiento = string.IsNullOrEmpty(cmb_tratamiento.SelectedItem?.ToString()) ? null : cmb_tratamiento.SelectedItem?.ToString();
+            if (cbx_tratamiento.Checked)
+            {
+                if (string.IsNullOrEmpty(tratamiento) || tratamiento == "Tratamiento")
+                {
+                    MessageBox.Show("Para registrar una cita de tipo de tratamiento debes seleccionar uno del combobox.");
+                    return;
+                }
+            }
+
+
             //para id_cliente
             Cliente cliente = LogCliente.Instancia.BuscarClienteDNI(txt_DNI.Text.Trim());
-            int id_cliente = cliente.Id_cliente;
+            int id_cliente = cliente.ClienteID;
 
             //para id_empleado
             Empleado emp = LogEmpleado.Instancia.BuscarEmpleadoNombre(cmb_odontologo.SelectedItem.ToString());
-            int id_empleado = emp.Id_empleado;
+            int id_empleado = emp.EmpleadoID;
 
             //para la fecha inicio
             DateTime fechaSeleccionada = dtp_registroCitas.Value.Date; 
             string intervalo = cmb_horario.SelectedItem.ToString(); 
             string[] horas = intervalo.Split('-');
             TimeSpan horaInicio = TimeSpan.Parse(horas[0].Trim()); 
-            DateTime Fecha_inicio = fechaSeleccionada + horaInicio;
-
+            DateTime Fecha_Programada = fechaSeleccionada + horaInicio;
+            string idcito = $"{id_cliente}_{id_empleado}_{Fecha_Programada:dd/MM/yy}_{Fecha_Programada:HH:mm}";
             Cita cita = new Cita
             {
-                Id_cliente = id_cliente,
-                Id_cita = GenerarStringAleatorio(10),
-                id_empleado = id_empleado,
-                Fecha_inicio = Fecha_inicio,
+                ClienteID = id_cliente,
+                CitaID = $"CIT_{idcito}",
+                EmpleadoID = id_empleado,
+                FechaProgramacion = Fecha_Programada,
                 Estado = "PENDIENTE",
-                Fecha_Registro = DateTime.Now
+                FechaRegistroCita = DateTime.Now
             };
-
-
 
             bool verificar_registro = LogCita.Instancia.InsertarCita(cita);
 
@@ -81,24 +90,22 @@ namespace CapaPresentacion
             {
                 if (cbx_tratamiento.Checked)
                 {
-                    Cita_tratamiento citaTratamiento = new Cita_tratamiento();
-                    citaTratamiento.Id_citatratamiento = GenerarStringAleatorio(12);
-                    citaTratamiento.Id_cita = cita.Id_cita;
+                    Citatratamiento citaTratamiento = new Citatratamiento();
+                    citaTratamiento.CitaID = cita.CitaID;
                     List<Tratamiento> tratamientos = LogTratamiento.Instancia.ListarTratamientos();
-                    Tratamiento tr = tratamientos.Find(x => x.Nombre == cmb_tratamiento.SelectedItem.ToString());
-                    int idTratamiento = tr.Id_Tratamiento; 
-                    citaTratamiento.Id_Tratamiento = idTratamiento;
-                    
+                    Tratamiento tr = tratamientos.Find(x => x.NombreTratamiento == tratamiento);
+                    citaTratamiento.TratamientoID = tr.TratamientoID;
                     LogCitaTratamiento.Instancia.InsertarCitaTratamiento(citaTratamiento);
                 }
                 else
                 {
-                    Cita_consulta citaConsulta = new Cita_consulta();
-                    citaConsulta.Id_citaconsulta = GenerarStringAleatorio(12);
-                    citaConsulta.Id_cita = cita.Id_cita;
-                    LogCitaConsulta.Instancia.InsertarCitaConsulta(citaConsulta);
+                    Diagnostico diagnostico = new Diagnostico();
+                    diagnostico.DiagnosticoID = $"DIAG_{idcito}";
+                    diagnostico.CitaID = cita.CitaID;
+                    LogCitaConsulta.Instancia.InsertarCitaConsulta(diagnostico);
                 }
                 LimpiarCampos();
+                Placeholders();
                 MessageBox.Show("La cita se ha registrado correctamente", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -106,8 +113,10 @@ namespace CapaPresentacion
 
         private void btn_mostrar_citas_Click(object sender, EventArgs e)
         {
+            this.Hide();
             form_cita form_Cita = new form_cita();
             form_Cita.ShowDialog();
+            this.Show();
         }
 
         private void txt_DNI_TextChanged(object sender, EventArgs e)
@@ -121,30 +130,14 @@ namespace CapaPresentacion
                 {
                     Cliente cliente = LogCliente.Instancia.BuscarClienteDNI(dni);
                     txt_nombreCliente.Text = cliente.Nombre;
-                    btn_registrarCita.Enabled = true;
-                    btn_nuevo_cliente.Enabled = false;
                    
 
-                }
-                else
-                {
-                    txt_nombreCliente.Text = "not found";
-                    btn_nuevo_cliente.Enabled = true;
-                    btn_registrarCita.Enabled = false;
                 }
             }
             else
             {
                 txt_nombreCliente.Text = "complete DNI";
-                btn_registrarCita.Enabled = false;
-                btn_nuevo_cliente.Enabled = false;
             }
-        }
-
-        private void cmb_odontologo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            
         }
 
         private void dtp_registroCitas_ValueChanged(object sender, EventArgs e)
@@ -156,7 +149,7 @@ namespace CapaPresentacion
                 {
                     if (emp.Nombre == cmb_odontologo.SelectedItem?.ToString())
                     {
-                        List<Cita> listCitas = LogCita.Instancia.ListarCitasPorEmpleado(emp.Id_empleado);
+                        List<Cita> listCitas = LogCita.Instancia.ListarCitasPorEmpleado(emp.EmpleadoID);
                         var horas = GenerarHorasDia();
                         cmb_horario.Items.Clear();
                         DateTime fechaSeleccionada = dtp_registroCitas.Value.Date;
@@ -171,10 +164,10 @@ namespace CapaPresentacion
 
                             foreach (var cita in listCitas)
                             {
-                                if (fechaSeleccionada == cita.Fecha_inicio.Value.Date)
+                                if (fechaSeleccionada == cita.FechaProgramacion.Date)
                                 {
-                                    if ((cita.Fecha_inicio.Value.TimeOfDay == fechaHoraInicio.TimeOfDay) &&
-                                        (cita.Fecha_fin.Value.TimeOfDay == fechaHoraFin.TimeOfDay))
+                                    if ((cita.FechaProgramacion.TimeOfDay == fechaHoraInicio.TimeOfDay) &&
+                                        (cita.FechaFinCita.Value.TimeOfDay == fechaHoraFin.TimeOfDay))
                                     {
                                         agregarIntervalo = false;
                                         break;
@@ -196,10 +189,6 @@ namespace CapaPresentacion
             }
         }
 
-
-
-
-
         public void getTratamientos(ComboBox comboBox)
         {
            
@@ -211,7 +200,7 @@ namespace CapaPresentacion
             
             foreach (var tratamiento in listaTratamientos)
             {
-                comboBox.Items.Add(tratamiento.Nombre);
+                comboBox.Items.Add(tratamiento.NombreTratamiento);
             }
 
            
@@ -234,21 +223,27 @@ namespace CapaPresentacion
 
         }
 
-        public static string GenerarStringAleatorio(int tamañoMaximo)
+        public static string GenerarStringAleatorio(string textoInicial)
         {
             Random random = new Random();
             const string caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            return new string(Enumerable.Repeat(caracteres, tamañoMaximo)
-                                         .Select(s => s[random.Next(s.Length)])
-                                         .ToArray());
+
+            string caracteresAleatorios = new string(Enumerable.Repeat(caracteres, 3)
+                                                               .Select(s => s[random.Next(s.Length)])
+                                                               .ToArray());
+
+            string idGenerado = textoInicial + caracteresAleatorios;
+
+            return idGenerado;
         }
+
 
         public static List<Tuple<TimeSpan, TimeSpan>> GenerarHorasDia()
         {
             var horas = new List<Tuple<TimeSpan, TimeSpan>>();
             try
             {
-                for (int i = 0; i < 24; i++)
+                for (int i = 8; i <= 18; i++)
                 {
                     TimeSpan horaInicio = new TimeSpan(i, 0, 0); 
                     TimeSpan horaFin = new TimeSpan(i + 1, 0, 0); 
@@ -262,16 +257,6 @@ namespace CapaPresentacion
             return horas;
         }
 
-        public static void getHorarios(ComboBox comboBox)
-        {
-            comboBox.Items.Clear();
-            var horas = GenerarHorasDia();
-            foreach (var hora in horas)
-            {
-                comboBox.Items.Add($"{hora.Item1} - {hora.Item2}");
-            }
-        }
-
         public void LimpiarCampos()
         {
             MetodosUI.SetPlaceholder(txt_DNI, "DNI");
@@ -279,6 +264,7 @@ namespace CapaPresentacion
             MetodosUI.SetPlaceholder(dtp_registroCitas, "Fecha");
             MetodosUI.SetPlaceholder(cmb_horario, "Horario");
             MetodosUI.SetPlaceholder(cmb_tratamiento, "Tratamiento");
+            cbx_tratamiento.Checked = false;
         }
 
 

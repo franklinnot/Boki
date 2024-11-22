@@ -35,9 +35,8 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
 
                 // Añadir los parámetros necesarios para el procedimiento almacenado
-                comando.Parameters.AddWithValue("@Id_diagnostico", diagnostico.Id_diagnostico);
-                comando.Parameters.AddWithValue("@CitaID", diagnostico.Id_citaconsulta);
-                comando.Parameters.AddWithValue("@Recomendaciones", diagnostico.Recomendaciones);
+                comando.Parameters.AddWithValue("@CitaID", diagnostico.CitaID);
+                comando.Parameters.AddWithValue("@Recomendaciones", diagnostico.Recomendacion);
                 comando.Parameters.AddWithValue("@Resultado", diagnostico.Resultado);
 
                 conexion.Open();
@@ -94,6 +93,44 @@ namespace CapaDatos
 
             return tratamientos;
         }
+
+
+        public bool RegistrarResultadoDiagnostico(Diagnostico diagnostico)
+        {
+            SqlCommand comando = null;
+            bool resultado = false;
+
+            try
+            {
+                SqlConnection conexion = Conexion.Instancia.Conectar();
+                comando = new SqlCommand("sp_RegistrarDiagnostico", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                // Añadir los parámetros necesarios para el procedimiento almacenado
+                comando.Parameters.AddWithValue("@CitaID", diagnostico.CitaID);
+                comando.Parameters.AddWithValue("@Recomendaciones", diagnostico.Recomendacion);
+                comando.Parameters.AddWithValue("@Resultado", diagnostico.Resultado);
+
+                conexion.Open();
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                // Verificar si se insertó al menos una fila
+                resultado = filasAfectadas > 0;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            finally
+            {
+                if (comando != null)
+                {
+                    comando.Connection.Close();
+                }
+            }
+            return resultado;
+        }
+
 
     }
 }

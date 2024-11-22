@@ -6,33 +6,31 @@ namespace CapaEntidad
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Cliente")]
-    public partial class Cliente
+    [Table("Pedidoimplemento")]
+    public partial class Pedidoimplemento
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cliente()
+        public Pedidoimplemento()
         {
-            Citas = new HashSet<Cita>();
+            DetallePedidoes = new HashSet<DetallePedido>();
         }
 
-        public int ClienteID { get; set; }
-
-        [StringLength(150)]
-        public string Nombre { get; set; }
-
         [StringLength(50)]
-        public string DNI { get; set; }
+        public string PedidoimplementoID { get; set; }
 
-        [StringLength(50)]
-        public string Genero { get; set; }
+        public int OdontologoID { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime? FechaNacimiento { get; set; }
+        public DateTime FechaRegistro { get; set; }
 
+        public DateTime? FechaEntrega { get; set; }
+
+        [Required]
         [StringLength(50)]
         public string Estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cita> Citas { get; set; }
+        public virtual ICollection<DetallePedido> DetallePedidoes { get; set; }
+
+        public virtual Empleado Empleado { get; set; }
     }
 }

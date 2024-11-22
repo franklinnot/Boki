@@ -50,7 +50,7 @@ namespace CapaDatos
                     Dictionary<string, string> cita = new Dictionary<string, string>
                     {
                         { "CitaID", fila["CitaId"].ToString() },
-                        { "FechaRegistroCita", fila["FechaRegistroCita"].ToString() },
+                        { "FechaProgramacion", fila["FechaProgramacion"].ToString() },
                         { "NombreOdontologo", fila["Odontologo"].ToString() },
                         { "DNI", fila["DNI"].ToString() },
                         { "NombreCliente", fila["Paciente"].ToString() },
@@ -92,7 +92,7 @@ namespace CapaDatos
 
             if (fecha.HasValue) 
             {
-                parameters.Add(new SqlParameter("@FechaRegistro", fecha.Value));
+                parameters.Add(new SqlParameter("@FechaProgramacion", fecha.Value));
                 Console.Write(" -FechaRegistro- ");
             }
 
@@ -243,12 +243,12 @@ namespace CapaDatos
                     {
                         Cita cita = new Cita
                         {
-                            Id_cita = (fila["Id_cita"]).ToString(),
-                            id_empleado = ((int)fila["id_empleado"]),
-                            Id_cliente = Convert.ToInt32(fila["Id_cliente"]),
-                            Fecha_Registro = Convert.ToDateTime(fila["Fecha_Registro"]),
-                            Fecha_inicio = Convert.ToDateTime(fila["Fecha_inicio"]),
-                            Fecha_fin = Convert.ToDateTime(fila["Fecha_fin_provisional"]),
+                            CitaID = (fila["CitaID"]).ToString(),
+                            EmpleadoID = ((int)fila["EmpleadoID"]),
+                            ClienteID = Convert.ToInt32(fila["ClienteID"]),
+                            FechaRegistroCita = Convert.ToDateTime(fila["FechaRegistroCita"]),
+                            FechaProgramacion = Convert.ToDateTime(fila["FechaProgramacion"]),
+                            FechaFinCita = Convert.ToDateTime(fila["Fecha_fin_provisional"]),
                             Estado = fila["Estado"].ToString()
                             // Otros campos de Cita que necesites agregar aquí
                         };
@@ -263,7 +263,7 @@ namespace CapaDatos
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Error: " + e.Message);
+                Debug.WriteLine("Errorcito: " + e.Message);
             }
             finally
             {
@@ -289,13 +289,13 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
 
                 // Añadir los parámetros necesarios para el procedimiento almacenado
-                comando.Parameters.AddWithValue("@Id_Cita", cita.Id_cita);
-                comando.Parameters.AddWithValue("@Id_cliente", cita.Id_cliente);
-                comando.Parameters.AddWithValue("@Fecha_registro", cita.Fecha_Registro);
-                comando.Parameters.AddWithValue("@Fecha_inicio", cita.Fecha_inicio);
+                comando.Parameters.AddWithValue("@Id_Cita", cita.CitaID);
+                comando.Parameters.AddWithValue("@Id_cliente", cita.ClienteID);
+                comando.Parameters.AddWithValue("@Fecha_registro", cita.FechaRegistroCita);
+                comando.Parameters.AddWithValue("@Fecha_inicio", cita.FechaProgramacion);
                 comando.Parameters.AddWithValue("@Estado", cita.Estado);
                 //comando.Parameters.AddWithValue("@Fecha_fin", cita.Fecha_fin);
-                comando.Parameters.AddWithValue("@id_empleado", cita.id_empleado);
+                comando.Parameters.AddWithValue("@id_empleado", cita.EmpleadoID);
 
                 conexion.Open();
                 int filasAfectadas = comando.ExecuteNonQuery();

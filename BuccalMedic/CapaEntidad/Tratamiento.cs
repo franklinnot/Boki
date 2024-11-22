@@ -12,25 +12,30 @@ namespace CapaEntidad
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Tratamiento()
         {
-            Cita_tratamiento = new HashSet<Cita_tratamiento>();
-            Tratamiento_diagnostico = new HashSet<Tratamiento_diagnostico>();
+            Citatratamientoes = new HashSet<Citatratamiento>();
+            DiagnosticoTratamientoes = new HashSet<DiagnosticoTratamiento>();
         }
 
-        [Key]
-        public int Id_Tratamiento { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string NombreTratamiento { get; set; }
 
-        [StringLength(128)]
+        public int TratamientoID { get; set; }
+
+        [Required]
+        [StringLength(240)]
         public string Descripcion { get; set; }
 
-        [StringLength(128)]
-        public string Nombre { get; set; }
+        [StringLength(50)]
+        public string estado { get; set; }
 
-        public double Precio { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cita_tratamiento> Cita_tratamiento { get; set; }
+        [Column(TypeName = "money")]
+        public decimal Precio { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tratamiento_diagnostico> Tratamiento_diagnostico { get; set; }
+        public virtual ICollection<Citatratamiento> Citatratamientoes { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DiagnosticoTratamiento> DiagnosticoTratamientoes { get; set; }
     }
 }

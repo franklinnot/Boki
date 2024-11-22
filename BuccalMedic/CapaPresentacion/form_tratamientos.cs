@@ -32,7 +32,7 @@ namespace CapaPresentacion
             List<Tratamiento> tratamientos = LogTratamiento.Instancia.ListarTratamientos();
             foreach (var tratamiento in tratamientos)
             {
-                tratamientos_dgv.Rows.Add(tratamiento.Id_Tratamiento, tratamiento.Nombre, tratamiento.Descripcion, tratamiento.Precio);
+                tratamientos_dgv.Rows.Add(tratamiento.TratamientoID, tratamiento.NombreTratamiento, tratamiento.Descripcion, tratamiento.Precio);
             }
         }
         void limpiarVariables()
@@ -49,7 +49,7 @@ namespace CapaPresentacion
             {
                 Tratamiento c = new Tratamiento
                 {
-                    Nombre = tratamiento_tbx_Nombre_Tratamiento.Text.Trim(),
+                    NombreTratamiento = tratamiento_tbx_Nombre_Tratamiento.Text.Trim(),
                     Descripcion = tratamiento_tbx_Descripcion.Text.Trim(),
                     Precio = int.Parse(txt_precio.Text.Trim())
                 };
@@ -75,8 +75,8 @@ namespace CapaPresentacion
                 {
                     Tratamiento tratamiento = new Tratamiento
                     {
-                        Id_Tratamiento = idTratamientoSeleccionado,
-                        Nombre = tratamiento_tbx_Nombre_Tratamiento.Text.Trim(),
+                        TratamientoID = idTratamientoSeleccionado,
+                        NombreTratamiento = tratamiento_tbx_Nombre_Tratamiento.Text.Trim(),
                         Descripcion = tratamiento_tbx_Descripcion.Text.Trim(),
                         Precio = int.Parse(txt_precio.Text.Trim())
                     };

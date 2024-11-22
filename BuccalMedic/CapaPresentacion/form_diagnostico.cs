@@ -45,7 +45,7 @@ namespace CapaPresentacion
                 List<Tratamiento> tratamientos = LogTratamiento.Instancia.ListarTratamientos();
                 foreach (var tratamiento in tratamientos)
                 {
-                    chlbtratamientos.Items.Add(tratamiento.Nombre); // Asegúrate de que "Nombre" es la propiedad que quieres mostrar
+                    chlbtratamientos.Items.Add(tratamiento.NombreTratamiento); // Asegúrate de que "Nombre" es la propiedad que quieres mostrar
                 }
             }
             catch (Exception ex)
@@ -72,14 +72,13 @@ namespace CapaPresentacion
             MessageBox.Show(idCita);
             Diagnostico diagnostico = new Diagnostico
             {
-                Id_diagnostico = GenerarIDDiagnostico(12),
-                Id_citaconsulta = idCita,
+                CitaID = idCita,
                 Resultado = txt_resultadod.Text,
-                Recomendaciones = txtrecomendacionesd.Text,
+                Recomendacion = txtrecomendacionesd.Text,
             };
 
 
-            bool verificar = LogDiagnostico.Instancia.InsertarDiagnostico(diagnostico);
+            bool verificar = LogDiagnostico.Instancia.RegistrarResultadoDiagnostico(diagnostico);
             if (verificar)
             {
                 MessageBox.Show("Diagnóstico registrado exitosamente.");
@@ -98,18 +97,18 @@ namespace CapaPresentacion
             }
 
             List<Tratamiento> trt = LogTratamiento.Instancia.ListarTratamientos();
-            List<Tratamiento> tratamientosFiltrados = trt.FindAll(t => tratamientosmarcados.Contains(t.Nombre));
+            List<Tratamiento> tratamientosFiltrados = trt.FindAll(t => tratamientosmarcados.Contains(t.NombreTratamiento));
 
             foreach (Tratamiento item in tratamientosFiltrados)
             {
-                Tratamiento_diagnostico tratamientodiag = new Tratamiento_diagnostico();
-                tratamientodiag.Id_Tratamiento = item.Id_Tratamiento;
-                tratamientodiag.Id_diagnostico = diagnostico.Id_diagnostico;
+                DiagnosticoTratamiento tratamientodiag = new DiagnosticoTratamiento();
+                tratamientodiag.TratamientoID = item.TratamientoID;
+                tratamientodiag.DiagnosticoID = diagnostico.DiagnosticoID;
      
                 bool verificax = LogTratamientoDiagnostico.Instancia.InsertarTratamientoDiagnostico(tratamientodiag);
                 if (verificax)
                 {
-                    Debug.WriteLine($"Se inserto el tratamiento: {item.Nombre}, con el diagnostico {diagnostico.Id_diagnostico}");
+                    Debug.WriteLine($"Se inserto el tratamiento: {item.NombreTratamiento}, con el diagnostico {diagnostico.DiagnosticoID}");
                 }
                 else
                 {

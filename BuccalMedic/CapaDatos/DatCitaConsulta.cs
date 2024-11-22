@@ -24,7 +24,7 @@ namespace CapaDatos
         public static DatCitaConsulta Instancia { get { return DatCitaConsulta._instancia; } }
         #endregion
 
-        public bool InsertarCitaConsulta(Cita_consulta cita)
+        public bool InsertarCitaConsulta(Diagnostico diagnostico)
         {
             SqlCommand comando = null;
             bool resultado = false;
@@ -36,8 +36,8 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
 
                 // Añadir los parámetros necesarios para el procedimiento almacenado
-                comando.Parameters.AddWithValue("@Id_cita", cita.Id_cita);
-                comando.Parameters.AddWithValue("@Id_CitaConsulta", cita.Id_citaconsulta);
+                comando.Parameters.AddWithValue("@Id_cita", diagnostico.CitaID);
+                comando.Parameters.AddWithValue("@Id_CitaConsulta", diagnostico.DiagnosticoID);
           
                 conexion.Open();
                 int filasAfectadas = comando.ExecuteNonQuery();

@@ -17,7 +17,7 @@ namespace CapaLogica
         #endregion
 
 
-        public bool InsertarCitaTratamiento(Cita_tratamiento cita)
+        public bool InsertarCitaTratamiento(Citatratamiento cita)
         {
             return DatCitaTratamiento.Instancia.InsertarCitaTratamiento(cita);
 
@@ -30,7 +30,7 @@ namespace CapaLogica
 
         }
 
-        public bool InsertarAtencion(Cita_tratamiento atenc)
+        public bool InsertarAtencion(Citatratamiento atenc)
         {
             return DatCitaTratamiento.Instancia.InsertarAtencion(atenc);
         }

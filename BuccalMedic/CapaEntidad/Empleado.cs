@@ -13,24 +13,43 @@ namespace CapaEntidad
         public Empleado()
         {
             Citas = new HashSet<Cita>();
+            Ordencompras = new HashSet<Ordencompra>();
+            Pedidoimplementoes = new HashSet<Pedidoimplemento>();
         }
 
-        [Key]
-        public int Id_empleado { get; set; }
+        public int EmpleadoID { get; set; }
 
-        [StringLength(36)]
-        public string Usuario { get; set; }
+        [StringLength(50)]
+        public string Nombre { get; set; }
 
-        [StringLength(36)]
-        public string Password { get; set; }
+        [StringLength(50)]
+        public string DNI { get; set; }
 
-        [StringLength(36)]
+        [StringLength(50)]
+        public string Telefono { get; set; }
+
+        [StringLength(50)]
+        public string FechaNacimiento { get; set; }
+
+        [StringLength(50)]
+        public string Genero { get; set; }
+
+        [StringLength(50)]
         public string Cargo { get; set; }
 
-        [StringLength(128)]
-        public string Nombre { get; set; }
+        [StringLength(50)]
+        public string Usuario { get; set; }
+
+        [StringLength(50)]
+        public string Contraseña { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cita> Citas { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ordencompra> Ordencompras { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pedidoimplemento> Pedidoimplementoes { get; set; }
     }
 }

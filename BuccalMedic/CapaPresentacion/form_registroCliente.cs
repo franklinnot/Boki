@@ -54,7 +54,7 @@ namespace CapaPresentacion
             List<Cliente> clientes = LogCliente.Instancia.ListarClientes();
             foreach (var cliente in clientes)
             {
-                dgv_clientes.Rows.Add(cliente.DNI, cliente.Nombre, cliente.Fecha_nacimiento.Value.ToShortDateString(), cliente.Genero, cliente.Estado);
+                dgv_clientes.Rows.Add(cliente.DNI, cliente.Nombre, cliente.FechaNacimiento.Value.ToShortDateString(), cliente.Genero, cliente.Estado);
             }
         }
 
@@ -80,7 +80,7 @@ namespace CapaPresentacion
                 Nombre = nombre,
                 Genero = genero,
                 Estado = "ACTIVO",
-                Fecha_nacimiento = fecha_nacimiento
+                FechaNacimiento = fecha_nacimiento
             };
 
             bool verificar_registro = LogCliente.Instancia.InsertarCliente(cliente);
@@ -116,7 +116,7 @@ namespace CapaPresentacion
             {
                 DNI = dni,
                 Nombre = nombre,
-                Fecha_nacimiento = fecha_nacimieto,
+                FechaNacimiento = fecha_nacimieto,
                 Estado = "ACTIVO"
             };
 
@@ -166,7 +166,7 @@ namespace CapaPresentacion
             {
                 DNI = dni,
                 Nombre = "",
-                Fecha_nacimiento = DateTime.Now,
+                FechaNacimiento = DateTime.Now,
                 Estado = "INACTIVO"
             };
             MessageBox.Show(cliente.DNI);

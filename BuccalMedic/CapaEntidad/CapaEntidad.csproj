@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{137113F0-D13E-494B-AAD6-156327ECD66C}</ProjectGuid>
+    <ProjectGuid>{DC10CB83-10A8-4878-8A26-494C7FABAC67}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CapaEntidad</RootNamespace>
@@ -51,15 +51,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cita.cs" />
-    <Compile Include="Cita_consulta.cs" />
-    <Compile Include="Cita_tratamiento.cs" />
+    <Compile Include="Citatratamiento.cs" />
     <Compile Include="Cliente.cs" />
-    <Compile Include="Contexto.cs" />
+    <Compile Include="DetalleOrdenCompra.cs" />
+    <Compile Include="DetallePedido.cs" />
     <Compile Include="Diagnostico.cs" />
+    <Compile Include="DiagnosticoTratamiento.cs" />
     <Compile Include="Empleado.cs" />
+    <Compile Include="Implemento.cs" />
+    <Compile Include="model.cs" />
+    <Compile Include="Notaingreso.cs" />
+    <Compile Include="Ordencompra.cs" />
+    <Compile Include="Pedidoimplemento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor.cs" />
+    <Compile Include="sysdiagram.cs" />
     <Compile Include="Tratamiento.cs" />
-    <Compile Include="Tratamiento_diagnostico.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -42,9 +42,9 @@ namespace CapaPresentacion
         {
             try
             {               
-                Cita_tratamiento atencion = new Cita_tratamiento
+                Citatratamiento atencion = new Citatratamiento
                 {
-                    Id_cita = idCita,
+                    CitaID = idCita,
                     Recomendaciones = atencion_txtRecomendaciones.Text,
                     Procedimiento = atencion_txtProcedimientos.Text
                 };

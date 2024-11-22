@@ -18,9 +18,9 @@ namespace CapaLogica
         #endregion
 
 
-        public bool InsertarCitaConsulta(Cita_consulta cita)
+        public bool InsertarCitaConsulta(Diagnostico diagnostico)
         {
-            return DatCitaConsulta.Instancia.InsertarCitaConsulta(cita);
+            return DatCitaConsulta.Instancia.InsertarCitaConsulta(diagnostico);
 
         }
 

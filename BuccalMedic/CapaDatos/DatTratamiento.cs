@@ -37,10 +37,10 @@ namespace CapaDatos
                 {
                     Tratamiento tratamiento = new Tratamiento
                     {
-                        Id_Tratamiento = Convert.ToInt32(fila["TratamientoID"]),
+                        TratamientoID = Convert.ToInt32(fila["TratamientoID"]),
                         Descripcion = fila["Descripcion"].ToString(),
-                        Nombre = fila["NombreTratamiento"].ToString(),
-                        Precio = Convert.ToDouble(fila["Precio"].ToString())
+                        NombreTratamiento = fila["NombreTratamiento"].ToString(),
+                        Precio = (decimal)Convert.ToDouble(fila["Precio"].ToString())
 
                     };
 
@@ -72,7 +72,7 @@ namespace CapaDatos
                 cmd = new SqlCommand("spRegistrarTratamientos", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@descripcion", tratamiento.Descripcion);
-                cmd.Parameters.AddWithValue("@nombre", tratamiento.Nombre);
+                cmd.Parameters.AddWithValue("@nombre", tratamiento.NombreTratamiento);
                 cmd.Parameters.AddWithValue("@precio", tratamiento.Precio);
 
 
@@ -100,9 +100,9 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spEditarTratamiento", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idTratamiento", tratamiento.Id_Tratamiento);
+                cmd.Parameters.AddWithValue("@idTratamiento", tratamiento.TratamientoID);
                 cmd.Parameters.AddWithValue("@descripcion", tratamiento.Descripcion);
-                cmd.Parameters.AddWithValue("@nombre", tratamiento.Nombre);
+                cmd.Parameters.AddWithValue("@nombre", tratamiento.NombreTratamiento);
                 cmd.Parameters.AddWithValue("@precio", tratamiento.Precio);
 
 

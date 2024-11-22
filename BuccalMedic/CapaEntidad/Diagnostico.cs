@@ -12,26 +12,25 @@ namespace CapaEntidad
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Diagnostico()
         {
-            Tratamiento_diagnostico = new HashSet<Tratamiento_diagnostico>();
+            DiagnosticoTratamientoes = new HashSet<DiagnosticoTratamiento>();
         }
 
-        [Key]
-        [StringLength(16)]
-        public string Id_diagnostico { get; set; }
+        [StringLength(50)]
+        public string DiagnosticoID { get; set; }
 
         [Required]
-        [StringLength(16)]
-        public string Id_citaconsulta { get; set; }
+        [StringLength(50)]
+        public string CitaID { get; set; }
 
-        [StringLength(256)]
-        public string Recomendaciones { get; set; }
-
-        [StringLength(256)]
+        [StringLength(250)]
         public string Resultado { get; set; }
 
-        public virtual Cita_consulta Cita_consulta { get; set; }
+        [StringLength(250)]
+        public string Recomendacion { get; set; }
+
+        public virtual Cita Cita { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tratamiento_diagnostico> Tratamiento_diagnostico { get; set; }
+        public virtual ICollection<DiagnosticoTratamiento> DiagnosticoTratamientoes { get; set; }
     }
 }

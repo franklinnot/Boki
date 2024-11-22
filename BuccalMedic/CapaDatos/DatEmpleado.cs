@@ -46,13 +46,13 @@ namespace CapaDatos
                 {
                     Empleado empleado = new Empleado
                     {
-                        Id_empleado = Convert.ToInt32(fila["EmpleadoID"]),
+                        EmpleadoID = Convert.ToInt32(fila["EmpleadoID"]),
                         Usuario = fila["Usuario"].ToString(),
-                        Password = fila["Contraseña"].ToString(),
+                        Contraseña = fila["Contraseña"].ToString(),
                         Cargo = fila["Cargo"].ToString(),
                         Nombre = fila["Nombre"].ToString()
                     };
-
+                    Debug.WriteLine(empleado.Nombre + " " + empleado.EmpleadoID + " " + empleado.DNI);
                     empleados.Add(empleado);
                 }
             }
@@ -64,17 +64,15 @@ namespace CapaDatos
             return empleados;
         }
 
-
-
         public List<Empleado> ListarEmpleados()
         {
             return ToList("sp_ListarEmpleados");
         }
+
         public List<Empleado> ListarOdontologo()
         {
             return ToList("sp_ListarOdontologos");
         }
-
 
         public Empleado BuscarEmpleadoId(int id_empleado)
         {
@@ -97,9 +95,9 @@ namespace CapaDatos
                 {
                     Empleado emp = new Empleado
                     {
-                        Id_empleado = Convert.ToInt32(fila["Id_empleado"]),
+                        EmpleadoID = Convert.ToInt32(fila["Id_empleado"]),
                         Usuario = fila["Usuario"].ToString(),
-                        Password = fila["Password"].ToString(),
+                        Contraseña = fila["Password"].ToString(),
                         Cargo = fila["Cargo"].ToString(),
                         Nombre = fila["Nombre"].ToString()
                     };
@@ -142,9 +140,9 @@ namespace CapaDatos
                 {
                     Empleado emp = new Empleado
                     {
-                        Id_empleado = Convert.ToInt32(fila["EmpleadoID"]),
+                        EmpleadoID = Convert.ToInt32(fila["EmpleadoID"]),
                         Usuario = fila["Usuario"].ToString(),
-                        Password = fila["Contraseña"].ToString(),
+                        Contraseña = fila["Contraseña"].ToString(),
                         Cargo = fila["Cargo"].ToString(),
                         Nombre = fila["Nombre"].ToString()
                     };
@@ -188,9 +186,9 @@ namespace CapaDatos
                 {
                     Empleado emp = new Empleado
                     {
-                        Id_empleado = Convert.ToInt32(fila["EmpleadoID"]),
+                        EmpleadoID = Convert.ToInt32(fila["EmpleadoID"]),
                         Usuario = fila["Usuario"].ToString(),
-                        Password = fila["Contraseña"].ToString(),
+                        Contraseña = fila["Contraseña"].ToString(),
                         Cargo = fila["Cargo"].ToString(),
                         Nombre = fila["Nombre"].ToString()
                     };

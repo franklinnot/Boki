@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_recepcion));
             this.panel_Recepcion = new System.Windows.Forms.Panel();
+            this.txt_nombreCliente = new System.Windows.Forms.TextBox();
             this.dtp_registroCitas = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txt_nombreCliente = new System.Windows.Forms.TextBox();
             this.panel_Recepcion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -82,9 +82,22 @@
             this.panel_Recepcion.Size = new System.Drawing.Size(812, 552);
             this.panel_Recepcion.TabIndex = 0;
             // 
+            // txt_nombreCliente
+            // 
+            this.txt_nombreCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(238)))));
+            this.txt_nombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txt_nombreCliente.Location = new System.Drawing.Point(320, 162);
+            this.txt_nombreCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_nombreCliente.Name = "txt_nombreCliente";
+            this.txt_nombreCliente.ReadOnly = true;
+            this.txt_nombreCliente.Size = new System.Drawing.Size(141, 20);
+            this.txt_nombreCliente.TabIndex = 40;
+            this.txt_nombreCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // dtp_registroCitas
             // 
             this.dtp_registroCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dtp_registroCitas.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_registroCitas.Location = new System.Drawing.Point(146, 297);
             this.dtp_registroCitas.MinDate = new System.DateTime(2024, 10, 28, 0, 0, 0, 0);
             this.dtp_registroCitas.Name = "dtp_registroCitas";
@@ -161,7 +174,6 @@
             this.cmb_odontologo.Name = "cmb_odontologo";
             this.cmb_odontologo.Size = new System.Drawing.Size(141, 21);
             this.cmb_odontologo.TabIndex = 30;
-            this.cmb_odontologo.SelectedIndexChanged += new System.EventHandler(this.cmb_odontologo_SelectedIndexChanged);
             // 
             // txt_DNI
             // 
@@ -268,18 +280,6 @@
             this.pictureBox4.Size = new System.Drawing.Size(599, 8);
             this.pictureBox4.TabIndex = 38;
             this.pictureBox4.TabStop = false;
-            // 
-            // txt_nombreCliente
-            // 
-            this.txt_nombreCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(238)))));
-            this.txt_nombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt_nombreCliente.Location = new System.Drawing.Point(320, 162);
-            this.txt_nombreCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_nombreCliente.Name = "txt_nombreCliente";
-            this.txt_nombreCliente.ReadOnly = true;
-            this.txt_nombreCliente.Size = new System.Drawing.Size(141, 20);
-            this.txt_nombreCliente.TabIndex = 40;
-            this.txt_nombreCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // form_recepcion
             // 

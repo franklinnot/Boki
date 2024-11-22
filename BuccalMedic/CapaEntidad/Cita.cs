@@ -12,35 +12,34 @@ namespace CapaEntidad
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Cita()
         {
-            Cita_consulta = new HashSet<Cita_consulta>();
-            Cita_tratamiento = new HashSet<Cita_tratamiento>();
+            Citatratamientoes = new HashSet<Citatratamiento>();
+            Diagnosticoes = new HashSet<Diagnostico>();
         }
 
-        public DateTime? Fecha_Registro { get; set; }
+        [StringLength(50)]
+        public string CitaID { get; set; }
 
-        [Key]
-        [StringLength(16)]
-        public string Id_cita { get; set; }
-
-        public int Id_cliente { get; set; }
-
-        public DateTime? Fecha_inicio { get; set; }
+        public int ClienteID { get; set; }
 
         [StringLength(50)]
         public string Estado { get; set; }
 
-        public DateTime? Fecha_fin { get; set; }
+        public DateTime FechaProgramacion { get; set; }
 
-        public int id_empleado { get; set; }
+        public int EmpleadoID { get; set; }
+
+        public DateTime? FechaFinCita { get; set; }
+
+        public DateTime FechaRegistroCita { get; set; }
 
         public virtual Cliente Cliente { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cita_consulta> Cita_consulta { get; set; }
 
         public virtual Empleado Empleado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cita_tratamiento> Cita_tratamiento { get; set; }
+        public virtual ICollection<Citatratamiento> Citatratamientoes { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Diagnostico> Diagnosticoes { get; set; }
     }
 }
