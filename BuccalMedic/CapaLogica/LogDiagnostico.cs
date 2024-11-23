@@ -33,5 +33,10 @@ namespace CapaLogica
             return DatDiagnostico.Instancia.Tratamientos_Diagnostico(idCita);
         }
 
+        public string CodigoDiagnostico(string id_cita)
+        {
+            return DatDiagnostico.Instancia.CodigoDiagnostico(id_cita);
+        }
+
     }
 }

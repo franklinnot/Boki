@@ -90,12 +90,6 @@ namespace CapaDatos
                 Console.Write(" -Paciente- ");
             }
 
-            if (fecha.HasValue) 
-            {
-                parameters.Add(new SqlParameter("@FechaProgramacion", fecha.Value));
-                Console.Write(" -FechaRegistro- ");
-            }
-
             return ToList("spListaCitasFiltradas", parameters);
         }
 
@@ -371,5 +365,50 @@ namespace CapaDatos
 
             return citas;
         }
+
+        public List<Dictionary<string, string>> HistorialCitas(string tipo)
+        {
+            List<Dictionary<string, string>> citas = new List<Dictionary<string, string>>();
+            DataTable dataTable = new DataTable();
+            SqlConnection conexion = Conexion.Instancia.Conectar();
+            SqlCommand cmd = new SqlCommand();
+            if (tipo == "CONSULTA") {
+                cmd = new SqlCommand("sp_HistorialConsultas", conexion);
+            }
+            else if (tipo == "TRATAMIENTO")
+            {
+                cmd = new SqlCommand("sp_HistorialTratamientos", conexion);
+            }
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            conexion.Open();
+
+            SqlDataReader query = cmd.ExecuteReader();
+            dataTable.Load(query);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow fila in dataTable.Rows)
+                {
+                    Dictionary<string, string> cita = new Dictionary<string, string>
+                    {
+                        { "Id_Cita", fila["CitaID"].ToString() },
+                        { "Fecha_Registro", fila["FechaProgramacion"].ToString() },
+                        { "Paciente", fila["Paciente"].ToString() },
+
+                    };
+                    citas.Add(cita);
+                }
+            }
+            else
+            {
+                Debug.WriteLine($"No se encontró ningún registro al listar y filtrar Citas.\nStore procedure:spHistorialDeCitas");
+            }
+
+            return citas;
+        }
+
+
     }
 }

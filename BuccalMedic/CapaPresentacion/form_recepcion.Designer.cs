@@ -181,6 +181,7 @@
             this.txt_DNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txt_DNI.Location = new System.Drawing.Point(146, 162);
             this.txt_DNI.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_DNI.MaxLength = 8;
             this.txt_DNI.Name = "txt_DNI";
             this.txt_DNI.Size = new System.Drawing.Size(141, 20);
             this.txt_DNI.TabIndex = 29;
@@ -225,6 +226,7 @@
             this.btn_cancelar.TabIndex = 25;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_registrarCita
             // 

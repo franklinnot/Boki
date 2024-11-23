@@ -53,13 +53,14 @@ namespace CapaPresentacion
                 if (verificar)
                 {
                     MessageBox.Show("se ha registrado correctamente");
+                    LimpiarVariables();
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("No fue posible registrar");
                 }
 
-                LimpiarVariables();
             }
             catch (Exception ex)
             {

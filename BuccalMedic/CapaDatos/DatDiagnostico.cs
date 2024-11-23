@@ -132,5 +132,38 @@ namespace CapaDatos
         }
 
 
+        public string CodigoDiagnostico(string id_cita) {
+            string tratamiento = string.Empty;
+
+            DataTable dataTable = new DataTable();
+            SqlConnection conexion = Conexion.Instancia.Conectar();
+            SqlCommand cmd = new SqlCommand("sp_RetornarCodigoDiagnostico", conexion);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@citaID", id_cita);
+
+            conexion.Open();
+
+            SqlDataReader query = cmd.ExecuteReader();
+            dataTable.Load(query);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow fila in dataTable.Rows)
+                {
+                    tratamiento = fila["DiagnosticoID"].ToString();
+
+                }
+            }
+            else
+            {
+                Debug.WriteLine("El DataTable está vacío.");
+            }
+
+            return tratamiento;
+            // sp_RetornarCodigoDiagnostico
+        }
+
     }
 }

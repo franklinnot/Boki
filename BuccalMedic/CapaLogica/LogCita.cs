@@ -55,5 +55,12 @@ namespace CapaLogica
         {
             return DatCita.Instancia.HistorialCitas(idEmpleado,tipoCita,paciente,fecha,idcita);
         }
+
+        public List<Dictionary<string, string>> HistorialCitas(string tipo)
+        {
+            return DatCita.Instancia.HistorialCitas(tipo);
+        }
+
+
     }
 }

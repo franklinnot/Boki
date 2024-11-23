@@ -33,7 +33,7 @@ namespace CapaPresentacion
         private void CargarCitas(DateTime? fecha = null, string paciente = null, string idcita = null)
         {
             cirugias_dgv.Rows.Clear();
-            foreach (Dictionary<string, string> item in LogCita.Instancia.HistorialCitas(idEmpleado, tipoCita))
+            foreach (Dictionary<string, string> item in LogCita.Instancia.HistorialCitas("TRATAMIENTO"))
             {
                 string id = item["Id_Cita"].ToString();
                 string fechaC = DateTime.Parse(item["Fecha_Registro"].ToString()).ToShortDateString();
@@ -43,9 +43,10 @@ namespace CapaPresentacion
 
             }
         }
+
         private void CargarCombobox()
         {
-            var citas = LogCita.Instancia.HistorialCitas(idEmpleado, tipoCita);
+            var citas = LogCita.Instancia.HistorialCitas("TRATAMIENTO");
 
             cirugia_codigocita.Items.Clear();
             foreach (var item in citas)
@@ -66,6 +67,7 @@ namespace CapaPresentacion
             }
 
         }
+
         private void FiltrarCitas()
         {
             // obtenemos el dato seleccionado de los objetos, si no selecciono nada lo pondremos como null

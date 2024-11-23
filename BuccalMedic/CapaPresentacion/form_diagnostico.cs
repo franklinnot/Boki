@@ -54,22 +54,9 @@ namespace CapaPresentacion
             }
         }
         
-        static string GenerarIDDiagnostico(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            Random random = new Random();
-            char[] stringChars = new char[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                stringChars[i] = chars[random.Next(chars.Length)];
-            }
-            return new string(stringChars);
-        }
 
         private void btn_registrardiagnosticod_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show(idCita);
             Diagnostico diagnostico = new Diagnostico
             {
                 CitaID = idCita,
@@ -103,19 +90,21 @@ namespace CapaPresentacion
             {
                 DiagnosticoTratamiento tratamientodiag = new DiagnosticoTratamiento();
                 tratamientodiag.TratamientoID = item.TratamientoID;
-                tratamientodiag.DiagnosticoID = diagnostico.DiagnosticoID;
-     
+                tratamientodiag.DiagnosticoID = LogDiagnostico.Instancia.CodigoDiagnostico(idCita);
+                MessageBox.Show($"CODIGO DE DIAGNOSTICO: {tratamientodiag.DiagnosticoID}");
                 bool verificax = LogTratamientoDiagnostico.Instancia.InsertarTratamientoDiagnostico(tratamientodiag);
                 if (verificax)
                 {
-                    Debug.WriteLine($"Se inserto el tratamiento: {item.NombreTratamiento}, con el diagnostico {diagnostico.DiagnosticoID}");
+                    Debug.WriteLine($"Se inserto el tratamiento: {item.NombreTratamiento}, con el diagnostico {tratamientodiag.DiagnosticoID}");
                 }
                 else
                 {
                     Debug.WriteLine($"Hubo un error al registrar los tratamiendos recomendados en el diagnóstico.");
+                    
                 }
             }
             LimpiarVariables();
+            this.Close();
         }
 
     }

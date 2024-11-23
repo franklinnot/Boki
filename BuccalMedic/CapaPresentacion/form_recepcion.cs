@@ -45,18 +45,26 @@ namespace CapaPresentacion
         private void btn_registrarCita_Click(object sender, EventArgs e)
         {
             string tratamiento = string.IsNullOrEmpty(cmb_tratamiento.SelectedItem?.ToString()) ? null : cmb_tratamiento.SelectedItem?.ToString();
-            if (cbx_tratamiento.Checked)
+            /* Validaciones */
+            if (string.IsNullOrEmpty(txt_DNI.Text.Trim()) || txt_DNI.Text.Trim() == "DNI" ||
+                string.IsNullOrEmpty(cmb_odontologo.Text.Trim()) || cmb_odontologo.Text.Trim() == "Odontólogo" ||
+                string.IsNullOrEmpty(cmb_horario.Text.Trim()) || cmb_horario.Text.Trim() == "Horario")
             {
-                if (string.IsNullOrEmpty(tratamiento) || tratamiento == "Tratamiento")
-                {
-                    MessageBox.Show("Para registrar una cita de tipo de tratamiento debes seleccionar uno del combobox.");
-                    return;
-                }
+                MessageBox.Show("Debes llenar todos los campos correctamente.");
+                return;
             }
-
+            if (cbx_tratamiento.Checked && (string.IsNullOrEmpty(tratamiento) || tratamiento == "Tratamiento"))
+            {
+                MessageBox.Show("Para registrar una cita de tipo de tratamiento debes seleccionar uno del combobox.");
+                return;
+            }
 
             //para id_cliente
             Cliente cliente = LogCliente.Instancia.BuscarClienteDNI(txt_DNI.Text.Trim());
+            if (cliente.Nombre == null) {
+                MessageBox.Show("Primero debe registrar al paciente.");
+                return;
+            }
             int id_cliente = cliente.ClienteID;
 
             //para id_empleado
@@ -267,8 +275,12 @@ namespace CapaPresentacion
             cbx_tratamiento.Checked = false;
         }
 
-
-
-
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Placeholders();
+            dtp_registroCitas.MinDate = DateTime.Now;
+            getTratamientos(cmb_tratamiento);
+            getOdontologos(cmb_odontologo);
+        }
     }
 }

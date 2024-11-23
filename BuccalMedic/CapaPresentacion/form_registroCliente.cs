@@ -60,6 +60,14 @@ namespace CapaPresentacion
 
         private void btn_registrar_Cliente_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txt_DNI.Text.Trim()) || txt_DNI.Text.Trim() == "DNI" ||
+                string.IsNullOrEmpty(txt_NombreCliente.Text.Trim()) || txt_NombreCliente.Text.Trim() == "Nombre y Apellidos" ||
+                string.IsNullOrEmpty(cmb_genero.Text) || cmb_genero.Text == "Género")
+            {
+                MessageBox.Show("Debe llenar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string dni = txt_DNI.Text.Trim();
             dni = string.IsNullOrEmpty(dni) || dni == "DNI" ? null : dni;
 
@@ -67,11 +75,6 @@ namespace CapaPresentacion
             string genero = cmb_genero.SelectedItem.ToString();
             DateTime fecha_nacimiento = DateTime.Parse(dtp_fecha_nacimiento.Value.ToShortDateString());
 
-            if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(genero) || string.IsNullOrEmpty(genero))
-            {
-                MessageBox.Show("Debe llenar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
 
             Cliente cliente = new Cliente
@@ -99,6 +102,13 @@ namespace CapaPresentacion
 
         private void btn_modificar_Cliente_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txt_DNI.Text.Trim()) || txt_DNI.Text.Trim() == "DNI" ||
+                string.IsNullOrEmpty(txt_NombreCliente.Text.Trim()) || txt_NombreCliente.Text.Trim() == "Nombre y Apellidos")
+            {
+                MessageBox.Show("Debe llenar los campos requeridos correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string dni = txt_DNI.Text.Trim();
             dni = dni == "DNI" || string.IsNullOrEmpty(dni) ? "" : dni;
 

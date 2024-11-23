@@ -32,7 +32,7 @@ namespace CapaPresentacion
         private void CargarCitas(string paciente = null, DateTime? fecha = null, string idcita = null)
         {
             evaluaciones_dgv.Rows.Clear();
-            foreach (Dictionary<string, string> item in LogCita.Instancia.HistorialCitas(idEmpleado,tipoCita, paciente, fecha, idcita))
+            foreach (Dictionary<string, string> item in LogCita.Instancia.HistorialCitas("CONSULTA"))
             {
                 string pacienteC = item["Paciente"].ToString();
                 string idConsulta = item["Id_Cita"].ToString();
@@ -43,7 +43,7 @@ namespace CapaPresentacion
         }
         private void CargarCombobox()
         {
-            var citas = LogCita.Instancia.HistorialCitas(idEmpleado,tipoCita);
+            var citas = LogCita.Instancia.HistorialCitas("CONSULTA");
 
 
             evaluacion_codigocita.Items.Clear();

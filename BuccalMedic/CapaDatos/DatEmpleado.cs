@@ -52,7 +52,6 @@ namespace CapaDatos
                         Cargo = fila["Cargo"].ToString(),
                         Nombre = fila["Nombre"].ToString()
                     };
-                    Debug.WriteLine(empleado.Nombre + " " + empleado.EmpleadoID + " " + empleado.DNI);
                     empleados.Add(empleado);
                 }
             }

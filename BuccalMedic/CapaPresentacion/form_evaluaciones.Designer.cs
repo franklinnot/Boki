@@ -69,7 +69,7 @@
             this.panel_evaluaciones.Controls.Add(this.label1);
             this.panel_evaluaciones.Controls.Add(this.pictureBox3);
             this.panel_evaluaciones.Location = new System.Drawing.Point(-3, -2);
-            this.panel_evaluaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_evaluaciones.Margin = new System.Windows.Forms.Padding(2);
             this.panel_evaluaciones.Name = "panel_evaluaciones";
             this.panel_evaluaciones.Size = new System.Drawing.Size(608, 438);
             this.panel_evaluaciones.TabIndex = 2;
@@ -91,7 +91,7 @@
             this.evaluacion_btn_Limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(238)))));
             this.evaluacion_btn_Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.evaluacion_btn_Limpiar.Location = new System.Drawing.Point(481, 373);
-            this.evaluacion_btn_Limpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.evaluacion_btn_Limpiar.Margin = new System.Windows.Forms.Padding(2);
             this.evaluacion_btn_Limpiar.Name = "evaluacion_btn_Limpiar";
             this.evaluacion_btn_Limpiar.Size = new System.Drawing.Size(100, 36);
             this.evaluacion_btn_Limpiar.TabIndex = 12;
@@ -106,7 +106,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(451, 29);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(130, 36);
             this.pictureBox1.TabIndex = 8;
@@ -129,7 +129,7 @@
             this.Paciente,
             this.Fecha_Registro});
             this.evaluaciones_dgv.Location = new System.Drawing.Point(203, 104);
-            this.evaluaciones_dgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.evaluaciones_dgv.Margin = new System.Windows.Forms.Padding(2);
             this.evaluaciones_dgv.Name = "evaluaciones_dgv";
             this.evaluaciones_dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.evaluaciones_dgv.RowTemplate.Height = 24;
@@ -161,9 +161,9 @@
             // 
             this.evaluacion_codigocita.FormattingEnabled = true;
             this.evaluacion_codigocita.Location = new System.Drawing.Point(42, 284);
-            this.evaluacion_codigocita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.evaluacion_codigocita.Margin = new System.Windows.Forms.Padding(2);
             this.evaluacion_codigocita.Name = "evaluacion_codigocita";
-            this.evaluacion_codigocita.Size = new System.Drawing.Size(92, 21);
+            this.evaluacion_codigocita.Size = new System.Drawing.Size(151, 21);
             this.evaluacion_codigocita.TabIndex = 6;
             this.evaluacion_codigocita.SelectedIndexChanged += new System.EventHandler(this.evaluacion_codigocita_SelectedIndexChanged);
             // 
@@ -171,7 +171,7 @@
             // 
             this.evaluacion_cmbox_paciente.FormattingEnabled = true;
             this.evaluacion_cmbox_paciente.Location = new System.Drawing.Point(42, 206);
-            this.evaluacion_cmbox_paciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.evaluacion_cmbox_paciente.Margin = new System.Windows.Forms.Padding(2);
             this.evaluacion_cmbox_paciente.Name = "evaluacion_cmbox_paciente";
             this.evaluacion_cmbox_paciente.Size = new System.Drawing.Size(151, 21);
             this.evaluacion_cmbox_paciente.TabIndex = 5;
@@ -181,7 +181,7 @@
             // 
             this.evaluacion_dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.evaluacion_dtp_fecha.Location = new System.Drawing.Point(42, 137);
-            this.evaluacion_dtp_fecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.evaluacion_dtp_fecha.Margin = new System.Windows.Forms.Padding(2);
             this.evaluacion_dtp_fecha.Name = "evaluacion_dtp_fecha";
             this.evaluacion_dtp_fecha.Size = new System.Drawing.Size(151, 20);
             this.evaluacion_dtp_fecha.TabIndex = 4;
@@ -237,7 +237,7 @@
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(-112, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(734, 475);
             this.pictureBox3.TabIndex = 18;
@@ -249,7 +249,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 433);
             this.Controls.Add(this.panel_evaluaciones);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "form_evaluaciones";
             this.Text = "form_evaluaciones";
             this.Load += new System.EventHandler(this.form_evaluaciones_Load);
