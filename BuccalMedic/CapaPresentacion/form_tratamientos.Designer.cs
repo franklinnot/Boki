@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_tratamientos));
             this.panel_tratamientos = new System.Windows.Forms.Panel();
+            this.btnHabilitar = new System.Windows.Forms.Button();
             this.txt_precio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,12 +45,11 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnHabilitar = new System.Windows.Forms.Button();
             this.panel_tratamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tratamientos_dgv)).BeginInit();
@@ -80,6 +80,19 @@
             this.panel_tratamientos.Name = "panel_tratamientos";
             this.panel_tratamientos.Size = new System.Drawing.Size(608, 438);
             this.panel_tratamientos.TabIndex = 2;
+            // 
+            // btnHabilitar
+            // 
+            this.btnHabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
+            this.btnHabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHabilitar.Location = new System.Drawing.Point(445, 373);
+            this.btnHabilitar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHabilitar.Name = "btnHabilitar";
+            this.btnHabilitar.Size = new System.Drawing.Size(100, 31);
+            this.btnHabilitar.TabIndex = 25;
+            this.btnHabilitar.Text = "Habilitar";
+            this.btnHabilitar.UseVisualStyleBackColor = false;
+            this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click);
             // 
             // txt_precio
             // 
@@ -225,6 +238,11 @@
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Estado";
+            this.Column1.Name = "Column1";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -269,32 +287,17 @@
             this.pictureBox3.TabIndex = 20;
             this.pictureBox3.TabStop = false;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Estado";
-            this.Column1.Name = "Column1";
-            // 
-            // btnHabilitar
-            // 
-            this.btnHabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
-            this.btnHabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHabilitar.Location = new System.Drawing.Point(445, 373);
-            this.btnHabilitar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHabilitar.Name = "btnHabilitar";
-            this.btnHabilitar.Size = new System.Drawing.Size(100, 31);
-            this.btnHabilitar.TabIndex = 25;
-            this.btnHabilitar.Text = "Habilitar";
-            this.btnHabilitar.UseVisualStyleBackColor = false;
-            this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click);
-            // 
             // form_tratamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 433);
             this.Controls.Add(this.panel_tratamientos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "form_tratamientos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_tratamientos";
             this.Load += new System.EventHandler(this.form_tratamientos_Load);
             this.panel_tratamientos.ResumeLayout(false);

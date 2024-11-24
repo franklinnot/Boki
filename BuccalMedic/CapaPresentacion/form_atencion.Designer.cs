@@ -81,7 +81,7 @@
             this.panel_atencion.Controls.Add(this.label1);
             this.panel_atencion.Controls.Add(this.pictureBox3);
             this.panel_atencion.Location = new System.Drawing.Point(-1, -4);
-            this.panel_atencion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_atencion.Margin = new System.Windows.Forms.Padding(2);
             this.panel_atencion.Name = "panel_atencion";
             this.panel_atencion.Size = new System.Drawing.Size(603, 441);
             this.panel_atencion.TabIndex = 2;
@@ -125,7 +125,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
             this.pictureBox4.Location = new System.Drawing.Point(0, 10);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(262, 53);
             this.pictureBox4.TabIndex = 43;
@@ -135,7 +135,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(103)))), ((int)(((byte)(196)))));
             this.pictureBox5.Location = new System.Drawing.Point(-19, 44);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(294, 25);
             this.pictureBox5.TabIndex = 45;
@@ -145,7 +145,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(52)))), ((int)(((byte)(148)))));
             this.pictureBox6.Location = new System.Drawing.Point(203, 73);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(439, 8);
             this.pictureBox6.TabIndex = 44;
@@ -165,7 +165,7 @@
             this.atencion_btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
             this.atencion_btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.atencion_btnRegistrar.Location = new System.Drawing.Point(249, 360);
-            this.atencion_btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.atencion_btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.atencion_btnRegistrar.Name = "atencion_btnRegistrar";
             this.atencion_btnRegistrar.Size = new System.Drawing.Size(108, 34);
             this.atencion_btnRegistrar.TabIndex = 13;
@@ -178,7 +178,7 @@
             this.atencion_txtRecomendaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(238)))));
             this.atencion_txtRecomendaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.atencion_txtRecomendaciones.Location = new System.Drawing.Point(378, 178);
-            this.atencion_txtRecomendaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.atencion_txtRecomendaciones.Margin = new System.Windows.Forms.Padding(2);
             this.atencion_txtRecomendaciones.Multiline = true;
             this.atencion_txtRecomendaciones.Name = "atencion_txtRecomendaciones";
             this.atencion_txtRecomendaciones.Size = new System.Drawing.Size(192, 166);
@@ -189,7 +189,7 @@
             this.atencion_txtProcedimientos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(238)))));
             this.atencion_txtProcedimientos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.atencion_txtProcedimientos.Location = new System.Drawing.Point(29, 178);
-            this.atencion_txtProcedimientos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.atencion_txtProcedimientos.Margin = new System.Windows.Forms.Padding(2);
             this.atencion_txtProcedimientos.Multiline = true;
             this.atencion_txtProcedimientos.Name = "atencion_txtProcedimientos";
             this.atencion_txtProcedimientos.Size = new System.Drawing.Size(328, 166);
@@ -199,7 +199,7 @@
             // 
             this.atencion_txtNombres.BackColor = System.Drawing.Color.AliceBlue;
             this.atencion_txtNombres.Location = new System.Drawing.Point(362, 92);
-            this.atencion_txtNombres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.atencion_txtNombres.Margin = new System.Windows.Forms.Padding(2);
             this.atencion_txtNombres.Name = "atencion_txtNombres";
             this.atencion_txtNombres.ReadOnly = true;
             this.atencion_txtNombres.Size = new System.Drawing.Size(210, 20);
@@ -209,7 +209,7 @@
             // 
             this.atencion_txtDNI.BackColor = System.Drawing.Color.AliceBlue;
             this.atencion_txtDNI.Location = new System.Drawing.Point(66, 93);
-            this.atencion_txtDNI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.atencion_txtDNI.Margin = new System.Windows.Forms.Padding(2);
             this.atencion_txtDNI.Name = "atencion_txtDNI";
             this.atencion_txtDNI.ReadOnly = true;
             this.atencion_txtDNI.Size = new System.Drawing.Size(124, 20);
@@ -221,7 +221,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(437, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(157, 41);
             this.pictureBox1.TabIndex = 6;
@@ -288,7 +288,7 @@
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(-8, 122);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(650, 319);
             this.pictureBox3.TabIndex = 40;
@@ -300,8 +300,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 433);
             this.Controls.Add(this.panel_atencion);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "form_atencion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_atencion";
             this.Load += new System.EventHandler(this.form_atencion_Load);
             this.panel_atencion.ResumeLayout(false);

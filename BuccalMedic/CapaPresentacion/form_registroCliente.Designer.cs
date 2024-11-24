@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_registroCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_buscarCliente = new System.Windows.Forms.Button();
@@ -65,9 +65,9 @@
             this.groupBox1.Controls.Add(this.txt_NombreCliente);
             this.groupBox1.Controls.Add(this.txt_DNI);
             this.groupBox1.Location = new System.Drawing.Point(64, 65);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(550, 147);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -78,7 +78,7 @@
             this.btn_buscarCliente.BackColor = System.Drawing.Color.Navy;
             this.btn_buscarCliente.ForeColor = System.Drawing.Color.White;
             this.btn_buscarCliente.Location = new System.Drawing.Point(49, 107);
-            this.btn_buscarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_buscarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_buscarCliente.Name = "btn_buscarCliente";
             this.btn_buscarCliente.Size = new System.Drawing.Size(73, 28);
             this.btn_buscarCliente.TabIndex = 19;
@@ -91,7 +91,7 @@
             this.dtp_fecha_nacimiento.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(238)))));
             this.dtp_fecha_nacimiento.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(238)))));
             this.dtp_fecha_nacimiento.Location = new System.Drawing.Point(297, 73);
-            this.dtp_fecha_nacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtp_fecha_nacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_fecha_nacimiento.Name = "dtp_fecha_nacimiento";
             this.dtp_fecha_nacimiento.Size = new System.Drawing.Size(198, 20);
             this.dtp_fecha_nacimiento.TabIndex = 25;
@@ -104,7 +104,7 @@
             "Masculino",
             "Femenino"});
             this.cmb_genero.Location = new System.Drawing.Point(49, 72);
-            this.cmb_genero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_genero.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_genero.Name = "cmb_genero";
             this.cmb_genero.Size = new System.Drawing.Size(191, 21);
             this.cmb_genero.TabIndex = 21;
@@ -113,7 +113,7 @@
             // 
             this.txt_NombreCliente.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_NombreCliente.Location = new System.Drawing.Point(297, 35);
-            this.txt_NombreCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_NombreCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txt_NombreCliente.Name = "txt_NombreCliente";
             this.txt_NombreCliente.Size = new System.Drawing.Size(198, 20);
             this.txt_NombreCliente.TabIndex = 20;
@@ -122,7 +122,7 @@
             // 
             this.txt_DNI.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_DNI.Location = new System.Drawing.Point(49, 35);
-            this.txt_DNI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_DNI.Margin = new System.Windows.Forms.Padding(2);
             this.txt_DNI.MaxLength = 8;
             this.txt_DNI.Name = "txt_DNI";
             this.txt_DNI.Size = new System.Drawing.Size(191, 20);
@@ -133,14 +133,14 @@
             // 
             this.dgv_clientes.AllowUserToAddRows = false;
             this.dgv_clientes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dni_Cliente,
@@ -149,7 +149,7 @@
             this.genero_Cliente,
             this.est_Cliente});
             this.dgv_clientes.Location = new System.Drawing.Point(64, 232);
-            this.dgv_clientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_clientes.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_clientes.Name = "dgv_clientes";
             this.dgv_clientes.ReadOnly = true;
             this.dgv_clientes.RowHeadersVisible = false;
@@ -203,7 +203,7 @@
             // 
             this.btn_inhabilitar_cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(60)))), ((int)(((byte)(44)))));
             this.btn_inhabilitar_cliente.Location = new System.Drawing.Point(646, 158);
-            this.btn_inhabilitar_cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_inhabilitar_cliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_inhabilitar_cliente.Name = "btn_inhabilitar_cliente";
             this.btn_inhabilitar_cliente.Size = new System.Drawing.Size(93, 35);
             this.btn_inhabilitar_cliente.TabIndex = 17;
@@ -215,7 +215,7 @@
             // 
             this.btn_modificar_Cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
             this.btn_modificar_Cliente.Location = new System.Drawing.Point(646, 119);
-            this.btn_modificar_Cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_modificar_Cliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_modificar_Cliente.Name = "btn_modificar_Cliente";
             this.btn_modificar_Cliente.Size = new System.Drawing.Size(93, 35);
             this.btn_modificar_Cliente.TabIndex = 16;
@@ -227,7 +227,7 @@
             // 
             this.btn_registrar_Cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(192)))), ((int)(((byte)(229)))));
             this.btn_registrar_Cliente.Location = new System.Drawing.Point(646, 79);
-            this.btn_registrar_Cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_registrar_Cliente.Margin = new System.Windows.Forms.Padding(2);
             this.btn_registrar_Cliente.Name = "btn_registrar_Cliente";
             this.btn_registrar_Cliente.Size = new System.Drawing.Size(93, 35);
             this.btn_registrar_Cliente.TabIndex = 15;
@@ -267,7 +267,7 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(23, 13);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(143, 41);
             this.pictureBox2.TabIndex = 20;
@@ -277,7 +277,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(808, 548);
             this.pictureBox1.TabIndex = 19;
@@ -290,8 +290,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(804, 541);
             this.Controls.Add(this.panel_mantenedorCliente);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "form_registroCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_registroCliente";
             this.Load += new System.EventHandler(this.form_registroCliente_Load);
             this.groupBox1.ResumeLayout(false);

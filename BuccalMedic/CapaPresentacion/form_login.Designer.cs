@@ -57,7 +57,7 @@
             this.panel_login.Controls.Add(this.label3);
             this.panel_login.Controls.Add(this.label2);
             this.panel_login.Location = new System.Drawing.Point(451, 224);
-            this.panel_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_login.Margin = new System.Windows.Forms.Padding(2);
             this.panel_login.Name = "panel_login";
             this.panel_login.Size = new System.Drawing.Size(221, 202);
             this.panel_login.TabIndex = 5;
@@ -67,7 +67,7 @@
             this.btn_iniciar_sesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(60)))), ((int)(((byte)(44)))));
             this.btn_iniciar_sesion.ForeColor = System.Drawing.Color.White;
             this.btn_iniciar_sesion.Location = new System.Drawing.Point(23, 144);
-            this.btn_iniciar_sesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_iniciar_sesion.Margin = new System.Windows.Forms.Padding(2);
             this.btn_iniciar_sesion.Name = "btn_iniciar_sesion";
             this.btn_iniciar_sesion.Size = new System.Drawing.Size(170, 32);
             this.btn_iniciar_sesion.TabIndex = 6;
@@ -78,7 +78,7 @@
             // txt_usuario
             // 
             this.txt_usuario.Location = new System.Drawing.Point(23, 58);
-            this.txt_usuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_usuario.Margin = new System.Windows.Forms.Padding(2);
             this.txt_usuario.MaxLength = 30;
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(170, 20);
@@ -87,7 +87,7 @@
             // txt_password
             // 
             this.txt_password.Location = new System.Drawing.Point(23, 103);
-            this.txt_password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(2);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
             this.txt_password.Size = new System.Drawing.Size(170, 20);
@@ -131,7 +131,7 @@
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(-2, -11);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(806, 564);
             this.pictureBox2.TabIndex = 7;
@@ -141,7 +141,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(52)))), ((int)(((byte)(148)))));
             this.pictureBox3.Location = new System.Drawing.Point(419, 149);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(280, 302);
             this.pictureBox3.TabIndex = 8;
@@ -175,9 +175,10 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "form_login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuccalMedic - Login";
             this.panel_login.ResumeLayout(false);
             this.panel_login.PerformLayout();

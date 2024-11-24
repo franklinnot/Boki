@@ -262,8 +262,11 @@
             this.ClientSize = new System.Drawing.Size(804, 541);
             this.Controls.Add(this.panel_cita);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "form_citas_odontologo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_citas_odontologo";
             this.panel_cita.ResumeLayout(false);
             this.panel_cita.PerformLayout();

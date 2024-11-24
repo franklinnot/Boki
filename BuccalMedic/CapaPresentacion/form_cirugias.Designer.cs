@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_cirugias));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_cirugias = new System.Windows.Forms.Panel();
+            this.btn_detalle_cita = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btn_detalle_cita = new System.Windows.Forms.Button();
             this.panel_cirugias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cirugias_dgv)).BeginInit();
@@ -75,6 +75,20 @@
             this.panel_cirugias.Name = "panel_cirugias";
             this.panel_cirugias.Size = new System.Drawing.Size(608, 438);
             this.panel_cirugias.TabIndex = 2;
+            // 
+            // btn_detalle_cita
+            // 
+            this.btn_detalle_cita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
+            this.btn_detalle_cita.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_detalle_cita.ForeColor = System.Drawing.Color.Black;
+            this.btn_detalle_cita.Location = new System.Drawing.Point(307, 377);
+            this.btn_detalle_cita.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_detalle_cita.Name = "btn_detalle_cita";
+            this.btn_detalle_cita.Size = new System.Drawing.Size(162, 41);
+            this.btn_detalle_cita.TabIndex = 24;
+            this.btn_detalle_cita.Text = "Detalle de la cita";
+            this.btn_detalle_cita.UseVisualStyleBackColor = false;
+            this.btn_detalle_cita.Click += new System.EventHandler(this.btn_detalle_cita_Click);
             // 
             // label5
             // 
@@ -244,28 +258,17 @@
             this.pictureBox3.TabIndex = 22;
             this.pictureBox3.TabStop = false;
             // 
-            // btn_detalle_cita
-            // 
-            this.btn_detalle_cita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
-            this.btn_detalle_cita.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_detalle_cita.ForeColor = System.Drawing.Color.Black;
-            this.btn_detalle_cita.Location = new System.Drawing.Point(307, 377);
-            this.btn_detalle_cita.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_detalle_cita.Name = "btn_detalle_cita";
-            this.btn_detalle_cita.Size = new System.Drawing.Size(162, 41);
-            this.btn_detalle_cita.TabIndex = 24;
-            this.btn_detalle_cita.Text = "Detalle de la cita";
-            this.btn_detalle_cita.UseVisualStyleBackColor = false;
-            this.btn_detalle_cita.Click += new System.EventHandler(this.btn_detalle_cita_Click);
-            // 
             // form_cirugias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 433);
             this.Controls.Add(this.panel_cirugias);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "form_cirugias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_cirugias";
             this.Load += new System.EventHandler(this.form_cirugias_Load);
             this.panel_cirugias.ResumeLayout(false);

@@ -40,12 +40,12 @@
             this.lbl_procedimiento = new System.Windows.Forms.Label();
             this.lbl_tratamiento = new System.Windows.Forms.Label();
             this.panel_detalleCita = new System.Windows.Forms.Panel();
-            this.lbl_estado = new System.Windows.Forms.Label();
             this.grb_diagnostico = new System.Windows.Forms.GroupBox();
             this.lsv_tratamientos = new System.Windows.Forms.ListView();
             this.colum1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_recomendacionD = new System.Windows.Forms.Label();
             this.lbl_resultado = new System.Windows.Forms.Label();
+            this.lbl_estado = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grb_tratamiento.SuspendLayout();
             this.panel_detalleCita.SuspendLayout();
@@ -59,7 +59,7 @@
             this.lbl_idCita.Location = new System.Drawing.Point(14, 15);
             this.lbl_idCita.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_idCita.Name = "lbl_idCita";
-            this.lbl_idCita.Size = new System.Drawing.Size(229, 19);
+            this.lbl_idCita.Size = new System.Drawing.Size(192, 17);
             this.lbl_idCita.TabIndex = 0;
             this.lbl_idCita.Text = "DETALLE DE LA CITA - COD01";
             // 
@@ -70,7 +70,7 @@
             this.lbl_DNI.Location = new System.Drawing.Point(6, 27);
             this.lbl_DNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DNI.Name = "lbl_DNI";
-            this.lbl_DNI.Size = new System.Drawing.Size(40, 20);
+            this.lbl_DNI.Size = new System.Drawing.Size(34, 17);
             this.lbl_DNI.TabIndex = 1;
             this.lbl_DNI.Text = "DNI:";
             // 
@@ -95,7 +95,7 @@
             this.lbl_nombre.Location = new System.Drawing.Point(6, 47);
             this.lbl_nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(165, 20);
+            this.lbl_nombre.Size = new System.Drawing.Size(133, 17);
             this.lbl_nombre.TabIndex = 2;
             this.lbl_nombre.Text = "Nombres Completos:";
             // 
@@ -105,7 +105,7 @@
             this.lbl_fechaCita.Location = new System.Drawing.Point(23, 42);
             this.lbl_fechaCita.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_fechaCita.Name = "lbl_fechaCita";
-            this.lbl_fechaCita.Size = new System.Drawing.Size(108, 20);
+            this.lbl_fechaCita.Size = new System.Drawing.Size(87, 17);
             this.lbl_fechaCita.TabIndex = 3;
             this.lbl_fechaCita.Text = "Fecha de cita:";
             // 
@@ -115,7 +115,7 @@
             this.lbl_odontologo.Location = new System.Drawing.Point(23, 66);
             this.lbl_odontologo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_odontologo.Name = "lbl_odontologo";
-            this.lbl_odontologo.Size = new System.Drawing.Size(104, 20);
+            this.lbl_odontologo.Size = new System.Drawing.Size(83, 17);
             this.lbl_odontologo.TabIndex = 5;
             this.lbl_odontologo.Text = "Odontologo:";
             // 
@@ -142,7 +142,7 @@
             this.lbl_recomendacionT.Location = new System.Drawing.Point(14, 151);
             this.lbl_recomendacionT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_recomendacionT.Name = "lbl_recomendacionT";
-            this.lbl_recomendacionT.Size = new System.Drawing.Size(147, 20);
+            this.lbl_recomendacionT.Size = new System.Drawing.Size(117, 17);
             this.lbl_recomendacionT.TabIndex = 8;
             this.lbl_recomendacionT.Text = "Recomendaciones:";
             // 
@@ -153,7 +153,7 @@
             this.lbl_procedimiento.Location = new System.Drawing.Point(14, 87);
             this.lbl_procedimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_procedimiento.Name = "lbl_procedimiento";
-            this.lbl_procedimiento.Size = new System.Drawing.Size(209, 20);
+            this.lbl_procedimiento.Size = new System.Drawing.Size(168, 17);
             this.lbl_procedimiento.TabIndex = 7;
             this.lbl_procedimiento.Text = "Procedimientos Realizados:";
             // 
@@ -164,7 +164,7 @@
             this.lbl_tratamiento.Location = new System.Drawing.Point(12, 29);
             this.lbl_tratamiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_tratamiento.Name = "lbl_tratamiento";
-            this.lbl_tratamiento.Size = new System.Drawing.Size(102, 20);
+            this.lbl_tratamiento.Size = new System.Drawing.Size(81, 17);
             this.lbl_tratamiento.TabIndex = 5;
             this.lbl_tratamiento.Text = "Tratamiento:";
             // 
@@ -185,17 +185,6 @@
             this.panel_detalleCita.Name = "panel_detalleCita";
             this.panel_detalleCita.Size = new System.Drawing.Size(406, 432);
             this.panel_detalleCita.TabIndex = 6;
-            // 
-            // lbl_estado
-            // 
-            this.lbl_estado.AutoSize = true;
-            this.lbl_estado.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_estado.Location = new System.Drawing.Point(326, 15);
-            this.lbl_estado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_estado.Name = "lbl_estado";
-            this.lbl_estado.Size = new System.Drawing.Size(71, 19);
-            this.lbl_estado.TabIndex = 7;
-            this.lbl_estado.Text = "ESTADO";
             // 
             // grb_diagnostico
             // 
@@ -239,7 +228,7 @@
             this.lbl_recomendacionD.Location = new System.Drawing.Point(8, 120);
             this.lbl_recomendacionD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_recomendacionD.Name = "lbl_recomendacionD";
-            this.lbl_recomendacionD.Size = new System.Drawing.Size(147, 20);
+            this.lbl_recomendacionD.Size = new System.Drawing.Size(117, 17);
             this.lbl_recomendacionD.TabIndex = 6;
             this.lbl_recomendacionD.Text = "Recomendaciones:";
             // 
@@ -250,20 +239,34 @@
             this.lbl_resultado.Location = new System.Drawing.Point(8, 29);
             this.lbl_resultado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_resultado.Name = "lbl_resultado";
-            this.lbl_resultado.Size = new System.Drawing.Size(93, 20);
+            this.lbl_resultado.Size = new System.Drawing.Size(75, 17);
             this.lbl_resultado.TabIndex = 5;
             this.lbl_resultado.Text = "Resultados:";
             // 
+            // lbl_estado
+            // 
+            this.lbl_estado.AutoSize = true;
+            this.lbl_estado.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_estado.Location = new System.Drawing.Point(326, 15);
+            this.lbl_estado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_estado.Name = "lbl_estado";
+            this.lbl_estado.Size = new System.Drawing.Size(59, 17);
+            this.lbl_estado.TabIndex = 7;
+            this.lbl_estado.Text = "ESTADO";
+            // 
             // form_detalleCita
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
             this.ClientSize = new System.Drawing.Size(433, 458);
             this.Controls.Add(this.panel_detalleCita);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "form_detalleCita";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_detalleCita";
             this.Load += new System.EventHandler(this.form_detalleCita_Load);
             this.groupBox1.ResumeLayout(false);

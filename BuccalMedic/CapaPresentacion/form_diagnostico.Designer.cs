@@ -70,7 +70,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(-3, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(609, 359);
             this.panel1.TabIndex = 0;
@@ -80,7 +80,7 @@
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox3.Location = new System.Drawing.Point(48, 2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(74, 72);
             this.pictureBox3.TabIndex = 24;
@@ -93,7 +93,7 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(467, 7);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(129, 41);
             this.pictureBox2.TabIndex = 22;
@@ -103,7 +103,7 @@
             // 
             this.txtrecomendacionesd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtrecomendacionesd.Location = new System.Drawing.Point(292, 126);
-            this.txtrecomendacionesd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtrecomendacionesd.Margin = new System.Windows.Forms.Padding(2);
             this.txtrecomendacionesd.Multiline = true;
             this.txtrecomendacionesd.Name = "txtrecomendacionesd";
             this.txtrecomendacionesd.Size = new System.Drawing.Size(278, 81);
@@ -124,7 +124,7 @@
             // 
             this.txt_resultadod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txt_resultadod.Location = new System.Drawing.Point(47, 126);
-            this.txt_resultadod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_resultadod.Margin = new System.Windows.Forms.Padding(2);
             this.txt_resultadod.Multiline = true;
             this.txt_resultadod.Name = "txt_resultadod";
             this.txt_resultadod.Size = new System.Drawing.Size(200, 81);
@@ -134,7 +134,7 @@
             // 
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtNombre.Location = new System.Drawing.Point(416, 78);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(154, 20);
@@ -144,7 +144,7 @@
             // 
             this.txtDni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtDni.Location = new System.Drawing.Point(84, 78);
-            this.txtDni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(2);
             this.txtDni.Name = "txtDni";
             this.txtDni.ReadOnly = true;
             this.txtDni.Size = new System.Drawing.Size(96, 20);
@@ -155,7 +155,7 @@
             this.chlbtratamientos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.chlbtratamientos.FormattingEnabled = true;
             this.chlbtratamientos.Location = new System.Drawing.Point(48, 240);
-            this.chlbtratamientos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chlbtratamientos.Margin = new System.Windows.Forms.Padding(2);
             this.chlbtratamientos.Name = "chlbtratamientos";
             this.chlbtratamientos.Size = new System.Drawing.Size(173, 79);
             this.chlbtratamientos.TabIndex = 10;
@@ -165,7 +165,7 @@
             this.btn_registrardiagnosticod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
             this.btn_registrardiagnosticod.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrardiagnosticod.Location = new System.Drawing.Point(467, 285);
-            this.btn_registrardiagnosticod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_registrardiagnosticod.Margin = new System.Windows.Forms.Padding(2);
             this.btn_registrardiagnosticod.Name = "btn_registrardiagnosticod";
             this.btn_registrardiagnosticod.Size = new System.Drawing.Size(101, 41);
             this.btn_registrardiagnosticod.TabIndex = 9;
@@ -234,7 +234,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(60)))), ((int)(((byte)(44)))));
             this.pictureBox1.Location = new System.Drawing.Point(145, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(301, 51);
             this.pictureBox1.TabIndex = 23;
@@ -246,8 +246,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 352);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "form_diagnostico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_diagnostico";
             this.Load += new System.EventHandler(this.form_diagnostico_Load);
             this.panel1.ResumeLayout(false);
