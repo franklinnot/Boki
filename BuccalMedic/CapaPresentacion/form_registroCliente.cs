@@ -149,8 +149,8 @@ namespace CapaPresentacion
             bool verificar_tipodato = int.TryParse(dni, out resultado);
             if (dni.Length == 8 && verificar_tipodato)
             {
-                btn_modificar_Cliente.Enabled = true;
-                btn_inhabilitar_cliente.Enabled = true;
+                //btn_modificar_Cliente.Enabled = true;
+                //btn_inhabilitar_cliente.Enabled = true;
                 btn_registrar_Cliente.Enabled = true;
             }
             else 
@@ -190,6 +190,41 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("El DNI ingresado no se encuentra registrado en el sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dgv_clientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = dgv_clientes.Rows[e.RowIndex];
+
+                txt_DNI.Text = filaSeleccionada.Cells[0].Value.ToString();
+                txt_NombreCliente.Text = filaSeleccionada.Cells[1].Value.ToString();
+                dtp_fecha_nacimiento.Text = filaSeleccionada.Cells[2].Value.ToString();
+                dtp_fecha_nacimiento.Focus();
+                cmb_genero.Text = filaSeleccionada.Cells[3].Value.ToString();
+
+            }
+            btn_modificar_Cliente.Enabled = true;
+            btn_inhabilitar_cliente.Enabled = true;
+            btn_registrar_Cliente.Enabled = false;
+
+        }
+
+        private void btn_buscarCliente_Click(object sender, EventArgs e)
+        {
+            string dni = txt_DNI.Text.Trim();
+            if(string.IsNullOrEmpty(dni) || dni == "DNI")
+            {
+                MessageBox.Show("Ingresa un DNI correcto");
+                return;
+            }
+            Cliente cliente = LogCliente.Instancia.BuscarClienteDNI(dni);
+            txt_DNI.Text = cliente.DNI;
+            txt_NombreCliente.Text = cliente.Nombre;
+            dtp_fecha_nacimiento.Text = cliente.FechaNacimiento.ToString();
+            dtp_fecha_nacimiento.Focus();
+            cmb_genero.Text = cliente.Genero;
         }
     }
 }

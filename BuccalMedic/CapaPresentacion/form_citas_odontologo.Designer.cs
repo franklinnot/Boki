@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_citas_odontologo));
             this.panel_cita = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btn_refrescar = new System.Windows.Forms.Button();
             this.dgv_cita = new System.Windows.Forms.DataGridView();
             this.colum_idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,26 +43,17 @@
             this.colum_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btn_atender = new System.Windows.Forms.Button();
             this.cmb_dniRC = new System.Windows.Forms.ComboBox();
-            this.cmb_pacienteRC = new System.Windows.Forms.ComboBox();
-            this.dtp_fechaRC = new System.Windows.Forms.DateTimePicker();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel_cita.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_cita)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cita)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_cita
@@ -69,13 +65,9 @@
             this.panel_cita.Controls.Add(this.pictureBox6);
             this.panel_cita.Controls.Add(this.btn_refrescar);
             this.panel_cita.Controls.Add(this.dgv_cita);
-            this.panel_cita.Controls.Add(this.label5);
             this.panel_cita.Controls.Add(this.label4);
-            this.panel_cita.Controls.Add(this.label3);
             this.panel_cita.Controls.Add(this.btn_atender);
             this.panel_cita.Controls.Add(this.cmb_dniRC);
-            this.panel_cita.Controls.Add(this.cmb_pacienteRC);
-            this.panel_cita.Controls.Add(this.dtp_fechaRC);
             this.panel_cita.Controls.Add(this.pictureBox2);
             this.panel_cita.Location = new System.Drawing.Point(-5, -7);
             this.panel_cita.Margin = new System.Windows.Forms.Padding(5);
@@ -83,11 +75,61 @@
             this.panel_cita.Size = new System.Drawing.Size(817, 553);
             this.panel_cita.TabIndex = 1;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(553, 23);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(243, 78);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 40;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
+            this.label2.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(68, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(258, 29);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "REVISIÓN DE CITAS";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
+            this.pictureBox4.Location = new System.Drawing.Point(-230, 19);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(641, 66);
+            this.pictureBox4.TabIndex = 42;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(103)))), ((int)(((byte)(196)))));
+            this.pictureBox5.Location = new System.Drawing.Point(-233, 50);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(662, 49);
+            this.pictureBox5.TabIndex = 44;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(52)))), ((int)(((byte)(148)))));
+            this.pictureBox6.Location = new System.Drawing.Point(321, 105);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(496, 10);
+            this.pictureBox6.TabIndex = 43;
+            this.pictureBox6.TabStop = false;
+            // 
             // btn_refrescar
             // 
             this.btn_refrescar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(171)))));
             this.btn_refrescar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_refrescar.Location = new System.Drawing.Point(682, 186);
+            this.btn_refrescar.Location = new System.Drawing.Point(214, 149);
             this.btn_refrescar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_refrescar.Name = "btn_refrescar";
             this.btn_refrescar.Size = new System.Drawing.Size(41, 30);
@@ -167,18 +209,6 @@
             this.colum_estado.ReadOnly = true;
             this.colum_estado.Width = 80;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(431, 131);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 18);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Seleccionar fecha:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -187,21 +217,9 @@
             this.label4.Location = new System.Drawing.Point(55, 132);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 18);
+            this.label4.Size = new System.Drawing.Size(33, 14);
             this.label4.TabIndex = 12;
             this.label4.Text = "DNI:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(210, 132);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 18);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Seleccionar Paciente:";
             // 
             // btn_atender
             // 
@@ -221,28 +239,9 @@
             this.cmb_dniRC.Location = new System.Drawing.Point(56, 154);
             this.cmb_dniRC.Margin = new System.Windows.Forms.Padding(5);
             this.cmb_dniRC.Name = "cmb_dniRC";
-            this.cmb_dniRC.Size = new System.Drawing.Size(124, 28);
+            this.cmb_dniRC.Size = new System.Drawing.Size(124, 25);
             this.cmb_dniRC.TabIndex = 5;
             this.cmb_dniRC.SelectedIndexChanged += new System.EventHandler(this.cmb_dniRC_SelectedIndexChanged);
-            // 
-            // cmb_pacienteRC
-            // 
-            this.cmb_pacienteRC.FormattingEnabled = true;
-            this.cmb_pacienteRC.Location = new System.Drawing.Point(211, 154);
-            this.cmb_pacienteRC.Margin = new System.Windows.Forms.Padding(5);
-            this.cmb_pacienteRC.Name = "cmb_pacienteRC";
-            this.cmb_pacienteRC.Size = new System.Drawing.Size(200, 28);
-            this.cmb_pacienteRC.TabIndex = 4;
-            this.cmb_pacienteRC.SelectedIndexChanged += new System.EventHandler(this.cmb_pacienteRC_SelectedIndexChanged);
-            // 
-            // dtp_fechaRC
-            // 
-            this.dtp_fechaRC.Location = new System.Drawing.Point(432, 154);
-            this.dtp_fechaRC.Margin = new System.Windows.Forms.Padding(5);
-            this.dtp_fechaRC.Name = "dtp_fechaRC";
-            this.dtp_fechaRC.Size = new System.Drawing.Size(291, 27);
-            this.dtp_fechaRC.TabIndex = 2;
-            this.dtp_fechaRC.ValueChanged += new System.EventHandler(this.dtp_fechaRC_ValueChanged);
             // 
             // pictureBox2
             // 
@@ -255,59 +254,9 @@
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(553, 23);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(243, 78);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 40;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
-            this.label2.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(68, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(322, 36);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "REVISIÓN DE CITAS";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
-            this.pictureBox4.Location = new System.Drawing.Point(-230, 19);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(641, 66);
-            this.pictureBox4.TabIndex = 42;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(103)))), ((int)(((byte)(196)))));
-            this.pictureBox5.Location = new System.Drawing.Point(-233, 50);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(662, 49);
-            this.pictureBox5.TabIndex = 44;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(52)))), ((int)(((byte)(148)))));
-            this.pictureBox6.Location = new System.Drawing.Point(321, 105);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(496, 10);
-            this.pictureBox6.TabIndex = 43;
-            this.pictureBox6.TabStop = false;
-            // 
             // form_citas_odontologo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(804, 541);
@@ -318,12 +267,12 @@
             this.Text = "form_citas_odontologo";
             this.panel_cita.ResumeLayout(false);
             this.panel_cita.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_cita)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cita)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,12 +281,8 @@
 
         private System.Windows.Forms.Panel panel_cita;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_atender;
         private System.Windows.Forms.ComboBox cmb_dniRC;
-        private System.Windows.Forms.ComboBox cmb_pacienteRC;
-        private System.Windows.Forms.DateTimePicker dtp_fechaRC;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgv_cita;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_idCita;
         private System.Windows.Forms.DataGridViewTextBoxColumn colum_fecha;

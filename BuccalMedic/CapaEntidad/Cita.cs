@@ -32,7 +32,7 @@ namespace CapaEntidad
 
         public DateTime FechaRegistroCita { get; set; }
 
-        public virtual Cliente Cliente { get; set; }
+        public virtual Cliente Cliente { get; set; } = new Cliente();
 
         public virtual Empleado Empleado { get; set; }
 

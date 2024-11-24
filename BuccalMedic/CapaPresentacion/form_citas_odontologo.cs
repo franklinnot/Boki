@@ -55,16 +55,6 @@ namespace CapaPresentacion
             {
                 cmb_dniRC.Items.Add(item["DNI"]);
             }
-
-            cmb_pacienteRC.Items.Clear();
-            foreach (var item in citas)
-            {
-                if (!cmb_pacienteRC.Items.Contains(item["NombreCliente"]))
-                {
-                    cmb_pacienteRC.Items.Add(item["NombreCliente"]);
-                }
-            }
-
         }
 
         private void FiltrarCitas()
@@ -72,12 +62,7 @@ namespace CapaPresentacion
             string dni = cmb_dniRC.SelectedItem?.ToString();
             dni = string.IsNullOrEmpty(dni) ? null : dni;
             
-            string paciente = cmb_pacienteRC.SelectedItem?.ToString();
-            paciente = string.IsNullOrEmpty(paciente) ? null : paciente;
-
-            DateTime? fecha = dtp_fechaRC.Checked ? dtp_fechaRC.Value : (DateTime?)null;
-
-            CargarCitas(empleado.EmpleadoID, empleado.Cargo, dni, paciente);
+            CargarCitas(empleado.EmpleadoID, empleado.Cargo, dni);
         }
 
 
@@ -153,7 +138,6 @@ namespace CapaPresentacion
         private void btn_refrescar_Click(object sender, EventArgs e)
         {
             cmb_dniRC.SelectedIndex = -1;
-            cmb_pacienteRC.SelectedIndex = -1;
 
             CargarCombobox();
         }

@@ -87,7 +87,8 @@ namespace CapaPresentacion
                 Estado = "PENDIENTE",
                 FechaRegistroCita = DateTime.Now
             };
-
+            cita.Cliente.DNI = txt_DNI.Text.Trim();
+            MessageBox.Show(cita.Cliente.DNI);
             bool verificar_registro = LogCita.Instancia.InsertarCita(cita);
 
             if (!verificar_registro)

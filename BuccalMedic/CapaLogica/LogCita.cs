@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaLogica
 {
@@ -48,6 +49,10 @@ namespace CapaLogica
 
         public bool InsertarCita(Cita cita)
         {
+            cita.Cliente.Estado = "ACTIVO";
+            DatCliente.Instancia.ModificarCliente(cita.Cliente);
+            MessageBox.Show(cita.Cliente.Estado);
+
             return DatCita.Instancia.InsertarCita(cita);
         }
 

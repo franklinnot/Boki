@@ -70,15 +70,6 @@ namespace CapaPresentacion
                 }
             }
 
-            cmb_pacienteC.Items.Clear();
-            foreach (var item in citas)
-            {
-                if (!cmb_pacienteC.Items.Contains(item["NombreCliente"]))
-                {
-                    cmb_pacienteC.Items.Add(item["NombreCliente"]);
-                }
-            }
-
         }
         
         private void FiltrarCitas()
@@ -87,12 +78,8 @@ namespace CapaPresentacion
             dni = string.IsNullOrEmpty(dni)? null:dni;
             string odontologo = cmb_odontologoC.SelectedItem?.ToString();
             odontologo = string.IsNullOrEmpty(odontologo) ? null : odontologo;
-            string paciente = cmb_pacienteC.SelectedItem?.ToString();
-            paciente = string.IsNullOrEmpty(paciente) ? null : paciente;
 
-            DateTime? fecha = dtp_fechaC.Checked ? dtp_fechaC.Value : (DateTime?)null;
-
-            CargarCitas(dni,odontologo,paciente,fecha);
+            CargarCitas(dni,odontologo);
         }
 
         private void dgv_cita_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -144,7 +131,6 @@ namespace CapaPresentacion
                 Dictionary<string,string> datosCita = LogCita.Instancia.TipoDeCita(idCita);
                 tipoCita = datosCita["tipoCita"];
                 estado = datosCita["estado"];
-                MessageBox.Show(tipoCita + " " + estado);
 
                 if ( tipoCita == "TRATAMIENTO")
                 {
@@ -196,9 +182,7 @@ namespace CapaPresentacion
         private void btn_refrescar_Click(object sender, EventArgs e)
         {
             cmb_dni.SelectedIndex = -1;
-            cmb_odontologoC.SelectedIndex = -1;
-            cmb_pacienteC.SelectedIndex = -1;
-            
+            cmb_odontologoC.SelectedIndex = -1;            
             CargarCitas();
         }
     }
