@@ -29,10 +29,10 @@ namespace CapaPresentacion
         {
 
         }
-        private void CargarCitas(string paciente = null, DateTime? fecha = null, string idcita = null)
+        private void CargarCitas(DateTime? fecha = null, string paciente = null, string idcita = null)
         {
             evaluaciones_dgv.Rows.Clear();
-            foreach (Dictionary<string, string> item in LogCita.Instancia.HistorialCitas("CONSULTA"))
+            foreach (Dictionary<string, string> item in LogCita.Instancia.HistorialCitas(tipoCita, idcita, paciente, fecha))
             {
                 string pacienteC = item["Paciente"].ToString();
                 string idConsulta = item["Id_Cita"].ToString();
@@ -72,7 +72,7 @@ namespace CapaPresentacion
             string paciente = !string.IsNullOrEmpty(evaluacion_cmbox_paciente.Text) ? evaluacion_cmbox_paciente.Text : null;
             DateTime? fecha = evaluacion_dtp_fecha.Checked ? evaluacion_dtp_fecha.Value : (DateTime?)null;
 
-            CargarCitas(paciente, fecha, idCita);
+            CargarCitas(fecha, paciente, idCita);
         }
 
         private void evaluacion_cmbox_paciente_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,6 +96,32 @@ namespace CapaPresentacion
         private void evaluacion_dtp_fecha_ValueChanged(object sender, EventArgs e)
         {
             FiltrarCitas();
+        }
+
+        private void btn_detalle_cita_Click(object sender, EventArgs e)
+        {
+            Dictionary <string,string> detalleCita = new Dictionary<string,string>();
+            string idCita = evaluaciones_dgv.CurrentRow.Cells[0].Value.ToString();
+
+            Dictionary<string, string> datosCita = LogCita.Instancia.TipoDeCita(idCita);
+            string estado = datosCita["estado"];
+
+                if (datosCita["tipoCita"] == "TRATAMIENTO")
+                {
+                    detalleCita = LogCitaTratamiento.Instancia.DetalleCitaTratamiento(idCita, estado);
+                }
+                else if (datosCita["tipoCita"] == "CONSULTA")
+                {
+                    detalleCita = LogCitaConsulta.Instancia.DetalleCitaConsulta(idCita, estado);
+                }
+                else
+                {
+                    MessageBox.Show("Error, codigo cita");
+                }
+
+                form_detalleCita detalleCitaForm = new form_detalleCita(detalleCita,estado, datosCita["tipoCita"]);
+                detalleCitaForm.ShowDialog();
+
         }
     }
 }

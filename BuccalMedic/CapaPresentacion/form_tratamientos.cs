@@ -32,7 +32,7 @@ namespace CapaPresentacion
             List<Tratamiento> tratamientos = LogTratamiento.Instancia.ListarTratamientos();
             foreach (var tratamiento in tratamientos)
             {
-                tratamientos_dgv.Rows.Add(tratamiento.TratamientoID, tratamiento.NombreTratamiento, tratamiento.Descripcion, tratamiento.Precio);
+                tratamientos_dgv.Rows.Add(tratamiento.TratamientoID, tratamiento.NombreTratamiento, tratamiento.Descripcion, tratamiento.Precio, tratamiento.estado);
             }
         }
         void limpiarVariables()
@@ -57,8 +57,6 @@ namespace CapaPresentacion
 
                 CargarTratamientos();
                 limpiarVariables();
-
-                MessageBox.Show("Tratamiento registrado");
             }
             catch (Exception ex)
             {
@@ -117,9 +115,39 @@ namespace CapaPresentacion
 
         private void tratamiento_btn_Inhabilitar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Tratamiento tratamiento = new Tratamiento();
+                tratamiento.TratamientoID = int.Parse(tratamientos_dgv.CurrentRow.Cells[0].Value.ToString());
+                tratamiento.estado = "INACTIVO";
+                LogTratamiento.Instancia.InhabilitarTratamiento(tratamiento);
 
-            // TODAVIA NO HACE NADA 
+                MessageBox.Show("Tratamiento Inhabilitado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("RECORCHOLIS, Ups.." + ex);
+            }
+            CargarTratamientos();
 
+        }
+
+        private void btnHabilitar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Tratamiento tratamiento = new Tratamiento();
+                tratamiento.TratamientoID = int.Parse(tratamientos_dgv.CurrentRow.Cells[0].Value.ToString());
+                tratamiento.estado = "ACTIVO";
+                LogTratamiento.Instancia.InhabilitarTratamiento(tratamiento);
+
+                MessageBox.Show("Tratamiento Habilitado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("RECORCHOLIS, Ups.." + ex);
+            }
+            CargarTratamientos();
         }
     }
 }

@@ -145,7 +145,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Error, codigo cita");
                 }
 
-                form_detalleCita detalleCitaForm = new form_detalleCita();
+                form_detalleCita detalleCitaForm = new form_detalleCita(detalleCita,estado,tipoCita);
                 detalleCitaForm.ShowDialog();
             }
             else

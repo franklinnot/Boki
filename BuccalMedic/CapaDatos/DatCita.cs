@@ -366,19 +366,19 @@ namespace CapaDatos
             return citas;
         }
 
-        public List<Dictionary<string, string>> HistorialCitas(string tipo)
+        public List<Dictionary<string, string>> HistorialCitas(string tipo, string citaid = null, string paciente = null, DateTime? fecha = null)
         {
             List<Dictionary<string, string>> citas = new List<Dictionary<string, string>>();
             DataTable dataTable = new DataTable();
             SqlConnection conexion = Conexion.Instancia.Conectar();
             SqlCommand cmd = new SqlCommand();
-            if (tipo == "CONSULTA") {
-                cmd = new SqlCommand("sp_HistorialConsultas", conexion);
-            }
-            else if (tipo == "TRATAMIENTO")
-            {
-                cmd = new SqlCommand("sp_HistorialTratamientos", conexion);
-            }
+          
+            cmd = new SqlCommand("sp_lista", conexion);
+            cmd.Parameters.AddWithValue("@tipo", tipo);
+            cmd.Parameters.AddWithValue("@CitaID", citaid);
+            cmd.Parameters.AddWithValue("@Paciente", paciente);
+            cmd.Parameters.AddWithValue("@FechaRegistro", fecha);
+
 
             cmd.CommandType = CommandType.StoredProcedure;
 

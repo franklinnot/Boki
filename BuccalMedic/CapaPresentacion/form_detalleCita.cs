@@ -16,17 +16,20 @@ namespace CapaPresentacion
 
         public static Dictionary<string, string> detalleCita;
 
-        public form_detalleCita()
+        string estado, tipoCita;
+
+        public form_detalleCita(Dictionary<string,string> detallito , string est, string tipoCit)
         {
             InitializeComponent();
+            
+            detalleCita = detallito;
+            estado = est;
+            tipoCita = tipoCit;
 
-            detalleCita = form_cita.detalleCita;
         }
 
         private void form_detalleCita_Load(object sender, EventArgs e)
         {
-            string estado = form_cita.estado;
-            string tipoCita = form_cita.tipoCita;
 
                 lbl_idCita.Text = $"DETALLE DE LA CITA - {detalleCita["Id_Cita"]}";
                 lbl_estado.Text = estado;

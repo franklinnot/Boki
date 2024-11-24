@@ -61,9 +61,9 @@ namespace CapaLogica
             return DatCita.Instancia.HistorialCitas(idEmpleado,tipoCita,paciente,fecha,idcita);
         }
 
-        public List<Dictionary<string, string>> HistorialCitas(string tipo)
+        public List<Dictionary<string, string>> HistorialCitas(string tipo, string citaid = null, string paciente = null, DateTime? fecha = null)
         {
-            return DatCita.Instancia.HistorialCitas(tipo);
+            return DatCita.Instancia.HistorialCitas(tipo, citaid, paciente, fecha);
         }
 
 

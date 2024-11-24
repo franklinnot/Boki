@@ -28,5 +28,10 @@ namespace CapaLogica
         {
             DatTratamiento.Instancia.EditarTratamiento(tratamiento);
         }
+
+        public void InhabilitarTratamiento(Tratamiento tratamiento)
+        {
+            DatTratamiento.Instancia.InhabilitarTratamiento(tratamiento);
+        }
     }
 }

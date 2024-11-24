@@ -206,13 +206,13 @@ namespace CapaPresentacion
            
             List<Tratamiento> listaTratamientos = LogTratamiento.Instancia.ListarTratamientos();
 
-            
             foreach (var tratamiento in listaTratamientos)
             {
-                comboBox.Items.Add(tratamiento.NombreTratamiento);
+                if (tratamiento.estado == "ACTIVO") 
+                {
+                    comboBox.Items.Add(tratamiento.NombreTratamiento);
+                }
             }
-
-           
         }
 
         public void getOdontologos(ComboBox comboBox)

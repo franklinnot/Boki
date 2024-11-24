@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_evaluaciones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_evaluaciones = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.evaluacion_btn_Limpiar = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btn_detalle_cita = new System.Windows.Forms.Button();
             this.panel_evaluaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.evaluaciones_dgv)).BeginInit();
@@ -56,6 +57,7 @@
             // 
             this.panel_evaluaciones.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_evaluaciones.BackColor = System.Drawing.Color.White;
+            this.panel_evaluaciones.Controls.Add(this.btn_detalle_cita);
             this.panel_evaluaciones.Controls.Add(this.label5);
             this.panel_evaluaciones.Controls.Add(this.evaluacion_btn_Limpiar);
             this.panel_evaluaciones.Controls.Add(this.pictureBox1);
@@ -115,14 +117,14 @@
             // evaluaciones_dgv
             // 
             this.evaluaciones_dgv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.evaluaciones_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.evaluaciones_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.evaluaciones_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.evaluaciones_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdConsulta,
@@ -243,6 +245,20 @@
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
+            // btn_detalle_cita
+            // 
+            this.btn_detalle_cita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
+            this.btn_detalle_cita.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_detalle_cita.ForeColor = System.Drawing.Color.Black;
+            this.btn_detalle_cita.Location = new System.Drawing.Point(287, 373);
+            this.btn_detalle_cita.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_detalle_cita.Name = "btn_detalle_cita";
+            this.btn_detalle_cita.Size = new System.Drawing.Size(162, 41);
+            this.btn_detalle_cita.TabIndex = 20;
+            this.btn_detalle_cita.Text = "Detalle de la cita";
+            this.btn_detalle_cita.UseVisualStyleBackColor = false;
+            this.btn_detalle_cita.Click += new System.EventHandler(this.btn_detalle_cita_Click);
+            // 
             // form_evaluaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,5 +296,6 @@
         private System.Windows.Forms.Button evaluacion_btn_Limpiar;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_detalle_cita;
     }
 }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_tratamientos));
             this.panel_tratamientos = new System.Windows.Forms.Panel();
+            this.txt_precio = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tratamiento_btn_Modificar = new System.Windows.Forms.Button();
@@ -41,13 +43,13 @@
             this.idTratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_precio = new System.Windows.Forms.TextBox();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnHabilitar = new System.Windows.Forms.Button();
             this.panel_tratamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tratamientos_dgv)).BeginInit();
@@ -58,6 +60,7 @@
             // 
             this.panel_tratamientos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_tratamientos.BackColor = System.Drawing.Color.White;
+            this.panel_tratamientos.Controls.Add(this.btnHabilitar);
             this.panel_tratamientos.Controls.Add(this.txt_precio);
             this.panel_tratamientos.Controls.Add(this.label1);
             this.panel_tratamientos.Controls.Add(this.label5);
@@ -73,10 +76,30 @@
             this.panel_tratamientos.Controls.Add(this.label2);
             this.panel_tratamientos.Controls.Add(this.pictureBox3);
             this.panel_tratamientos.Location = new System.Drawing.Point(-3, -2);
-            this.panel_tratamientos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_tratamientos.Margin = new System.Windows.Forms.Padding(2);
             this.panel_tratamientos.Name = "panel_tratamientos";
             this.panel_tratamientos.Size = new System.Drawing.Size(608, 438);
             this.panel_tratamientos.TabIndex = 2;
+            // 
+            // txt_precio
+            // 
+            this.txt_precio.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_precio.Location = new System.Drawing.Point(42, 164);
+            this.txt_precio.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_precio.Name = "txt_precio";
+            this.txt_precio.Size = new System.Drawing.Size(168, 20);
+            this.txt_precio.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(42, 147);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 15);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Precio";
             // 
             // label5
             // 
@@ -95,7 +118,7 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(31, 16);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(129, 41);
             this.pictureBox2.TabIndex = 21;
@@ -105,8 +128,8 @@
             // 
             this.tratamiento_btn_Modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
             this.tratamiento_btn_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tratamiento_btn_Modificar.Location = new System.Drawing.Point(445, 310);
-            this.tratamiento_btn_Modificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tratamiento_btn_Modificar.Location = new System.Drawing.Point(445, 284);
+            this.tratamiento_btn_Modificar.Margin = new System.Windows.Forms.Padding(2);
             this.tratamiento_btn_Modificar.Name = "tratamiento_btn_Modificar";
             this.tratamiento_btn_Modificar.Size = new System.Drawing.Size(100, 31);
             this.tratamiento_btn_Modificar.TabIndex = 15;
@@ -118,8 +141,8 @@
             // 
             this.tratamiento_btn_Inhabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(60)))), ((int)(((byte)(44)))));
             this.tratamiento_btn_Inhabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tratamiento_btn_Inhabilitar.Location = new System.Drawing.Point(445, 355);
-            this.tratamiento_btn_Inhabilitar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tratamiento_btn_Inhabilitar.Location = new System.Drawing.Point(445, 328);
+            this.tratamiento_btn_Inhabilitar.Margin = new System.Windows.Forms.Padding(2);
             this.tratamiento_btn_Inhabilitar.Name = "tratamiento_btn_Inhabilitar";
             this.tratamiento_btn_Inhabilitar.Size = new System.Drawing.Size(100, 31);
             this.tratamiento_btn_Inhabilitar.TabIndex = 14;
@@ -131,7 +154,7 @@
             // 
             this.tratamiento_tbx_Descripcion.BackColor = System.Drawing.Color.AliceBlue;
             this.tratamiento_tbx_Descripcion.Location = new System.Drawing.Point(251, 112);
-            this.tratamiento_tbx_Descripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tratamiento_tbx_Descripcion.Margin = new System.Windows.Forms.Padding(2);
             this.tratamiento_tbx_Descripcion.Name = "tratamiento_tbx_Descripcion";
             this.tratamiento_tbx_Descripcion.Size = new System.Drawing.Size(168, 20);
             this.tratamiento_tbx_Descripcion.TabIndex = 13;
@@ -140,7 +163,7 @@
             // 
             this.tratamiento_tbx_Nombre_Tratamiento.BackColor = System.Drawing.Color.AliceBlue;
             this.tratamiento_tbx_Nombre_Tratamiento.Location = new System.Drawing.Point(42, 112);
-            this.tratamiento_tbx_Nombre_Tratamiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tratamiento_tbx_Nombre_Tratamiento.Margin = new System.Windows.Forms.Padding(2);
             this.tratamiento_tbx_Nombre_Tratamiento.Name = "tratamiento_tbx_Nombre_Tratamiento";
             this.tratamiento_tbx_Nombre_Tratamiento.Size = new System.Drawing.Size(195, 20);
             this.tratamiento_tbx_Nombre_Tratamiento.TabIndex = 12;
@@ -150,7 +173,7 @@
             this.tratamiento_btn_Registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(192)))), ((int)(((byte)(229)))));
             this.tratamiento_btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tratamiento_btn_Registrar.Location = new System.Drawing.Point(445, 147);
-            this.tratamiento_btn_Registrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tratamiento_btn_Registrar.Margin = new System.Windows.Forms.Padding(2);
             this.tratamiento_btn_Registrar.Name = "tratamiento_btn_Registrar";
             this.tratamiento_btn_Registrar.Size = new System.Drawing.Size(100, 31);
             this.tratamiento_btn_Registrar.TabIndex = 11;
@@ -165,9 +188,10 @@
             this.idTratamiento,
             this.Nombre,
             this.Descripcion,
-            this.Precio});
+            this.Precio,
+            this.Column1});
             this.tratamientos_dgv.Location = new System.Drawing.Point(42, 254);
-            this.tratamientos_dgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tratamientos_dgv.Margin = new System.Windows.Forms.Padding(2);
             this.tratamientos_dgv.Name = "tratamientos_dgv";
             this.tratamientos_dgv.RowHeadersWidth = 51;
             this.tratamientos_dgv.RowTemplate.Height = 24;
@@ -195,6 +219,11 @@
             this.Descripcion.MinimumWidth = 6;
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Width = 125;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
             // 
             // label4
             // 
@@ -234,36 +263,29 @@
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(1264, 632);
             this.pictureBox3.TabIndex = 20;
             this.pictureBox3.TabStop = false;
             // 
-            // label1
+            // Column1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 147);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 15);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Precio";
+            this.Column1.HeaderText = "Estado";
+            this.Column1.Name = "Column1";
             // 
-            // txt_precio
+            // btnHabilitar
             // 
-            this.txt_precio.BackColor = System.Drawing.Color.AliceBlue;
-            this.txt_precio.Location = new System.Drawing.Point(42, 164);
-            this.txt_precio.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_precio.Name = "txt_precio";
-            this.txt_precio.Size = new System.Drawing.Size(168, 20);
-            this.txt_precio.TabIndex = 24;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
+            this.btnHabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
+            this.btnHabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHabilitar.Location = new System.Drawing.Point(445, 373);
+            this.btnHabilitar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHabilitar.Name = "btnHabilitar";
+            this.btnHabilitar.Size = new System.Drawing.Size(100, 31);
+            this.btnHabilitar.TabIndex = 25;
+            this.btnHabilitar.Text = "Habilitar";
+            this.btnHabilitar.UseVisualStyleBackColor = false;
+            this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click);
             // 
             // form_tratamientos
             // 
@@ -271,7 +293,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 433);
             this.Controls.Add(this.panel_tratamientos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "form_tratamientos";
             this.Text = "form_tratamientos";
             this.Load += new System.EventHandler(this.form_tratamientos_Load);
@@ -305,5 +327,7 @@
         private System.Windows.Forms.TextBox txt_precio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Button btnHabilitar;
     }
 }

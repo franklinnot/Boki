@@ -46,6 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btn_detalle_cita = new System.Windows.Forms.Button();
             this.panel_cirugias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cirugias_dgv)).BeginInit();
@@ -56,6 +57,7 @@
             // 
             this.panel_cirugias.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_cirugias.BackColor = System.Drawing.Color.White;
+            this.panel_cirugias.Controls.Add(this.btn_detalle_cita);
             this.panel_cirugias.Controls.Add(this.label5);
             this.panel_cirugias.Controls.Add(this.pictureBox1);
             this.panel_cirugias.Controls.Add(this.label1);
@@ -69,7 +71,7 @@
             this.panel_cirugias.Controls.Add(this.label2);
             this.panel_cirugias.Controls.Add(this.pictureBox3);
             this.panel_cirugias.Location = new System.Drawing.Point(-3, -2);
-            this.panel_cirugias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_cirugias.Margin = new System.Windows.Forms.Padding(2);
             this.panel_cirugias.Name = "panel_cirugias";
             this.panel_cirugias.Size = new System.Drawing.Size(608, 438);
             this.panel_cirugias.TabIndex = 2;
@@ -93,7 +95,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(452, 30);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(130, 36);
             this.pictureBox1.TabIndex = 21;
@@ -116,7 +118,7 @@
             this.cirugia_btn_Limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(238)))));
             this.cirugia_btn_Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cirugia_btn_Limpiar.Location = new System.Drawing.Point(482, 377);
-            this.cirugia_btn_Limpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cirugia_btn_Limpiar.Margin = new System.Windows.Forms.Padding(2);
             this.cirugia_btn_Limpiar.Name = "cirugia_btn_Limpiar";
             this.cirugia_btn_Limpiar.Size = new System.Drawing.Size(100, 37);
             this.cirugia_btn_Limpiar.TabIndex = 11;
@@ -140,7 +142,7 @@
             this.Nombre,
             this.Fecha});
             this.cirugias_dgv.Location = new System.Drawing.Point(214, 104);
-            this.cirugias_dgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cirugias_dgv.Margin = new System.Windows.Forms.Padding(2);
             this.cirugias_dgv.Name = "cirugias_dgv";
             this.cirugias_dgv.RowHeadersWidth = 51;
             this.cirugias_dgv.RowTemplate.Height = 24;
@@ -172,7 +174,7 @@
             // 
             this.cirugia_codigocita.FormattingEnabled = true;
             this.cirugia_codigocita.Location = new System.Drawing.Point(42, 284);
-            this.cirugia_codigocita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cirugia_codigocita.Margin = new System.Windows.Forms.Padding(2);
             this.cirugia_codigocita.Name = "cirugia_codigocita";
             this.cirugia_codigocita.Size = new System.Drawing.Size(151, 21);
             this.cirugia_codigocita.TabIndex = 6;
@@ -182,7 +184,7 @@
             // 
             this.cirugia_cmbox_paciente.FormattingEnabled = true;
             this.cirugia_cmbox_paciente.Location = new System.Drawing.Point(42, 206);
-            this.cirugia_cmbox_paciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cirugia_cmbox_paciente.Margin = new System.Windows.Forms.Padding(2);
             this.cirugia_cmbox_paciente.Name = "cirugia_cmbox_paciente";
             this.cirugia_cmbox_paciente.Size = new System.Drawing.Size(151, 21);
             this.cirugia_cmbox_paciente.TabIndex = 5;
@@ -192,7 +194,7 @@
             // 
             this.cirugia_dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.cirugia_dtp_fecha.Location = new System.Drawing.Point(42, 137);
-            this.cirugia_dtp_fecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cirugia_dtp_fecha.Margin = new System.Windows.Forms.Padding(2);
             this.cirugia_dtp_fecha.Name = "cirugia_dtp_fecha";
             this.cirugia_dtp_fecha.Size = new System.Drawing.Size(151, 20);
             this.cirugia_dtp_fecha.TabIndex = 4;
@@ -236,11 +238,25 @@
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(-112, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(734, 475);
             this.pictureBox3.TabIndex = 22;
             this.pictureBox3.TabStop = false;
+            // 
+            // btn_detalle_cita
+            // 
+            this.btn_detalle_cita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
+            this.btn_detalle_cita.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_detalle_cita.ForeColor = System.Drawing.Color.Black;
+            this.btn_detalle_cita.Location = new System.Drawing.Point(307, 377);
+            this.btn_detalle_cita.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_detalle_cita.Name = "btn_detalle_cita";
+            this.btn_detalle_cita.Size = new System.Drawing.Size(162, 41);
+            this.btn_detalle_cita.TabIndex = 24;
+            this.btn_detalle_cita.Text = "Detalle de la cita";
+            this.btn_detalle_cita.UseVisualStyleBackColor = false;
+            this.btn_detalle_cita.Click += new System.EventHandler(this.btn_detalle_cita_Click);
             // 
             // form_cirugias
             // 
@@ -248,7 +264,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 433);
             this.Controls.Add(this.panel_cirugias);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "form_cirugias";
             this.Text = "form_cirugias";
             this.Load += new System.EventHandler(this.form_cirugias_Load);
@@ -279,5 +295,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btn_detalle_cita;
     }
 }
